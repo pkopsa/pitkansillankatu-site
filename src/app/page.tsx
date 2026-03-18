@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, ReactNode } from "react";
 
 function FadeIn({
@@ -41,16 +42,34 @@ function FadeIn({
   );
 }
 
+const galleryImages = [
+  { src: "/olohuone1.webp", alt: "Olohuone" },
+  { src: "/olohuone2.webp", alt: "Olohuone" },
+  { src: "/olohuone3.webp", alt: "Olohuone" },
+  { src: "/lapihuoneisto.webp", alt: "Läpihuoneisto" },
+  { src: "/keittiö2.webp", alt: "Keittiö" },
+  { src: "/keittiökaapisto.webp", alt: "Keittiökaapisto" },
+  { src: "/makuuhuone1.webp", alt: "Makuuhuone" },
+  { src: "/kaytava1.webp", alt: "Käytävä" },
+  { src: "/vaatekaapisto.webp", alt: "Vaatekaapisto" },
+  { src: "/suihku.webp", alt: "Suihku" },
+];
+
 export default function Home() {
   return (
     <main className="bg-white text-stone-900 font-sans">
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-        {/* Placeholder background – korvaa oikealla kuvalla asettamalla src-attribuutti */}
-        <div className="absolute inset-0 bg-gradient-to-br from-stone-800 via-stone-700 to-amber-900">
-          {/* <img src="/hero.jpg" alt="Pitkänsillankatu 33" className="w-full h-full object-cover opacity-60" /> */}
-          <div className="absolute inset-0 bg-black/45" />
+        <div className="absolute inset-0">
+          <Image
+            src="/hero.webp"
+            alt="Pitkänsillankatu 33 – olohuone"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-black/55" />
         </div>
 
         <div className="relative z-10 text-center px-8 max-w-5xl mx-auto">
@@ -73,7 +92,6 @@ export default function Home() {
           </a>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-stone-300 animate-bounce">
           <span className="text-lg tracking-widest uppercase">Tutustu</span>
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -191,7 +209,7 @@ export default function Home() {
               },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 120}>
-                <div className="group bg-stone-50 hover:bg-amber-50 rounded-3xl p-12 transition-colors duration-300 border border-stone-100">
+                <div className="bg-stone-50 hover:bg-amber-50 rounded-3xl p-12 transition-colors duration-300 border border-stone-100">
                   <div className="text-6xl mb-8">{item.icon}</div>
                   <h3 className="text-3xl font-bold mb-5 text-stone-800">{item.title}</h3>
                   <p className="text-xl text-stone-600 leading-relaxed">{item.desc}</p>
@@ -202,8 +220,44 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── HISTORIA & SIJAINTI ─────────────────────────────────────── */}
+      {/* ── KUVAGALLERIA ────────────────────────────────────────────── */}
       <section className="py-28 px-8 bg-stone-50">
+        <div className="max-w-7xl mx-auto">
+          <FadeIn>
+            <h2 className="text-5xl font-bold text-center mb-20 text-stone-800">Kuvagalleria</h2>
+          </FadeIn>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {/* Pääkuva — leveä */}
+            <FadeIn className="col-span-2 row-span-2" delay={0}>
+              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-lg">
+                <Image
+                  src="/olohuone1.webp"
+                  alt="Olohuone"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+            </FadeIn>
+
+            {galleryImages.slice(1).map((img, i) => (
+              <FadeIn key={img.src} delay={(i + 1) * 80}>
+                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-md">
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── HISTORIA & SIJAINTI ─────────────────────────────────────── */}
+      <section className="py-28 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <h2 className="text-5xl font-bold text-center mb-6 text-stone-800">Historia & sijainti</h2>
@@ -213,10 +267,9 @@ export default function Home() {
           </FadeIn>
 
           <div className="grid md:grid-cols-2 gap-10 mb-16">
-            {/* Kuva 1 — historiallinen katukuva */}
+            {/* Kuva 1 — historiallinen katukuva (placeholder) */}
             <FadeIn delay={0}>
-              <div className="rounded-3xl overflow-hidden bg-stone-200 aspect-[4/3] flex flex-col items-center justify-center border-2 border-dashed border-stone-300 relative">
-                {/* Korvaa tämä oikealla kuvalla: <img src="/historia.jpg" className="w-full h-full object-cover" alt="Pitkänsillankatu 1950-luku" /> */}
+              <div className="rounded-3xl overflow-hidden bg-stone-100 aspect-[4/3] flex flex-col items-center justify-center border-2 border-dashed border-stone-300">
                 <svg className="w-20 h-20 text-stone-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
@@ -227,25 +280,28 @@ export default function Home() {
 
             {/* Kuva 2 — nykyinen ikkunanäkymä */}
             <FadeIn delay={150}>
-              <div className="rounded-3xl overflow-hidden bg-stone-200 aspect-[4/3] flex flex-col items-center justify-center border-2 border-dashed border-stone-300 relative">
-                {/* Korvaa tämä oikealla kuvalla: <img src="/nakyma.jpg" className="w-full h-full object-cover" alt="Ikkunanäkymä" /> */}
-                <svg className="w-20 h-20 text-stone-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <p className="text-stone-400 text-xl font-medium">Nykyinen ikkunanäkymä</p>
-                <p className="text-stone-400 text-lg">Ylin kerros, avara näkymä</p>
+              <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-lg">
+                <Image
+                  src="/nakyma.webp"
+                  alt="Ikkunanäkymä Nordealle"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+                  <p className="text-white text-xl font-semibold">Näkymä ylimmästä kerroksesta</p>
+                </div>
               </div>
             </FadeIn>
           </div>
 
           <FadeIn>
-            <div className="bg-white rounded-3xl p-12 shadow-sm border border-stone-100">
+            <div className="bg-stone-50 rounded-3xl p-12 border border-stone-100">
               <div className="grid md:grid-cols-3 gap-10 text-center">
                 {[
                   { icon: "📍", label: "Sijainti", value: "Kokkolan ydinkeskusta" },
                   { icon: "🚶", label: "Palvelut", value: "Kaikki kävelyetäisyydellä" },
                   { icon: "🏛️", label: "Rakennettu", value: "1950-luvun historiallinen talo" },
-                ].map((item, i) => (
+                ].map((item) => (
                   <div key={item.label} className="flex flex-col items-center">
                     <span className="text-5xl mb-4">{item.icon}</span>
                     <p className="text-stone-500 text-lg mb-2">{item.label}</p>
@@ -271,24 +327,9 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              {
-                icon: "👤",
-                label: "Myyjä",
-                value: "Petri Kopsa",
-                href: null,
-              },
-              {
-                icon: "📞",
-                label: "Puhelin",
-                value: "+358 50 306 0635",
-                href: "tel:+358503060635",
-              },
-              {
-                icon: "✉️",
-                label: "Sähköposti",
-                value: "info@terassitalo.com",
-                href: "mailto:info@terassitalo.com",
-              },
+              { icon: "👤", label: "Myyjä", value: "Petri Kopsa", href: null },
+              { icon: "📞", label: "Puhelin", value: "+358 50 306 0635", href: "tel:+358503060635" },
+              { icon: "✉️", label: "Sähköposti", value: "info@terassitalo.com", href: "mailto:info@terassitalo.com" },
             ].map((item, i) => (
               <FadeIn key={item.label} delay={i * 120}>
                 <div className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-3xl p-10 transition-colors duration-300">
