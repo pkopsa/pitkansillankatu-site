@@ -57,7 +57,7 @@ const galleryImages = [
 
 export default function Home() {
   return (
-    <main className="bg-white text-stone-900 font-sans">
+    <main className="bg-white text-slate-800 font-sans">
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
@@ -66,33 +66,33 @@ export default function Home() {
             src="/hero.webp"
             alt="Pitkänsillankatu 33 – olohuone"
             fill
-            className="object-cover"
+            className="object-cover brightness-105 contrast-105"
             priority
           />
-          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-black/50" />
         </div>
 
-        <div className="relative z-10 text-center px-8 max-w-5xl mx-auto">
+        <div className="relative z-10 text-center px-8 max-w-6xl mx-auto">
           <p className="text-amber-400 text-2xl font-semibold tracking-widest uppercase mb-6">
             Kokkola · Ydinkeskusta
           </p>
-          <h1 className="text-6xl md:text-8xl font-bold text-white leading-tight mb-8">
+          <h1 className="text-7xl md:text-[6.5rem] lg:text-[8rem] font-black text-white leading-[1.0] tracking-tight mb-10">
             Valoisa koti tai<br />
-            <span className="text-amber-400">huipputuottava sijoitus</span><br />
+            <span className="text-amber-400">huipputuottava<br />sijoitus</span><br />
             ydinkeskustasta
           </h1>
-          <p className="text-2xl md:text-3xl text-stone-200 mb-12 font-light">
+          <p className="text-2xl md:text-3xl text-slate-200 mb-12 font-light">
             Pitkänsillankatu 33 A 13 · 69 m² · Ylin kerros · 99 200 €
           </p>
           <a
             href="#yhteystiedot"
-            className="inline-block bg-amber-500 hover:bg-amber-400 text-stone-900 text-2xl font-bold px-14 py-6 rounded-full transition-colors duration-300 shadow-2xl"
+            className="inline-block bg-amber-500 hover:bg-amber-400 text-slate-900 text-2xl font-bold px-14 py-6 rounded-full transition-colors duration-300 shadow-2xl"
           >
             Ota yhteyttä
           </a>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-stone-300 animate-bounce">
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-300 animate-bounce">
           <span className="text-lg tracking-widest uppercase">Tutustu</span>
           <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -101,10 +101,10 @@ export default function Home() {
       </section>
 
       {/* ── PERUSTIEDOT ──────────────────────────────────────────────── */}
-      <section className="py-28 px-8 bg-stone-50">
+      <section className="py-28 px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <h2 className="text-5xl font-bold text-center mb-20 text-stone-800">Kohteen tiedot</h2>
+            <h2 className="text-5xl font-bold text-center mb-20 text-slate-800">Kohteen tiedot</h2>
           </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -114,10 +114,10 @@ export default function Home() {
               { label: "Vastike", value: "324 €/kk", sub: "Yhteensä" },
             ].map((item, i) => (
               <FadeIn key={item.label} delay={i * 100}>
-                <div className="bg-white rounded-3xl p-10 text-center shadow-sm border border-stone-100 hover:shadow-md transition-shadow">
-                  <p className="text-stone-500 text-xl font-medium mb-3">{item.label}</p>
-                  <p className="text-4xl font-bold text-stone-900 mb-2">{item.value}</p>
-                  <p className="text-stone-400 text-lg">{item.sub}</p>
+                <div className="bg-white rounded-3xl p-10 text-center shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+                  <p className="text-slate-500 text-xl font-medium mb-3">{item.label}</p>
+                  <p className="text-4xl font-bold text-slate-900 mb-2">{item.value}</p>
+                  <p className="text-slate-400 text-lg">{item.sub}</p>
                 </div>
               </FadeIn>
             ))}
@@ -126,15 +126,15 @@ export default function Home() {
       </section>
 
       {/* ── SIJOITTAJAN TIEDOT ───────────────────────────────────────── */}
-      <section className="py-28 px-8 bg-stone-900 text-white">
+      <section className="py-28 px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="flex items-center gap-4 mb-6 justify-center">
-              <span className="text-amber-400 text-2xl">◆</span>
-              <p className="text-amber-400 text-2xl font-semibold tracking-widest uppercase">Sijoittajalle</p>
-              <span className="text-amber-400 text-2xl">◆</span>
+              <span className="text-emerald-600 text-2xl">◆</span>
+              <p className="text-emerald-600 text-2xl font-semibold tracking-widest uppercase">Sijoittajalle</p>
+              <span className="text-emerald-600 text-2xl">◆</span>
             </div>
-            <h2 className="text-5xl font-bold text-center mb-20">Erinomainen tuottopotentiaali</h2>
+            <h2 className="text-5xl font-bold text-center mb-20 text-slate-800">Erinomainen tuottopotentiaali</h2>
           </FadeIn>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
@@ -159,22 +159,22 @@ export default function Home() {
               },
             ].map((item, i) => (
               <FadeIn key={item.label} delay={i * 150}>
-                <div className="relative bg-gradient-to-br from-amber-500 to-amber-600 rounded-3xl p-10 text-stone-900 overflow-hidden shadow-2xl">
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-16 translate-x-16" />
-                  <p className="text-lg font-semibold mb-4 opacity-80">{item.label}</p>
-                  <p className="text-6xl font-black mb-1">{item.value}</p>
-                  <p className="text-xl font-medium mb-6 opacity-70">{item.sub}</p>
-                  <p className="text-base opacity-80 leading-relaxed">{item.desc}</p>
+                <div className="relative bg-white rounded-3xl p-10 overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-emerald-50 rounded-full -translate-y-16 translate-x-16" />
+                  <p className="text-slate-500 text-lg font-semibold mb-4">{item.label}</p>
+                  <p className="text-6xl font-black mb-1 text-emerald-700">{item.value}</p>
+                  <p className="text-xl font-medium mb-6 text-slate-400">{item.sub}</p>
+                  <p className="text-base text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
           </div>
 
           <FadeIn>
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-10 text-center">
-              <p className="text-2xl text-stone-300 leading-relaxed">
-                Hankintahinta <strong className="text-white">99 200 €</strong> ja vastike vain{" "}
-                <strong className="text-white">324 €/kk</strong> tekevät tästä yhden Kokkolan
+            <div className="bg-slate-50 border border-slate-200 rounded-3xl p-10 text-center shadow-lg">
+              <p className="text-2xl text-slate-600 leading-relaxed">
+                Hankintahinta <strong className="text-emerald-700">99 200 €</strong> ja vastike vain{" "}
+                <strong className="text-emerald-700">324 €/kk</strong> tekevät tästä yhden Kokkolan
                 houkuttelevimmista sijoitusasunnoista.
               </p>
             </div>
@@ -183,11 +183,11 @@ export default function Home() {
       </section>
 
       {/* ── MUUTTOVALMIS KOTI ───────────────────────────────────────── */}
-      <section className="py-28 px-8 bg-white">
+      <section className="py-28 px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <h2 className="text-5xl font-bold text-center mb-6 text-stone-800">Muuttovalmis & freesi</h2>
-            <p className="text-2xl text-stone-500 text-center mb-20">Ei remonttitarvetta — voit vuokrata tai muuttaa heti</p>
+            <h2 className="text-5xl font-bold text-center mb-6 text-slate-800">Muuttovalmis & freesi</h2>
+            <p className="text-2xl text-slate-500 text-center mb-20">Ei remonttitarvetta — voit vuokrata tai muuttaa heti</p>
           </FadeIn>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -209,10 +209,10 @@ export default function Home() {
               },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 120}>
-                <div className="bg-stone-50 hover:bg-amber-50 rounded-3xl p-12 transition-colors duration-300 border border-stone-100">
+                <div className="bg-white hover:bg-slate-50 rounded-3xl p-12 transition-colors duration-300 border border-slate-100 shadow-lg hover:shadow-xl">
                   <div className="text-6xl mb-8">{item.icon}</div>
-                  <h3 className="text-3xl font-bold mb-5 text-stone-800">{item.title}</h3>
-                  <p className="text-xl text-stone-600 leading-relaxed">{item.desc}</p>
+                  <h3 className="text-3xl font-bold mb-5 text-slate-800">{item.title}</h3>
+                  <p className="text-xl text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -221,10 +221,10 @@ export default function Home() {
       </section>
 
       {/* ── KUVAGALLERIA ────────────────────────────────────────────── */}
-      <section className="py-28 px-8 bg-stone-50">
+      <section className="py-28 px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <FadeIn>
-            <h2 className="text-5xl font-bold text-center mb-20 text-stone-800">Kuvagalleria</h2>
+            <h2 className="text-5xl font-bold text-center mb-20 text-slate-800">Kuvagalleria</h2>
           </FadeIn>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -235,7 +235,7 @@ export default function Home() {
                   src="/olohuone1.webp"
                   alt="Olohuone"
                   fill
-                  className="object-cover hover:scale-105 transition-transform duration-500"
+                  className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </FadeIn>
@@ -247,7 +247,7 @@ export default function Home() {
                     src={img.src}
                     alt={img.alt}
                     fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </FadeIn>
@@ -257,45 +257,31 @@ export default function Home() {
       </section>
 
       {/* ── HISTORIA & SIJAINTI ─────────────────────────────────────── */}
-      <section className="py-28 px-8 bg-white">
+      <section className="py-28 px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
-            <h2 className="text-5xl font-bold text-center mb-6 text-stone-800">Historia & sijainti</h2>
-            <p className="text-2xl text-stone-500 text-center mb-20">
+            <h2 className="text-5xl font-bold text-center mb-6 text-slate-800">Historia & sijainti</h2>
+            <p className="text-2xl text-slate-500 text-center mb-20">
               Arvokas sijainti Kokkolan sydämessä — historiaa ja nykypäivää
             </p>
           </FadeIn>
 
-          <div className="grid md:grid-cols-2 gap-10 mb-16">
-            {/* Kuva 1 — historiallinen katukuva (placeholder) */}
-            <FadeIn delay={0}>
-              <div className="rounded-3xl overflow-hidden bg-stone-100 aspect-[4/3] flex flex-col items-center justify-center border-2 border-dashed border-stone-300">
-                <svg className="w-20 h-20 text-stone-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                <p className="text-stone-400 text-xl font-medium">Historiallinen katukuva</p>
-                <p className="text-stone-400 text-lg">Pitkänsillankatu 1950-luku</p>
+          <FadeIn delay={0} className="mb-16">
+            <div className="relative rounded-3xl overflow-hidden aspect-[16/7] shadow-xl">
+              <Image
+                src="/nakyma.webp"
+                alt="Ikkunanäkymä Nordealle"
+                fill
+                className="object-cover brightness-105 contrast-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-8">
+                <p className="text-white text-2xl font-semibold">Näkymä ylimmästä kerroksesta — suoraan Kokkolan sydämeen</p>
               </div>
-            </FadeIn>
-
-            {/* Kuva 2 — nykyinen ikkunanäkymä */}
-            <FadeIn delay={150}>
-              <div className="relative rounded-3xl overflow-hidden aspect-[4/3] shadow-lg">
-                <Image
-                  src="/nakyma.webp"
-                  alt="Ikkunanäkymä Nordealle"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
-                  <p className="text-white text-xl font-semibold">Näkymä ylimmästä kerroksesta</p>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
+            </div>
+          </FadeIn>
 
           <FadeIn>
-            <div className="bg-stone-50 rounded-3xl p-12 border border-stone-100">
+            <div className="bg-white rounded-3xl p-12 border border-slate-100 shadow-lg">
               <div className="grid md:grid-cols-3 gap-10 text-center">
                 {[
                   { icon: "📍", label: "Sijainti", value: "Kokkolan ydinkeskusta" },
@@ -304,8 +290,8 @@ export default function Home() {
                 ].map((item) => (
                   <div key={item.label} className="flex flex-col items-center">
                     <span className="text-5xl mb-4">{item.icon}</span>
-                    <p className="text-stone-500 text-lg mb-2">{item.label}</p>
-                    <p className="text-2xl font-bold text-stone-800">{item.value}</p>
+                    <p className="text-slate-500 text-lg mb-2">{item.label}</p>
+                    <p className="text-2xl font-bold text-slate-800">{item.value}</p>
                   </div>
                 ))}
               </div>
@@ -315,12 +301,12 @@ export default function Home() {
       </section>
 
       {/* ── OTA YHTEYTTÄ ────────────────────────────────────────────── */}
-      <section id="yhteystiedot" className="py-28 px-8 bg-stone-900 text-white">
+      <section id="yhteystiedot" className="py-28 px-8 bg-slate-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <FadeIn>
             <p className="text-amber-400 text-2xl font-semibold tracking-widest uppercase mb-6">Kiinnostuitko?</p>
             <h2 className="text-6xl font-bold mb-8">Ota yhteyttä</h2>
-            <p className="text-2xl text-stone-300 mb-20 leading-relaxed">
+            <p className="text-2xl text-slate-300 mb-20 leading-relaxed">
               Varaa näyttöaika tai pyydä lisätietoja — vastataan nopeasti.
             </p>
           </FadeIn>
@@ -334,7 +320,7 @@ export default function Home() {
               <FadeIn key={item.label} delay={i * 120}>
                 <div className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-3xl p-10 transition-colors duration-300">
                   <div className="text-5xl mb-6">{item.icon}</div>
-                  <p className="text-stone-400 text-xl mb-3">{item.label}</p>
+                  <p className="text-slate-400 text-xl mb-3">{item.label}</p>
                   {item.href ? (
                     <a href={item.href} className="text-2xl font-bold text-amber-400 hover:text-amber-300 transition-colors">
                       {item.value}
@@ -349,7 +335,7 @@ export default function Home() {
 
           <FadeIn delay={400}>
             <div className="mt-20 pt-12 border-t border-white/10">
-              <p className="text-stone-500 text-xl">
+              <p className="text-slate-500 text-xl">
                 Pitkänsillankatu 33 A 13 · 67100 Kokkola · 69 m² · 99 200 €
               </p>
             </div>
