@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, ReactNode } from "react";
+import { QRCodeSVG } from "qrcode.react";
 import ContactSection from "@/components/ContactSection";
 
 function FadeIn({
@@ -147,19 +148,19 @@ export default function Home() {
             {[
               {
                 label: "Bruttovuokratuotto",
-                value: "9–10 %",
+                value: "8,5–10 %",
                 sub: "vuodessa",
                 desc: "Kokkolan ydinkeskustan vahvalla vuokrakysyntäalueella",
               },
               {
                 label: "Arvioitu markkinavuokra",
-                value: "750–850 €",
+                value: "700–850 €",
                 sub: "kuukaudessa",
-                desc: "Alueen käypä vuokrataso vastaavalle kohteelle",
+                desc: "700 € ilman kalusteita · 850 € kevyesti kalustettuna",
               },
               {
                 label: "Nettotuotto",
-                value: "5–6 %",
+                value: "4,5–6 %",
                 sub: "vuodessa",
                 desc: "Vastikekulujen jälkeen laskettuna",
               },
@@ -340,7 +341,51 @@ export default function Home() {
           </div>
 
           <FadeIn delay={400}>
-            <div className="mt-12 pt-8 lg:mt-20 lg:pt-12 border-t border-white/10">
+            <div className="mt-12 lg:mt-20 flex flex-col sm:flex-row items-end justify-center gap-6">
+              {/* QR-koodi */}
+              <div className="flex flex-col items-center gap-3">
+                <div className="bg-white rounded-2xl p-4 shadow-lg">
+                  <QRCodeSVG
+                    value="https://pitkansillankatu33.com/"
+                    size={160}
+                    bgColor="#ffffff"
+                    fgColor="#1e293b"
+                    level="M"
+                  />
+                </div>
+                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide">
+                  Skannaa ja varaa
+                </p>
+              </div>
+
+              {/* Etuovi-linkki */}
+              <div className="flex flex-col items-center gap-3">
+                <a
+                  href="https://www.etuovi.com/kohde/w24967"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-6 shadow-lg w-48 h-48 hover:shadow-xl transition-shadow group"
+                >
+                  <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none">
+                    <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H5a1 1 0 01-1-1V10.5z" fill="#FF6600" />
+                    <rect x="9" y="13" width="6" height="8" rx="0.5" fill="#fff" />
+                  </svg>
+                  <span className="text-slate-800 font-bold text-base text-center leading-tight">
+                    Katso ilmoitus<br />Etuovessa
+                  </span>
+                  <span className="text-[#FF6600] font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                    Avaa →
+                  </span>
+                </a>
+                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide">
+                  Etuovi
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={500}>
+            <div className="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-white/10">
               <p className="text-slate-500 text-sm lg:text-xl">
                 Pitkänsillankatu 33 A 13 · 67100 Kokkola · 69 m² · 99 200 €
               </p>
