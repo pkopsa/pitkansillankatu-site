@@ -19,7 +19,9 @@ No test runner is configured yet.
 
 ## Architecture
 
-This is a **Next.js 16** app using the **App Router** with React 19, TypeScript, and Tailwind CSS v4.
+This is a **Next.js 15** app using the **App Router** with React 19, TypeScript, and Tailwind CSS v4.
+
+**Webpack only:** This machine's CPU lacks BMI2 instructions — Turbopack crashes. Never add `--turbopack` to scripts or config. `next dev` uses Webpack by default in Next.js 15 (no flag needed).
 
 - `src/app/` — App Router root. `layout.tsx` is the root layout; `page.tsx` is the home route.
 - `src/` — All application code lives here. The `@/*` alias maps to `src/*`.

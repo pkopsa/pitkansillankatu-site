@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, ReactNode } from "react";
+import ContactSection from "@/components/ContactSection";
 
 function FadeIn({
   children,
@@ -347,6 +348,9 @@ export default function Home() {
           </FadeIn>
         </div>
       </section>
+
+      {/* ── YHTEYDENOTTOLOMAKE ──────────────────────────────────────── */}
+      <ContactSection />
     </main>
   );
 }
