@@ -53,6 +53,11 @@ const galleryImages = [
   { src: "/kaytava1.webp", alt: "Käytävä" },
   { src: "/vaatekaapisto.webp", alt: "Vaatekaapisto" },
   { src: "/suihku.webp", alt: "Suihku" },
+  { src: "/uusi1.jpeg", alt: "Olohuone ja keittiö" },
+  { src: "/uusi2.jpeg", alt: "Keittiö" },
+  { src: "/uusi3.jpeg", alt: "Makuuhuone" },
+  { src: "/uusi4.jpeg", alt: "Vaatekaapisto" },
+  { src: "/uusi5.jpeg", alt: "Kylpyhuone" },
 ];
 
 export default function Home() {
