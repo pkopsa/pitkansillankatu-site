@@ -101,8 +101,14 @@ const maalaattuImages = [
   { src: "/maalattu2.jpeg", alt: "Makuuhuone" },
 ];
 
-const SCROLL_SPEED = 5.2; // px per frame — säädä tätä nopeuden muuttamiseksi
-const PAUSE_MS = 2000;    // tauko ylä- ja alareunassa ennen suunnanvaihtoa
+const PAUSE_MS = 2000; // tauko ylä- ja alareunassa ennen suunnanvaihtoa
+// Nopeus riippuu näytön leveydestä: TV 5.2, desktop 2.0, mobiili 0.8
+function getScrollSpeed() {
+  if (typeof window === "undefined") return 1.0;
+  if (window.innerWidth >= 1920) return 5.2;
+  if (window.innerWidth >= 1024) return 2.0;
+  return 0.8;
+}
 
 export default function Home() {
   const [lightbox, setLightbox] = useState<{ images: typeof galleryImages; index: number } | null>(null);
@@ -125,7 +131,7 @@ export default function Home() {
         pausing = true;
         setTimeout(() => { direction = 1; pausing = false; }, PAUSE_MS);
       } else {
-        window.scrollBy(0, SCROLL_SPEED * direction);
+        window.scrollBy(0, getScrollSpeed() * direction);
       }
 
       rafId = requestAnimationFrame(step);
@@ -214,16 +220,16 @@ export default function Home() {
           </FadeIn>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
             {[
-              { label: "Koko", value: "69 m²", sub: "2h + k + kh + wc" },
-              { label: "Kerros", value: "3 / 3", sub: "Ei ylänaapuria" },
-              { label: "Hinta", value: "99 200 €", sub: "Neuvoteltavissa" },
-              { label: "Vastike", value: "324 €/kk", sub: "Yhteensä" },
+              { label: "Koko", value: "69 m²", sub: "2h + k + kh + wc", inline: false },
+              { label: "Kerros", value: "3 / 3", sub: "Ei ylänaapuria", inline: false },
+              { label: "Hinta", value: "99 200 € – Neuvoteltavissa", sub: "", inline: true },
+              { label: "Vastike", value: "324 €/kk", sub: "Yhteensä", inline: false },
             ].map((item, i) => (
               <FadeIn key={item.label} delay={i * 100}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-5 lg:p-10 text-center shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
                   <p className="text-slate-500 text-sm lg:text-xl font-medium mb-2 lg:mb-3">{item.label}</p>
-                  <p className="text-2xl lg:text-4xl font-bold text-slate-900 mb-1 lg:mb-2">{item.value}</p>
-                  <p className="text-slate-400 text-xs lg:text-lg">{item.sub}</p>
+                  <p className="text-2xl lg:text-4xl font-bold text-slate-900 mb-1 lg:mb-2 whitespace-nowrap">{item.value}</p>
+                  {!item.inline && <p className="text-slate-400 text-xs lg:text-lg">{item.sub}</p>}
                 </div>
               </FadeIn>
             ))}

@@ -54,7 +54,7 @@ body {
 
   /* ── Tuottopotentiaali-osio: hillitympi skaalaus jotta teksti ei rivity ── */
   /* Isonumerot (8,5–10%, 700–850€) — -5% jotta mahtuu yhdelle riville */
-  .text-5xl.lg\:text-6xl   { font-size: 4.75rem !important; line-height: 5.25rem !important; }
+  .text-5xl.lg\:text-6xl   { font-size: 4.5rem !important; line-height: 5rem !important; }
   /* Label-teksti (Bruttovuokratuotto jne.) */
   .text-sm.lg\:text-lg     { font-size: 1.5rem !important; line-height: 2rem !important; }
   /* Sub-teksti (vuodessa, kuukaudessa) */
