@@ -101,8 +101,50 @@ const maalaattuImages = [
   { src: "/maalattu2.jpeg", alt: "Makuuhuone" },
 ];
 
+const SCROLL_SPEED = 0.8; // px per frame — säädä tätä nopeuden muuttamiseksi
+const PAUSE_MS = 2000;    // tauko ylä- ja alareunassa ennen suunnanvaihtoa
+
 export default function Home() {
   const [lightbox, setLightbox] = useState<{ images: typeof galleryImages; index: number } | null>(null);
+
+  useEffect(() => {
+    let rafId: number;
+    let direction: 1 | -1 = 1;
+    let pausing = false;
+
+    function step() {
+      if (pausing) { rafId = requestAnimationFrame(step); return; }
+
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const current = window.scrollY;
+
+      if (direction === 1 && current >= maxScroll - 1) {
+        pausing = true;
+        setTimeout(() => { direction = -1; pausing = false; }, PAUSE_MS);
+      } else if (direction === -1 && current <= 1) {
+        pausing = true;
+        setTimeout(() => { direction = 1; pausing = false; }, PAUSE_MS);
+      } else {
+        window.scrollBy(0, SCROLL_SPEED * direction);
+      }
+
+      rafId = requestAnimationFrame(step);
+    }
+
+    // Käyttäjän kosketus tai vieritys pysäyttää automaattiskrollauksen
+    function stop() { cancelAnimationFrame(rafId); }
+    window.addEventListener("wheel", stop, { passive: true });
+    window.addEventListener("touchstart", stop, { passive: true });
+    window.addEventListener("keydown", stop);
+
+    rafId = requestAnimationFrame(step);
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener("wheel", stop);
+      window.removeEventListener("touchstart", stop);
+      window.removeEventListener("keydown", stop);
+    };
+  }, []);
 
   function openLightbox(images: typeof galleryImages, index: number) {
     setLightbox({ images, index });
