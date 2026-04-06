@@ -53,8 +53,8 @@ body {
   .lg\:text-\[8rem\] { font-size: 16rem !important; line-height: 1.0 !important; }
 
   /* ── Tuottopotentiaali-osio: hillitympi skaalaus jotta teksti ei rivity ── */
-  /* Isonumerot (8,5–10%, 700–850€) — pidetään hallittavana */
-  .text-5xl.lg\:text-6xl   { font-size: 5rem !important; line-height: 5.5rem !important; }
+  /* Isonumerot (8,5–10%, 700–850€) — -5% jotta mahtuu yhdelle riville */
+  .text-5xl.lg\:text-6xl   { font-size: 4.75rem !important; line-height: 5.25rem !important; }
   /* Label-teksti (Bruttovuokratuotto jne.) */
   .text-sm.lg\:text-lg     { font-size: 1.5rem !important; line-height: 2rem !important; }
   /* Sub-teksti (vuodessa, kuukaudessa) */
@@ -62,11 +62,11 @@ body {
   /* Desc-teksti (yhden rivin kuvaukset) */
   .text-sm.lg\:text-base.text-slate-600 { font-size: 1.5rem !important; line-height: 2rem !important; }
 
-  /* ── Yhteystiedot-osio: tummien laatikoiden teksti 2× isompaa ── */
-  .bg-slate-700 .lg\:text-xl  { font-size: 4rem   !important; line-height: 4.75rem !important; }
-  .bg-slate-700 .lg\:text-5xl { font-size: 8rem   !important; line-height: 1      !important; }
+  /* ── Yhteystiedot-osio: tummien laatikoiden teksti +30% ── */
+  .bg-slate-700 .lg\:text-xl  { font-size: 5.2rem  !important; line-height: 6rem    !important; }
+  .bg-slate-700 .lg\:text-5xl { font-size: 10.4rem !important; line-height: 1       !important; }
   .bg-slate-700 p.lg\:text-xl,
-  .bg-slate-700 a.lg\:text-xl { font-size: 3.5rem !important; line-height: 4rem   !important; }
+  .bg-slate-700 a.lg\:text-xl { font-size: 4.55rem !important; line-height: 5.25rem !important; }
   /* Padding laatikoihin enemmän jotta teksti hengittää */
   .bg-slate-700.lg\:rounded-3xl { padding: 4rem !important; }
 
