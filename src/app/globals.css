@@ -30,49 +30,45 @@ body {
 
   /* Maksimileveydet — sisältö täyttää koko ruudun */
   .max-w-4xl { max-width: 100% !important; }
-  .max-w-6xl { max-width: 1700px !important; }
-  .max-w-7xl { max-width: 1860px !important; }
+  .max-w-6xl { max-width: 1800px !important; }
+  .max-w-7xl { max-width: 1900px !important; }
 
-  /* Paddingt — enemmän hengitystilaa */
-  .lg\:px-8  { padding-left: 4rem !important; padding-right: 4rem !important; }
-  .lg\:py-28 { padding-top: 7rem !important; padding-bottom: 7rem !important; }
-  .lg\:p-10  { padding: 3.5rem !important; }
-  .lg\:p-12  { padding: 4rem !important; }
+  /* Paddingt */
+  .lg\:px-8  { padding-left: 8rem  !important; padding-right: 8rem  !important; }
+  .lg\:py-28 { padding-top: 14rem  !important; padding-bottom: 14rem !important; }
+  .lg\:p-10  { padding: 7rem   !important; }
+  .lg\:p-12  { padding: 8rem   !important; }
 
-  /* Tekstikoot — kaikki lg: -luokat isommaksi */
-  .lg\:text-base { font-size: 1.25rem !important; line-height: 1.75rem !important; }
-  .lg\:text-lg   { font-size: 1.5rem  !important; line-height: 2rem    !important; }
-  .lg\:text-xl   { font-size: 1.75rem !important; line-height: 2.25rem !important; }
-  .lg\:text-2xl  { font-size: 2rem    !important; line-height: 2.5rem  !important; }
-  .lg\:text-3xl  { font-size: 2.5rem  !important; line-height: 3rem    !important; }
-  .lg\:text-4xl  { font-size: 3rem    !important; line-height: 3.5rem  !important; }
-  .lg\:text-5xl  { font-size: 4rem    !important; line-height: 4.5rem  !important; }
-  .lg\:text-6xl  { font-size: 5rem    !important; line-height: 5.5rem  !important; }
+  /* Tekstikoot — 2× Tailwindin lg-arvoista */
+  .lg\:text-base { font-size: 2rem    !important; line-height: 2.75rem !important; }
+  .lg\:text-lg   { font-size: 2.25rem !important; line-height: 3rem    !important; }
+  .lg\:text-xl   { font-size: 2.5rem  !important; line-height: 3.25rem !important; }
+  .lg\:text-2xl  { font-size: 3rem    !important; line-height: 3.75rem !important; }
+  .lg\:text-3xl  { font-size: 4rem    !important; line-height: 4.75rem !important; }
+  .lg\:text-4xl  { font-size: 5rem    !important; line-height: 5.75rem !important; }
+  .lg\:text-5xl  { font-size: 7rem    !important; line-height: 7.75rem !important; }
+  .lg\:text-6xl  { font-size: 9rem    !important; line-height: 9.75rem !important; }
 
-  /* Hero H1 erikoisarvo */
-  .lg\:text-\[8rem\] { font-size: 10rem !important; line-height: 1.0 !important; }
+  /* Hero H1 */
+  .lg\:text-\[8rem\] { font-size: 16rem !important; line-height: 1.0 !important; }
 
-  /* Ikonit ja emojit */
-  .lg\:text-5xl.text-5xl:not(h1):not(h2):not(h3) { font-size: 4rem !important; }
+  /* Kuvagalleria */
+  .lg\:gap-4  { gap: 2rem !important; }
+  .lg\:gap-8  { gap: 4rem !important; }
+  .lg\:gap-10 { gap: 5rem !important; }
 
-  /* Kuvagalleria — isommat kuvat */
-  .lg\:gap-4  { gap: 1.25rem !important; }
-  .lg\:gap-8  { gap: 2.5rem  !important; }
-  .lg\:gap-10 { gap: 3rem    !important; }
-  .lg\:rounded-3xl { border-radius: 1.5rem !important; }
-
-  /* Nappi hero-osiossa */
-  .lg\:px-14 { padding-left: 5rem  !important; padding-right: 5rem  !important; }
-  .lg\:py-6  { padding-top: 2rem   !important; padding-bottom: 2rem !important; }
-  .lg\:py-5  { padding-top: 1.75rem !important; padding-bottom: 1.75rem !important; }
+  /* Hero-nappi */
+  .lg\:px-14 { padding-left: 10rem !important; padding-right: 10rem !important; }
+  .lg\:py-6  { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+  .lg\:py-5  { padding-top: 3rem   !important; padding-bottom: 3rem   !important; }
 
   /* Marginaalit */
-  .lg\:mb-6  { margin-bottom: 2rem   !important; }
-  .lg\:mb-8  { margin-bottom: 2.5rem !important; }
-  .lg\:mb-10 { margin-bottom: 3rem   !important; }
-  .lg\:mb-12 { margin-bottom: 3.5rem !important; }
-  .lg\:mb-16 { margin-bottom: 5rem   !important; }
-  .lg\:mb-20 { margin-bottom: 6rem   !important; }
-  .lg\:mt-20 { margin-top:    6rem   !important; }
-  .lg\:pt-12 { padding-top:   3.5rem !important; }
+  .lg\:mb-6  { margin-bottom: 4rem  !important; }
+  .lg\:mb-8  { margin-bottom: 5rem  !important; }
+  .lg\:mb-10 { margin-bottom: 6rem  !important; }
+  .lg\:mb-12 { margin-bottom: 7rem  !important; }
+  .lg\:mb-16 { margin-bottom: 10rem !important; }
+  .lg\:mb-20 { margin-bottom: 12rem !important; }
+  .lg\:mt-20 { margin-top:    12rem !important; }
+  .lg\:pt-12 { padding-top:   7rem  !important; }
 }
