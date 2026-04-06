@@ -101,7 +101,7 @@ const maalaattuImages = [
   { src: "/maalattu2.jpeg", alt: "Makuuhuone" },
 ];
 
-const SCROLL_SPEED = 0.8; // px per frame — säädä tätä nopeuden muuttamiseksi
+const SCROLL_SPEED = 4.0; // px per frame — säädä tätä nopeuden muuttamiseksi
 const PAUSE_MS = 2000;    // tauko ylä- ja alareunassa ennen suunnanvaihtoa
 
 export default function Home() {
