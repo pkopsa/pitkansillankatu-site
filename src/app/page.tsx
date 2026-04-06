@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, ReactNode } from "react";
+import { useEffect, useRef, useState, ReactNode } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import ContactSection from "@/components/ContactSection";
+import Lightbox from "@/components/Lightbox";
 
 function FadeIn({
   children,
@@ -48,23 +49,79 @@ const galleryImages = [
   { src: "/olohuone1.webp", alt: "Olohuone" },
   { src: "/olohuone2.webp", alt: "Olohuone" },
   { src: "/olohuone3.webp", alt: "Olohuone" },
+  { src: "/olohuone4.webp", alt: "Olohuone" },
+  { src: "/olohuoneesta-keittioon.webp", alt: "Olohuoneesta keittiöön" },
+  { src: "/lapitalo-kruunut.webp", alt: "Läpitalo" },
   { src: "/lapihuoneisto.webp", alt: "Läpihuoneisto" },
-  { src: "/keittiö2.webp", alt: "Keittiö" },
-  { src: "/keittiökaapisto.webp", alt: "Keittiökaapisto" },
   { src: "/makuuhuone1.webp", alt: "Makuuhuone" },
+  { src: "/makuuhuoneesta-olohuoneeseen.webp", alt: "Makuuhuoneesta olohuoneeseen" },
+  { src: "/keittiö2.webp", alt: "Keittiö" },
+  { src: "/keittio3.webp", alt: "Keittiö" },
+  { src: "/keittiökaapisto.webp", alt: "Keittiökaapisto" },
+  { src: "/jaakaappi.webp", alt: "Jääkaappi ja mikroaaltouuni" },
   { src: "/kaytava1.webp", alt: "Käytävä" },
+  { src: "/kaytava2.webp", alt: "Käytävä" },
   { src: "/vaatekaapisto.webp", alt: "Vaatekaapisto" },
+  { src: "/vaatehuone-kaapisto.webp", alt: "Vaatehuoneen kaapisto" },
+  { src: "/vaatekaapisto-kruunu.webp", alt: "Vaatekaapisto ja kattokruunu" },
   { src: "/suihku.webp", alt: "Suihku" },
+  { src: "/suihkukaappi.webp", alt: "Suihkukaappi" },
+  { src: "/wc-lavuaari.webp", alt: "WC ja lavuaari" },
+  { src: "/pesukone.webp", alt: "Pesukone" },
+  { src: "/pesukone2.webp", alt: "Pesukone" },
+  { src: "/pesukone-ja-liesi.webp", alt: "Pesukone ja liesi" },
   { src: "/uusi1.jpeg", alt: "Olohuone ja keittiö" },
   { src: "/uusi2.jpeg", alt: "Keittiö" },
   { src: "/uusi3.jpeg", alt: "Makuuhuone" },
   { src: "/uusi4.jpeg", alt: "Vaatekaapisto" },
   { src: "/uusi5.jpeg", alt: "Kylpyhuone" },
+  { src: "/IMG_1504.jpeg", alt: "Makuuhuone" },
+  { src: "/IMG_1505.jpeg", alt: "Säilytystilaa" },
+  { src: "/IMG_1507.jpeg", alt: "Käytävä" },
+  { src: "/IMG_1501.jpeg", alt: "Olohuone" },
+  { src: "/IMG_1503.jpeg", alt: "Keittiö" },
+  { src: "/img-1479.jpeg", alt: "Huone" },
+  { src: "/maalattu1.jpeg", alt: "Olohuone ja keittiö" },
+  { src: "/maalattu2.jpeg", alt: "Makuuhuone" },
+  { src: "/image0.jpeg", alt: "Makuuhuone" },
+  { src: "/image1.jpeg", alt: "Käytävä" },
+  { src: "/image2.jpeg", alt: "Huone" },
+];
+
+const freesiImages = [
+  { src: "/IMG_1504.jpeg", alt: "Makuuhuone" },
+  { src: "/IMG_1505.jpeg", alt: "Säilytystilaa" },
+  { src: "/IMG_1507.jpeg", alt: "Käytävä" },
+  { src: "/IMG_1501.jpeg", alt: "Olohuone" },
+  { src: "/IMG_1503.jpeg", alt: "Keittiö" },
+];
+
+const maalaattuImages = [
+  { src: "/maalattu1.jpeg", alt: "Olohuone ja keittiö" },
+  { src: "/maalattu2.jpeg", alt: "Makuuhuone" },
 ];
 
 export default function Home() {
+  const [lightbox, setLightbox] = useState<{ images: typeof galleryImages; index: number } | null>(null);
+
+  function openLightbox(images: typeof galleryImages, index: number) {
+    setLightbox({ images, index });
+  }
+  function closeLightbox() { setLightbox(null); }
+  function prevImage() { setLightbox((lb) => lb && { ...lb, index: (lb.index - 1 + lb.images.length) % lb.images.length }); }
+  function nextImage() { setLightbox((lb) => lb && { ...lb, index: (lb.index + 1) % lb.images.length }); }
+
   return (
     <main className="bg-white text-slate-800 font-sans">
+      {lightbox && (
+        <Lightbox
+          images={lightbox.images}
+          index={lightbox.index}
+          onClose={closeLightbox}
+          onPrev={prevImage}
+          onNext={nextImage}
+        />
+      )}
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
@@ -197,29 +254,45 @@ export default function Home() {
             <p className="text-base lg:text-2xl text-slate-500 text-center mb-10 lg:mb-20">Ei remonttitarvetta — voit vuokrata tai muuttaa heti</p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 items-stretch">
             {[
               {
                 icon: "🖌️",
                 title: "Juuri maalattu",
                 desc: "2026 valmistunut kattava maalausurakka. Kaikki pinnat uusittu ammattitaidolla — seinät, katot ja puuosat.",
+                images: maalaattuImages,
               },
               {
                 icon: "🪟",
                 title: "Uudet säleverhot",
                 desc: "Jokaiseen ikkunaan asennettu uudet laadukkaat säleverhot. Valoisa tunnelma ja helppo valaistuksen säätö.",
+                images: null,
               },
               {
                 icon: "✨",
                 title: "Freesi valkoinen ilme",
                 desc: "Ajaton ja valoisa sisustus, joka sopii kaikille. Ylin kerros tuo lisää luonnonvaloa päivittäin.",
+                images: freesiImages,
               },
             ].map((item, i) => (
               <FadeIn key={item.title} delay={i * 120}>
-                <div className="bg-white hover:bg-slate-50 rounded-2xl lg:rounded-3xl p-6 lg:p-12 transition-colors duration-300 border border-slate-100 shadow-lg hover:shadow-xl">
+                <div className="bg-white hover:bg-slate-50 rounded-2xl lg:rounded-3xl p-6 lg:p-12 transition-colors duration-300 border border-slate-100 shadow-lg hover:shadow-xl flex flex-col h-full">
                   <div className="text-5xl mb-4 lg:mb-8">{item.icon}</div>
                   <h3 className="text-xl lg:text-3xl font-bold mb-3 lg:mb-5 text-slate-800">{item.title}</h3>
-                  <p className="text-sm lg:text-xl text-slate-600 leading-relaxed">{item.desc}</p>
+                  <p className="text-sm lg:text-xl text-slate-600 leading-relaxed flex-1">{item.desc}</p>
+                  {item.images ? (
+                    <button
+                      onClick={() => openLightbox(item.images!, 0)}
+                      className="mt-6 inline-flex items-center gap-2 text-sm lg:text-base font-semibold text-amber-600 hover:text-amber-500 transition-colors"
+                    >
+                      Katso kuvat
+                      <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
+                  ) : (
+                    <div className="mt-6 h-6" />
+                  )}
                 </div>
               </FadeIn>
             ))}
@@ -237,26 +310,32 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-4">
             {/* Pääkuva — leveä */}
             <FadeIn className="col-span-2 row-span-2" delay={0}>
-              <div className="relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg">
+              <button
+                onClick={() => openLightbox(galleryImages, 0)}
+                className="relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg w-full block cursor-zoom-in"
+              >
                 <Image
                   src="/olohuone1.webp"
                   alt="Olohuone"
                   fill
                   className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500"
                 />
-              </div>
+              </button>
             </FadeIn>
 
             {galleryImages.slice(1).map((img, i) => (
               <FadeIn key={img.src} delay={(i + 1) * 80}>
-                <div className="relative aspect-square rounded-xl lg:rounded-2xl overflow-hidden shadow-md">
+                <button
+                  onClick={() => openLightbox(galleryImages, i + 1)}
+                  className="relative aspect-square rounded-xl lg:rounded-2xl overflow-hidden shadow-md w-full block cursor-zoom-in"
+                >
                   <Image
                     src={img.src}
                     alt={img.alt}
                     fill
                     className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500"
                   />
-                </div>
+                </button>
               </FadeIn>
             ))}
           </div>
@@ -318,23 +397,46 @@ export default function Home() {
             </p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 items-stretch">
             {[
-              { icon: "👤", label: "Myyjä", value: "Petri Kopsa", href: null },
-              { icon: "📞", label: "Puhelin", value: "+358 50 306 0635", href: "tel:+358503060635" },
-              { icon: "✉️", label: "Sähköposti", value: "info@terassitalo.com", href: "mailto:info@terassitalo.com" },
+              {
+                icon: "👤",
+                label: "Myyjä",
+                lines: [
+                  { text: "Petri Kopsa", href: null },
+                  { text: "petri.kopsa@gmail.com", href: "mailto:petri.kopsa@gmail.com" },
+                ],
+              },
+              {
+                icon: "📞",
+                label: "Puhelin",
+                lines: [
+                  { text: "+358 50 306 0635", href: "tel:+358503060635" },
+                ],
+              },
+              {
+                icon: "✉️",
+                label: "Sähköposti",
+                lines: [
+                  { text: "info@terassitalo.com", href: "mailto:info@terassitalo.com" },
+                ],
+              },
             ].map((item, i) => (
               <FadeIn key={item.label} delay={i * 120}>
-                <div className="bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl lg:rounded-3xl p-6 lg:p-10 transition-colors duration-300">
+                <div className="bg-slate-700 hover:bg-slate-600 border border-white/10 rounded-2xl lg:rounded-3xl p-6 lg:p-10 transition-colors duration-300 h-full flex flex-col">
                   <div className="text-4xl lg:text-5xl mb-4 lg:mb-6">{item.icon}</div>
                   <p className="text-slate-400 text-sm lg:text-xl mb-2 lg:mb-3">{item.label}</p>
-                  {item.href ? (
-                    <a href={item.href} className="text-lg lg:text-2xl font-bold text-amber-400 hover:text-amber-300 transition-colors">
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="text-lg lg:text-2xl font-bold text-white">{item.value}</p>
-                  )}
+                  <div className="flex flex-col gap-1 mt-auto">
+                    {item.lines.map((line) =>
+                      line.href ? (
+                        <a key={line.text} href={line.href} className="text-base lg:text-xl font-bold text-amber-400 hover:text-amber-300 transition-colors whitespace-nowrap">
+                          {line.text}
+                        </a>
+                      ) : (
+                        <p key={line.text} className="text-base lg:text-xl font-bold text-white">{line.text}</p>
+                      )
+                    )}
+                  </div>
                 </div>
               </FadeIn>
             ))}
@@ -379,6 +481,45 @@ export default function Home() {
                 </a>
                 <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide">
                   Etuovi
+                </p>
+              </div>
+
+              {/* Isännöitsijäntodistus — Retta */}
+              <div className="flex flex-col items-center gap-3">
+                <a
+                  href="/docs/isannoitsijantodistus.pdf"
+                  download
+                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-6 shadow-lg w-48 h-48 hover:shadow-xl transition-shadow group"
+                >
+                  <img src="/retta-logo-dark.svg" alt="Retta" className="w-28 h-auto" />
+                  <span className="text-slate-500 font-semibold text-sm group-hover:translate-y-0.5 transition-transform inline-flex items-center gap-1">
+                    Lataa PDF ↓
+                  </span>
+                </a>
+                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide">
+                  Isännöitsijäntodistus
+                </p>
+              </div>
+
+              {/* Kunnossapitotarveselvitys */}
+              <div className="flex flex-col items-center gap-3">
+                <a
+                  href="/docs/kunnossapito2025.pdf"
+                  download
+                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-6 shadow-lg w-48 h-48 hover:shadow-xl transition-shadow group"
+                >
+                  <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none" stroke="#1e293b" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l5.653-4.655m5.833-4.322a7.5 7.5 0 00-10.23 0" />
+                  </svg>
+                  <span className="text-slate-800 font-bold text-base text-center leading-tight">
+                    Kunnossapito-<br />tarveselvitys
+                  </span>
+                  <span className="text-slate-500 font-semibold text-sm group-hover:translate-y-0.5 transition-transform inline-flex items-center gap-1">
+                    Lataa PDF ↓
+                  </span>
+                </a>
+                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide">
+                  Remontit
                 </p>
               </div>
             </div>
