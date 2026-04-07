@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState, ReactNode } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import ContactSection from "@/components/ContactSection";
+import PropertyMap from "@/components/PropertyMap";
 import Lightbox from "@/components/Lightbox";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Lang, translations } from "@/translations";
@@ -104,11 +105,12 @@ const maalaattuImages = [
 ];
 
 const PAUSE_MS = 2000;
+const LANGS_CYCLE: Lang[] = ["fi", "sv", "en"];
 function getScrollSpeed() {
   if (typeof window === "undefined") return 1.0;
-  if (window.innerWidth >= 1920) return 5.2;
-  if (window.innerWidth >= 1024) return 2.0;
-  return 0.8;
+  if (window.innerWidth >= 1920) return 4.16;
+  if (window.innerWidth >= 1024) return 1.6;
+  return 0.64;
 }
 
 export default function Home() {
@@ -153,24 +155,29 @@ export default function Home() {
     return () => clearInterval(id);
   }, []);
 
-  // Kiosk-skrollaus
+  // Kiosk-skrollaus: fi → sv → en → fi → ...
   useEffect(() => {
     let rafId: number;
-    let direction: 1 | -1 = 1;
     let pausing = false;
+    let langIndex = 0;
+
+    function switchLang() {
+      pausing = true;
+      setTimeout(() => {
+        langIndex = (langIndex + 1) % LANGS_CYCLE.length;
+        setLang(LANGS_CYCLE[langIndex]);
+        window.scrollTo({ top: 0, behavior: "instant" });
+        pausing = false;
+      }, PAUSE_MS);
+    }
 
     function step() {
       if (pausing) { rafId = requestAnimationFrame(step); return; }
       const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-      const current = window.scrollY;
-      if (direction === 1 && current >= maxScroll - 1) {
-        pausing = true;
-        setTimeout(() => { direction = -1; pausing = false; }, PAUSE_MS);
-      } else if (direction === -1 && current <= 1) {
-        pausing = true;
-        setTimeout(() => { direction = 1; pausing = false; }, PAUSE_MS);
+      if (window.scrollY >= maxScroll - 1) {
+        switchLang();
       } else {
-        window.scrollBy(0, getScrollSpeed() * direction);
+        window.scrollBy(0, getScrollSpeed());
       }
       rafId = requestAnimationFrame(step);
     }
@@ -225,7 +232,7 @@ export default function Home() {
           <p className="text-amber-400 text-base lg:text-2xl font-semibold tracking-widest uppercase mb-4 lg:mb-6">
             {t.heroLocation}
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[8rem] font-black text-white leading-[1.05] lg:leading-[1.0] tracking-tight mb-6 lg:mb-10">
+          <h1 className="text-[2.14rem] sm:text-[2.85rem] md:text-[4.28rem] lg:text-[7.6rem] font-black text-white leading-[1.05] lg:leading-[1.0] tracking-tight mb-6 lg:mb-10">
             {t.heroLine1}<br />
             <span className="text-amber-400">
               {t.heroLine2.split("\n").map((line, i) => (
@@ -299,10 +306,10 @@ export default function Home() {
               <FadeIn key={i} delay={i * 150}>
                 <div className="relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
                   <div className="absolute top-0 right-0 w-32 h-32 lg:w-40 lg:h-40 bg-emerald-50 rounded-full -translate-y-12 translate-x-12 lg:-translate-y-16 lg:translate-x-16" />
-                  <p className="text-slate-500 text-sm lg:text-lg font-semibold mb-3 lg:mb-4">{item.label}</p>
-                  <p className="text-5xl lg:text-6xl font-black mb-1 text-emerald-700">{item.value}</p>
-                  <p className="text-base lg:text-xl font-medium mb-4 lg:mb-6 text-slate-400">{item.sub}</p>
-                  <p className="text-sm lg:text-base text-slate-600 leading-relaxed">{item.desc}</p>
+                  <p className="text-slate-500 text-[1.05rem] lg:text-[1.35rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
+                  <p className="text-[3.24rem] lg:text-[4.06rem] font-black mb-1 text-emerald-700">{item.value}</p>
+                  <p className="text-[1.2rem] lg:text-[1.5rem] font-medium mb-4 lg:mb-6 text-slate-400">{item.sub}</p>
+                  <p className="text-[1.05rem] lg:text-[1.2rem] text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -461,11 +468,11 @@ export default function Home() {
                   <div className="flex flex-col gap-1 mt-auto">
                     {item.lines.map((line) =>
                       line.href ? (
-                        <a key={line.text} href={line.href} className="text-base lg:text-xl font-bold text-amber-400 hover:text-amber-300 transition-colors whitespace-nowrap">
+                        <a key={line.text} href={line.href} className="text-[0.9rem] lg:text-[1.13rem] font-bold text-amber-400 hover:text-amber-300 transition-colors whitespace-nowrap">
                           {line.text}
                         </a>
                       ) : (
-                        <p key={line.text} className="text-base lg:text-xl font-bold text-white">{line.text}</p>
+                        <p key={line.text} className="text-[0.9rem] lg:text-[1.13rem] font-bold text-white">{line.text}</p>
                       )
                     )}
                   </div>
@@ -553,6 +560,30 @@ export default function Home() {
 
       {/* ── YHTEYDENOTTOLOMAKE ──────────────────────────────────────── */}
       <ContactSection />
+
+      {/* ── SIJAINTI ────────────────────────────────────────────────── */}
+      <section className="bg-slate-900 py-14 px-4 lg:py-24 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8 lg:mb-14">
+            <p className="text-amber-400 text-sm lg:text-base font-semibold tracking-widest uppercase mb-3">Sijainti</p>
+            <h2 className="text-3xl lg:text-5xl font-bold text-white mb-3">Kohteen sijainti</h2>
+            <p className="text-slate-400 text-base lg:text-xl">Pitkänsillankatu 33, 67100 Kokkola — BioRexin vieressä</p>
+          </div>
+          <div className="rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+            <PropertyMap />
+          </div>
+          <p className="text-center text-slate-500 text-sm mt-4">
+            <a
+              href="https://maps.google.com/maps?q=Pitkänsillankatu+33,+67100+Kokkola"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-amber-400 transition-colors"
+            >
+              Avaa Google Mapsissa →
+            </a>
+          </p>
+        </div>
+      </section>
     </main>
   );
 }
