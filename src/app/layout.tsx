@@ -70,9 +70,9 @@ export const metadata: Metadata = {
       "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², bruttovuokratuotto 9–10 %. Hinta 99 200 €.",
     images: [
       {
-        url: "/IMG_1501.jpeg",
+        url: "/og-image.jpg",
         width: 1200,
-        height: 800,
+        height: 630,
         alt: "Pitkänsillankatu 33 A 13 – olohuone, Kokkola",
       },
     ],
@@ -83,7 +83,7 @@ export const metadata: Metadata = {
     title: "Pitkänsillankatu 33 A 13 – Sijoitusasunto Kokkola 99 200 €",
     description:
       "69 m² sijoituskaksio Kokkolan ydinkeskustassa. Bruttovuokratuotto 9–10 %. Muuttovalmis.",
-    images: ["/IMG_1501.jpeg"],
+    images: ["/og-image.jpg"],
   },
 
   other: {
@@ -104,7 +104,7 @@ const jsonLd = {
       description:
         "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², ylin kerros, bruttovuokratuotto 9–10 %.",
       url: BASE_URL,
-      image: `${BASE_URL}/IMG_1501.jpeg`,
+      image: `${BASE_URL}/og-image.jpg`,
       address: {
         "@type": "PostalAddress",
         streetAddress: "Pitkänsillankatu 33 A 13",
