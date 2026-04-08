@@ -24,32 +24,72 @@ export const metadata: Metadata = {
   description:
     "Laadukas kaksio Kokkolan ydinkeskustassa – myytävänä 99 200 € tai vuokrattavissa yrityksille. 69 m², ylin kerros, kalustettu tai kalustamaton. Bruttovuokratuotto 9–10 %. BioRexin vieressä. Ota yhteyttä: +358 50 306 0635.",
   keywords: [
+    // ── SUOMI ──────────────────────────────────────────────────────
+    // Myynti
     "sijoitusasunto Kokkola",
     "asuinhuoneisto Kokkola",
     "kaksio Kokkola",
     "Pitkänsillankatu 33",
     "Kokkolan keskusta asunto",
-    "vuokra-asunto Kokkola",
-    "myynti Kokkola",
-    "huipputuotto sijoitus",
     "asunto myytävänä Kokkola",
     "Kokkola kiinteistö",
-    // Vuokraushaut yrityksille
+    "huipputuotto sijoitus",
+    "myynti Kokkola",
+    "kerrostaloasunto Kokkola",
+    "1930-luvun kerrostalo Kokkola",
+    // Vuokraus yrityksille
+    "vuokra-asunto Kokkola",
     "vuokra-asunto yritykselle Kokkola",
     "yritysasunto Kokkola",
     "lyhytaikainen vuokra Kokkola",
     "asunto yrityksille Kokkola",
-    "business asunto Kokkola",
     "työsuhde-asunto Kokkola",
     "kuukausivuokra Kokkola",
     "kalustettu asunto Kokkola",
     "väliaikaismajoitus yritys Kokkola",
-    "corporate housing Kokkola",
-    "furnished apartment Kokkola",
-    "short term rental Kokkola",
     "Kokkola yritysvuokraus",
     "asunto vierailijoille Kokkola",
     "majoitus yrityksille Kokkola",
+    "business asunto Kokkola",
+
+    // ── RUOTSI ─────────────────────────────────────────────────────
+    // Försäljning
+    "lägenhet till salu Karleby",
+    "tvårummare Karleby centrum",
+    "investering lägenhet Karleby",
+    "bostadsrätt Karleby",
+    "Karleby fastighet",
+    "lägenhet Karleby centrum",
+    "historisk byggnad Karleby",
+    "1930-talets hyreshus Karleby",
+    // Uthyrning
+    "hyreslägenhet Karleby",
+    "hyra lägenhet företag Karleby",
+    "företagsboende Karleby",
+    "möblerad lägenhet Karleby",
+    "korttidsuthyrning Karleby",
+    "boende för företag Karleby",
+    "månadsuthyrning Karleby",
+    "tillfälligt boende Karleby",
+
+    // ── ENGLANTI ───────────────────────────────────────────────────
+    // Sales
+    "apartment for sale Kokkola",
+    "investment property Kokkola",
+    "flat for sale Kokkola Finland",
+    "Kokkola real estate",
+    "Kokkola city centre apartment",
+    "historic 1930s building Kokkola",
+    // Rental
+    "corporate housing Kokkola",
+    "furnished apartment Kokkola",
+    "short term rental Kokkola",
+    "furnished rental Kokkola",
+    "apartment for rent Kokkola",
+    "business accommodation Kokkola",
+    "monthly rental Kokkola",
+    "temporary housing Kokkola",
+    "serviced apartment Kokkola Finland",
   ],
   authors: [{ name: "Petri Kopsa", url: BASE_URL }],
   creator: "Petri Kopsa",
@@ -72,6 +112,7 @@ export const metadata: Metadata = {
       "fi": BASE_URL,
       "sv": BASE_URL,
       "en": BASE_URL,
+      "x-default": BASE_URL,
     },
   },
 
