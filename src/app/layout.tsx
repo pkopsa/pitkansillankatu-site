@@ -18,11 +18,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: "Pitkänsillankatu 33 A 13 – Sijoitusasunto Kokkolan ydinkeskusta | 69 m² | 99 200 €",
+    default: "Pitkänsillankatu 33 A 13 – Asunto myyntiin tai vuokralle yrityksille | Kokkola | 69 m²",
     template: "%s | Pitkänsillankatu 33 Kokkola",
   },
   description:
-    "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², ylin kerros, bruttovuokratuotto 9–10 %. Laadukkaasti maalattu ja freesi kaksio BioRexin vieressä. Ota yhteyttä: Petri Kopsa, +358 50 306 0635.",
+    "Laadukas kaksio Kokkolan ydinkeskustassa – myytävänä 99 200 € tai vuokrattavissa yrityksille. 69 m², ylin kerros, kalustettu tai kalustamaton. Bruttovuokratuotto 9–10 %. BioRexin vieressä. Ota yhteyttä: +358 50 306 0635.",
   keywords: [
     "sijoitusasunto Kokkola",
     "asuinhuoneisto Kokkola",
@@ -34,6 +34,22 @@ export const metadata: Metadata = {
     "huipputuotto sijoitus",
     "asunto myytävänä Kokkola",
     "Kokkola kiinteistö",
+    // Vuokraushaut yrityksille
+    "vuokra-asunto yritykselle Kokkola",
+    "yritysasunto Kokkola",
+    "lyhytaikainen vuokra Kokkola",
+    "asunto yrityksille Kokkola",
+    "business asunto Kokkola",
+    "työsuhde-asunto Kokkola",
+    "kuukausivuokra Kokkola",
+    "kalustettu asunto Kokkola",
+    "väliaikaismajoitus yritys Kokkola",
+    "corporate housing Kokkola",
+    "furnished apartment Kokkola",
+    "short term rental Kokkola",
+    "Kokkola yritysvuokraus",
+    "asunto vierailijoille Kokkola",
+    "majoitus yrityksille Kokkola",
   ],
   authors: [{ name: "Petri Kopsa", url: BASE_URL }],
   creator: "Petri Kopsa",
@@ -65,9 +81,9 @@ export const metadata: Metadata = {
     alternateLocale: ["sv_SE", "en_US"],
     url: BASE_URL,
     siteName: "Pitkänsillankatu 33 – Kokkola",
-    title: "Pitkänsillankatu 33 A 13 – Sijoitusasunto Kokkolan ydinkeskusta",
+    title: "Pitkänsillankatu 33 A 13 – Asunto myyntiin tai vuokralle yrityksille | Kokkola",
     description:
-      "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², bruttovuokratuotto 9–10 %. Hinta 99 200 €.",
+      "Laadukas kaksio Kokkolan ydinkeskustassa. Myytävänä 99 200 € tai vuokrattavissa yrityksille. 69 m², kalustettu tai kalustamaton, BioRexin vieressä.",
     images: [
       {
         url: "/og-image.jpg",
@@ -80,9 +96,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Pitkänsillankatu 33 A 13 – Sijoitusasunto Kokkola 99 200 €",
+    title: "Pitkänsillankatu 33 A 13 – Myynti tai yritysuvokraus | Kokkola",
     description:
-      "69 m² sijoituskaksio Kokkolan ydinkeskustassa. Bruttovuokratuotto 9–10 %. Muuttovalmis.",
+      "69 m² kaksio Kokkolan ydinkeskustassa. Myytävänä tai vuokrattavissa yrityksille. Kalustettu tai kalustamaton.",
     images: ["/og-image.jpg"],
   },
 
@@ -124,18 +140,40 @@ const jsonLd = {
         unitCode: "MTK",
       },
       numberOfRooms: 2,
-      offers: {
-        "@type": "Offer",
-        price: 99200,
-        priceCurrency: "EUR",
-        availability: "https://schema.org/InStock",
-        seller: {
-          "@type": "Person",
-          name: "Petri Kopsa",
-          telephone: "+358503060635",
-          email: "petri.kopsa@gmail.com",
+      offers: [
+        {
+          "@type": "Offer",
+          name: "Myynti",
+          price: 99200,
+          priceCurrency: "EUR",
+          availability: "https://schema.org/InStock",
+          seller: {
+            "@type": "Person",
+            name: "Petri Kopsa",
+            telephone: "+358503060635",
+            email: "petri.kopsa@gmail.com",
+          },
         },
-      },
+        {
+          "@type": "Offer",
+          name: "Vuokraus yrityksille",
+          description: "Kalustettu tai kalustamaton. Sopii yritysasunnoksi tai väliaikaismajoitukseksi.",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            minPrice: 700,
+            maxPrice: 850,
+            priceCurrency: "EUR",
+            unitCode: "MON",
+          },
+          availability: "https://schema.org/InStock",
+          seller: {
+            "@type": "Person",
+            name: "Petri Kopsa",
+            telephone: "+358503060635",
+            email: "petri.kopsa@gmail.com",
+          },
+        },
+      ],
       amenityFeature: [
         { "@type": "LocationFeatureSpecification", name: "Ylin kerros", value: true },
         { "@type": "LocationFeatureSpecification", name: "Maalattu 2026", value: true },
