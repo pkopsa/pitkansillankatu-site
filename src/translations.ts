@@ -64,7 +64,7 @@ export const translations = {
     svcLabel: "Palvelut",
     svcValue: "Kaikki kävelyetäisyydellä",
     builtLabel: "Rakennettu",
-    builtValue: "1950-luvun historiallinen talo",
+    builtValue: "1930-luvun historiallinen kerrostalo",
 
     // Yhteystiedot
     contactBadge: "Kiinnostuitko?",
@@ -142,7 +142,7 @@ export const translations = {
     svcLabel: "Tjänster",
     svcValue: "Allt inom gångavstånd",
     builtLabel: "Byggt",
-    builtValue: "Historiskt hus från 1950-talet",
+    builtValue: "Historiskt hyreshus från 1930-talet",
 
     contactBadge: "Intresserad?",
     contactTitle: "Kontakta oss",
@@ -219,7 +219,7 @@ export const translations = {
     svcLabel: "Services",
     svcValue: "Everything within walking distance",
     builtLabel: "Built",
-    builtValue: "Historic building from the 1950s",
+    builtValue: "Historic apartment building from the 1930s",
 
     contactBadge: "Interested?",
     contactTitle: "Contact us",
