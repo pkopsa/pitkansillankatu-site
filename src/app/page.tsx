@@ -369,11 +369,11 @@ export default function Home() {
 
       {/* ── POHJAPIIRROS ────────────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-24 lg:px-8 bg-slate-900">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <FadeIn>
             <p className="text-amber-400 text-sm lg:text-base font-semibold tracking-widest uppercase mb-3 text-center">{t.floorPlanBadge}</p>
             <h2 className="text-3xl lg:text-5xl font-bold text-center mb-3 text-white">{t.floorPlanTitle}</h2>
-            <p className="text-slate-400 text-base lg:text-xl text-center mb-10 lg:mb-16">{t.floorPlanSub}</p>
+            <p className="text-slate-400 text-sm lg:text-lg text-center mb-10 lg:mb-16 whitespace-nowrap">{t.floorPlanSub}</p>
           </FadeIn>
           <FadeIn delay={150}>
             <div className="rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
