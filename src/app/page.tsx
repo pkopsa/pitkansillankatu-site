@@ -371,15 +371,15 @@ export default function Home() {
       <section className="py-14 px-4 lg:py-24 lg:px-8 bg-slate-900">
         <div className="max-w-3xl mx-auto">
           <FadeIn>
-            <p className="text-amber-400 text-sm lg:text-base font-semibold tracking-widest uppercase mb-3 text-center">Pohjapiirros</p>
-            <h2 className="text-3xl lg:text-5xl font-bold text-center mb-3 text-white">Huoneiston layout</h2>
-            <p className="text-slate-400 text-base lg:text-xl text-center mb-10 lg:mb-16">69 m²  ·  Käytävä, keittiö, olohuone, makuuhuone, kylpyhuone ja WC</p>
+            <p className="text-amber-400 text-sm lg:text-base font-semibold tracking-widest uppercase mb-3 text-center">{t.floorPlanBadge}</p>
+            <h2 className="text-3xl lg:text-5xl font-bold text-center mb-3 text-white">{t.floorPlanTitle}</h2>
+            <p className="text-slate-400 text-base lg:text-xl text-center mb-10 lg:mb-16">{t.floorPlanSub}</p>
           </FadeIn>
           <FadeIn delay={150}>
             <div className="rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
               <FloorPlan />
             </div>
-            <p className="text-center text-slate-500 text-xs mt-4">Pohjapiirros on suuntaa-antava arvio. Tarkat mitat tarkistettavissa esittelyssä.</p>
+            <p className="text-center text-slate-500 text-xs mt-4">{t.floorPlanNote}</p>
           </FadeIn>
         </div>
       </section>
