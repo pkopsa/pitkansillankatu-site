@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
 import { Lang, translations } from "@/translations";
 
 const LANGS: Lang[] = ["fi", "sv", "en"];
-const AUTO_ROTATE_MS = 25000; // vaihto 25 sekunnin välein
 
 type Props = {
   lang: Lang;
@@ -12,13 +10,6 @@ type Props = {
 };
 
 export default function LanguageSwitcher({ lang, setLang }: Props) {
-  // Auto-rotaatio
-  useEffect(() => {
-    const id = setInterval(() => {
-      setLang(LANGS[(LANGS.indexOf(lang) + 1) % LANGS.length]);
-    }, AUTO_ROTATE_MS);
-    return () => clearInterval(id);
-  }, [lang, setLang]);
 
   return (
     <div className="fixed top-4 right-4 z-50 flex gap-1 bg-black/60 backdrop-blur-sm rounded-full px-2 py-1.5 shadow-xl">

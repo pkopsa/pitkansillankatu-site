@@ -5,6 +5,7 @@ import { useEffect, useRef, useState, ReactNode } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import ContactSection from "@/components/ContactSection";
 import PropertyMap from "@/components/PropertyMap";
+import FloorPlan from "@/components/FloorPlan";
 import Lightbox from "@/components/Lightbox";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Lang, translations } from "@/translations";
@@ -49,46 +50,18 @@ function FadeIn({
 }
 
 const galleryImages = [
-  { src: "/olohuone1.webp", alt: "Olohuone" },
-  { src: "/olohuone2.webp", alt: "Olohuone" },
-  { src: "/olohuone3.webp", alt: "Olohuone" },
-  { src: "/olohuone4.webp", alt: "Olohuone" },
-  { src: "/olohuoneesta-keittioon.webp", alt: "Olohuoneesta keittiöön" },
-  { src: "/lapitalo-kruunut.webp", alt: "Läpitalo" },
-  { src: "/lapihuoneisto.webp", alt: "Läpihuoneisto" },
-  { src: "/makuuhuone1.webp", alt: "Makuuhuone" },
-  { src: "/makuuhuoneesta-olohuoneeseen.webp", alt: "Makuuhuoneesta olohuoneeseen" },
-  { src: "/keittiö2.webp", alt: "Keittiö" },
-  { src: "/keittio3.webp", alt: "Keittiö" },
-  { src: "/keittiökaapisto.webp", alt: "Keittiökaapisto" },
-  { src: "/jaakaappi.webp", alt: "Jääkaappi ja mikroaaltouuni" },
-  { src: "/kaytava1.webp", alt: "Käytävä" },
-  { src: "/kaytava2.webp", alt: "Käytävä" },
-  { src: "/vaatekaapisto.webp", alt: "Vaatekaapisto" },
-  { src: "/vaatehuone-kaapisto.webp", alt: "Vaatehuoneen kaapisto" },
-  { src: "/vaatekaapisto-kruunu.webp", alt: "Vaatekaapisto ja kattokruunu" },
-  { src: "/suihku.webp", alt: "Suihku" },
-  { src: "/suihkukaappi.webp", alt: "Suihkukaappi" },
-  { src: "/wc-lavuaari.webp", alt: "WC ja lavuaari" },
-  { src: "/pesukone.webp", alt: "Pesukone" },
-  { src: "/pesukone2.webp", alt: "Pesukone" },
-  { src: "/pesukone-ja-liesi.webp", alt: "Pesukone ja liesi" },
-  { src: "/uusi1.jpeg", alt: "Olohuone ja keittiö" },
-  { src: "/uusi2.jpeg", alt: "Keittiö" },
-  { src: "/uusi3.jpeg", alt: "Makuuhuone" },
-  { src: "/uusi4.jpeg", alt: "Vaatekaapisto" },
-  { src: "/uusi5.jpeg", alt: "Kylpyhuone" },
-  { src: "/IMG_1504.jpeg", alt: "Makuuhuone" },
-  { src: "/IMG_1505.jpeg", alt: "Säilytystilaa" },
-  { src: "/IMG_1507.jpeg", alt: "Käytävä" },
-  { src: "/IMG_1501.jpeg", alt: "Olohuone" },
-  { src: "/IMG_1503.jpeg", alt: "Keittiö" },
-  { src: "/img-1479.jpeg", alt: "Huone" },
-  { src: "/maalattu1.jpeg", alt: "Olohuone ja keittiö" },
-  { src: "/maalattu2.jpeg", alt: "Makuuhuone" },
-  { src: "/image0.jpeg", alt: "Makuuhuone" },
-  { src: "/image1.jpeg", alt: "Käytävä" },
-  { src: "/image2.jpeg", alt: "Huone" },
+  { src: "/olohuone3.webp",               alt: "Olohuone – tilava ja valoisa" },
+  { src: "/olohuoneesta-keittioon.webp",  alt: "Olohuoneesta keittiöön" },
+  { src: "/uusi1.jpeg",                   alt: "Olohuone – freesi ilme" },
+  { src: "/makuuhuone1.webp",             alt: "Makuuhuone" },
+  { src: "/makuuhuoneesta-olohuoneeseen.webp", alt: "Makuuhuone ja kaapisto" },
+  { src: "/uusi3.jpeg",                   alt: "Makuuhuone – freesi ilme" },
+  { src: "/keittio3.webp",               alt: "Keittiö – kodinkoneet" },
+  { src: "/uusi2.jpeg",                   alt: "Keittiö – freesi ilme" },
+  { src: "/vaatehuone-kaapisto.webp",     alt: "Iso kaapistoseinä" },
+  { src: "/kaytava1.webp",               alt: "Käytävä ja eteinen" },
+  { src: "/suihkukaappi.webp",           alt: "Kylpyhuone" },
+  { src: "/pesukone.webp",               alt: "Pesutila ja suihku" },
 ];
 
 const freesiImages = [
@@ -377,7 +350,7 @@ export default function Home() {
                 onClick={() => openLightbox(galleryImages, 0)}
                 className="relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg w-full block cursor-zoom-in"
               >
-                <Image src="/olohuone1.webp" alt="Olohuone" fill className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
+                <Image src="/olohuone3.webp" alt="Olohuone" fill className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
               </button>
             </FadeIn>
             {galleryImages.slice(1).map((img, i) => (
@@ -394,6 +367,23 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── POHJAPIIRROS ────────────────────────────────────────────── */}
+      <section className="py-14 px-4 lg:py-24 lg:px-8 bg-slate-900">
+        <div className="max-w-3xl mx-auto">
+          <FadeIn>
+            <p className="text-amber-400 text-sm lg:text-base font-semibold tracking-widest uppercase mb-3 text-center">Pohjapiirros</p>
+            <h2 className="text-3xl lg:text-5xl font-bold text-center mb-3 text-white">Huoneiston layout</h2>
+            <p className="text-slate-400 text-base lg:text-xl text-center mb-10 lg:mb-16">69 m²  ·  Käytävä, keittiö, olohuone, makuuhuone, kylpyhuone ja WC</p>
+          </FadeIn>
+          <FadeIn delay={150}>
+            <div className="rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+              <FloorPlan />
+            </div>
+            <p className="text-center text-slate-500 text-xs mt-4">Pohjapiirros on suuntaa-antava arvio. Tarkat mitat tarkistettavissa esittelyssä.</p>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ── HISTORIA & SIJAINTI ─────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-28 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
@@ -403,11 +393,38 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0} className="mb-8 lg:mb-16">
-            <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[16/9] lg:aspect-[16/7] shadow-xl">
-              <Image src="/nakyma.webp" alt="Ikkunanäkymä" fill className="object-cover brightness-105 contrast-105" />
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 lg:p-8">
-                <p className="text-white text-base lg:text-2xl font-semibold">{t.historyCaption}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+              {/* Ikkunanäkymä */}
+              <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] shadow-xl group">
+                <Image src="/nakyma.webp" alt="Ikkunanäkymä Pitkänsillankadulle" fill className="object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 lg:p-6">
+                  <p className="text-white text-sm lg:text-xl font-semibold mb-2">{t.historyCaption}</p>
+                  <button
+                    onClick={() => openLightbox([
+                      { src: "/nakyma.webp",   alt: "Näkymä ikkunasta" },
+                      { src: "/katu-nyt.jpeg", alt: "Pitkänsillankatu kadulta – BioRex" },
+                    ], 1)}
+                    className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold text-xs lg:text-sm px-3 lg:px-5 py-2 rounded-full transition-colors duration-200 shadow-lg"
+                  >
+                    <span>📸</span>
+                    <span>Näkymä kadulta</span>
+                  </button>
+                </div>
               </div>
+              {/* Historiallinen katukuva */}
+              <button
+                onClick={() => openLightbox([
+                  { src: "/katu-historia.jpeg", alt: "Historiallinen näkymä Kokkolan keskustasta" },
+                  { src: "/katu-nyt.jpeg",      alt: "Pitkänsillankatu tänään – BioRex" },
+                ], 0)}
+                className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] shadow-xl cursor-zoom-in group"
+              >
+                <Image src="/katu-historia.jpeg" alt="Historiallinen katukuva Kokkolasta" fill className="object-cover brightness-100 contrast-105 sepia-[0.2] group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 lg:p-6">
+                  <p className="text-white text-sm lg:text-xl font-semibold">Historiallinen näkymä Kokkolan keskustasta</p>
+                  <p className="text-amber-400 text-xs lg:text-sm mt-1">🔍 Klikkaa suurentaaksesi</p>
+                </div>
+              </button>
             </div>
           </FadeIn>
 
@@ -482,13 +499,14 @@ export default function Home() {
           </div>
 
           <FadeIn delay={400}>
-            <div className="mt-12 lg:mt-20 flex flex-col sm:flex-row items-end justify-center gap-6">
+            <div className="mt-12 lg:mt-20 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
+
               {/* QR-koodi */}
               <div className="flex flex-col items-center gap-3">
-                <div className="bg-white rounded-2xl p-4 shadow-lg">
-                  <QRCodeSVG value="https://pitkansillankatu33.com/" size={160} bgColor="#ffffff" fgColor="#1e293b" level="M" />
+                <div className="bg-white rounded-2xl p-4 shadow-lg w-full aspect-square flex items-center justify-center">
+                  <QRCodeSVG value="https://pitkansillankatu33.com/" size={130} bgColor="#ffffff" fgColor="#1e293b" level="M" />
                 </div>
-                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide">{t.qrCaption}</p>
+                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.qrCaption}</p>
               </div>
 
               {/* Etuovi */}
@@ -497,9 +515,9 @@ export default function Home() {
                   href="https://www.etuovi.com/kohde/w24967"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-6 shadow-lg w-48 h-48 hover:shadow-xl transition-shadow group"
+                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-full aspect-square hover:shadow-xl transition-shadow group"
                 >
-                  <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none">
+                  <svg viewBox="0 0 24 24" className="w-10 h-10 shrink-0" fill="none">
                     <path d="M3 10.5L12 3l9 7.5V21a1 1 0 01-1 1H5a1 1 0 01-1-1V10.5z" fill="#FF6600" />
                     <rect x="9" y="13" width="6" height="8" rx="0.5" fill="#fff" />
                   </svg>
@@ -510,7 +528,7 @@ export default function Home() {
                     {t.etuoviOpen}
                   </span>
                 </a>
-                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide">Etuovi</p>
+                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide text-center">Etuovi</p>
               </div>
 
               {/* Retta */}
@@ -518,14 +536,14 @@ export default function Home() {
                 <a
                   href="/docs/isannoitsijantodistus.pdf"
                   download
-                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-6 shadow-lg w-48 h-48 hover:shadow-xl transition-shadow group"
+                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-full aspect-square hover:shadow-xl transition-shadow group"
                 >
-                  <img src="/retta-logo-dark.svg" alt="Retta" className="w-28 h-auto" />
-                  <span className="text-slate-500 font-semibold text-sm group-hover:translate-y-0.5 transition-transform inline-flex items-center gap-1">
+                  <img src="/retta-logo-dark.svg" alt="Retta" className="w-24 h-auto" />
+                  <span className="text-slate-500 font-semibold text-sm group-hover:translate-y-0.5 transition-transform inline-flex items-center gap-1 text-center">
                     {t.rettaDownload}
                   </span>
                 </a>
-                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide">{t.rettaCaption}</p>
+                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.rettaCaption}</p>
               </div>
 
               {/* Kunnossapito */}
@@ -533,9 +551,9 @@ export default function Home() {
                 <a
                   href="/docs/kunnossapito2025.pdf"
                   download
-                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-6 shadow-lg w-48 h-48 hover:shadow-xl transition-shadow group"
+                  className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-full aspect-square hover:shadow-xl transition-shadow group"
                 >
-                  <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none" stroke="#1e293b" strokeWidth={1.5}>
+                  <svg viewBox="0 0 24 24" className="w-10 h-10 shrink-0" fill="none" stroke="#1e293b" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l5.653-4.655m5.833-4.322a7.5 7.5 0 00-10.23 0" />
                   </svg>
                   <span className="text-slate-800 font-bold text-base text-center leading-tight">
@@ -545,7 +563,7 @@ export default function Home() {
                     {t.maintDownload}
                   </span>
                 </a>
-                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide">{t.maintCaption}</p>
+                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.maintCaption}</p>
               </div>
 
               {/* Vuokrausilmoitus */}
@@ -554,9 +572,9 @@ export default function Home() {
                   href="https://pitkanshop-gatafh9w.manus.space/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 rounded-2xl p-6 shadow-lg w-48 h-48 hover:shadow-xl transition-all duration-300 group"
+                  className="flex flex-col items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 rounded-2xl p-4 shadow-lg w-full aspect-square hover:shadow-xl transition-all duration-300 group"
                 >
-                  <svg viewBox="0 0 24 24" className="w-10 h-10" fill="none" stroke="#1e293b" strokeWidth={1.5}>
+                  <svg viewBox="0 0 24 24" className="w-10 h-10 shrink-0" fill="none" stroke="#1e293b" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
                   </svg>
                   <span className="text-slate-900 font-black text-base text-center leading-tight">
@@ -566,8 +584,9 @@ export default function Home() {
                     Katso ilmoitus →
                   </span>
                 </a>
-                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide">Vuokraus</p>
+                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide text-center">Vuokraus</p>
               </div>
+
             </div>
           </FadeIn>
 
