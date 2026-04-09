@@ -247,10 +247,10 @@ export default function Home() {
               { label: t.detailMaint, value: "324 €/kk",         sub: t.detailMaintSub,  inline: false },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
-                <div className="bg-white rounded-2xl lg:rounded-3xl p-5 lg:p-10 text-center shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
-                  <p className="text-slate-500 text-sm lg:text-xl font-medium mb-2 lg:mb-3">{item.label}</p>
-                  <p className="text-2xl lg:text-4xl font-bold text-slate-900 mb-1 lg:mb-2 whitespace-nowrap">{item.value}</p>
-                  {!item.inline && <p className="text-slate-400 text-xs lg:text-lg">{item.sub}</p>}
+                <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 text-center shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+                  <p className="text-slate-500 text-[1.05rem] lg:text-[1.35rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
+                  <p className="text-[3.24rem] lg:text-[4.06rem] font-black text-slate-900 mb-1 lg:mb-2 whitespace-nowrap leading-none">{item.value}</p>
+                  {!item.inline && <p className="text-slate-400 text-[1.2rem] lg:text-[1.5rem] font-medium mt-2">{item.sub}</p>}
                 </div>
               </FadeIn>
             ))}
