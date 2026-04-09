@@ -479,17 +479,17 @@ export default function Home() {
               },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 120}>
-                <div className="bg-slate-700 hover:bg-slate-600 border border-white/10 rounded-2xl lg:rounded-3xl p-6 lg:p-10 transition-colors duration-300 h-full flex flex-col">
-                  <div className="text-4xl lg:text-5xl mb-4 lg:mb-6">{item.icon}</div>
-                  <p className="text-slate-400 text-sm lg:text-xl mb-2 lg:mb-3">{item.label}</p>
-                  <div className="flex flex-col gap-1 mt-auto">
+                <div className="bg-slate-700 hover:bg-slate-600 border border-white/10 rounded-2xl lg:rounded-3xl p-6 lg:p-10 transition-colors duration-300 flex flex-col gap-2">
+                  <div className="text-4xl lg:text-5xl">{item.icon}</div>
+                  <p className="text-slate-400 text-sm lg:text-xl">{item.label}</p>
+                  <div className="flex flex-col gap-1">
                     {item.lines.map((line) =>
                       line.href ? (
-                        <a key={line.text} href={line.href} className="text-[0.9rem] lg:text-[1.13rem] font-bold text-amber-400 hover:text-amber-300 transition-colors whitespace-nowrap">
+                        <a key={line.text} href={line.href} className="text-[0.9rem] lg:text-[1.13rem] font-bold text-amber-400 hover:text-amber-300 transition-colors break-all">
                           {line.text}
                         </a>
                       ) : (
-                        <p key={line.text} className="text-[0.9rem] lg:text-[1.13rem] font-bold text-white">{line.text}</p>
+                        <p key={line.text} className="text-[0.9rem] lg:text-[1.13rem] font-bold text-white break-all">{line.text}</p>
                       )
                     )}
                   </div>
