@@ -377,7 +377,7 @@ export default function Home() {
           </FadeIn>
           <FadeIn delay={150}>
             <div className="rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-              <FloorPlan />
+              <FloorPlan lang={lang} />
             </div>
             <p className="text-center text-slate-500 text-xs mt-4">{t.floorPlanNote}</p>
           </FadeIn>
