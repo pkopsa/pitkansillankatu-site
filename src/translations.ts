@@ -12,6 +12,8 @@ export const translations = {
     heroLine2: "huipputuottava\nsijoitus",
     heroLine3: "ydinkeskustasta",
     heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Ylin kerros · 99 200 €",
+    heroAddress: "Pitkänsillankatu 33 A 13 · 69 m² · Ylin kerros",
+    heroPrice: "99 200 €",
     heroBtn: "Ota yhteyttä",
     heroScroll: "Tutustu",
 
@@ -158,6 +160,8 @@ export const translations = {
     heroLine2: "toppavkastande\ninvestering",
     heroLine3: "i stadskärnan",
     heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Översta våningen · 99 200 €",
+    heroAddress: "Pitkänsillankatu 33 A 13 · 69 m² · Översta våningen",
+    heroPrice: "99 200 €",
     heroBtn: "Kontakta oss",
     heroScroll: "Utforska",
 
@@ -298,6 +302,8 @@ export const translations = {
     heroLine2: "top-yield\ninvestment",
     heroLine3: "in the city centre",
     heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Top Floor · €99,200",
+    heroAddress: "Pitkänsillankatu 33 A 13 · 69 m² · Top floor",
+    heroPrice: "99 200 €",
     heroBtn: "Contact us",
     heroScroll: "Explore",
 

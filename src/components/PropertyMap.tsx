@@ -2,8 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
-const LAT = 63.83768;
-const LNG = 23.13045;
+const LAT = 63.83725971033715;
+const LNG = 23.13320260490938;
 
 export default function PropertyMap() {
   const containerRef = useRef<HTMLDivElement>(null);
