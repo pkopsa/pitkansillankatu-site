@@ -744,7 +744,7 @@ export default function Home() {
                 <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">{t.maintCaption}</p>
               </div>
 
-              {/* Vuokrausilmoitus */}
+              {/* Vuokrausilmoitus — piilotettu tilapäisesti hintapäivityksen ajaksi
               <div className="flex flex-col items-center gap-3 w-40">
                 <a
                   href="https://pitkanshop-gatafh9w.manus.space/"
@@ -764,6 +764,7 @@ export default function Home() {
                 </a>
                 <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">{t.rentalCaption}</p>
               </div>
+              */}
 
             </div>
           </FadeIn>
