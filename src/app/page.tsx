@@ -250,7 +250,7 @@ export default function Home() {
               { label: t.detailSize,  value: "69 m²",          sub: t.detailSizeSub   },
               { label: t.detailFloor, value: "3 / 3",           sub: t.detailFloorSub  },
               { label: t.detailPrice, value: t.detailPriceVal,  sub: t.detailPriceSub  },
-              { label: t.detailMaint, value: "269 €/kk",        sub: t.detailMaintSub  },
+              { label: t.detailMaint, value: "~332 €/kk",       sub: t.detailMaintSub  },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 text-center shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
@@ -358,8 +358,8 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 mb-8 lg:mb-16">
             {[
               { label: t.grossLabel, value: "7,8–9,0 %", sub: t.grossSub, desc: t.grossDesc },
-              { label: t.rentLabel,  value: "650–850 €",  sub: t.rentSub,  desc: t.rentDesc  },
-              { label: t.netLabel,   value: "4,6–7,0 %", sub: t.netSub,   desc: t.netDesc   },
+              { label: t.rentLabel,  value: "650–750 €",  sub: t.rentSub,  desc: t.rentDesc  },
+              { label: t.netLabel,   value: "3,8–5,0 %", sub: t.netSub,   desc: t.netDesc   },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 150}>
                 <div className="relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow text-center">
@@ -392,9 +392,9 @@ export default function Home() {
           </FadeIn>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
             {[
-              { label: t.yieldScenALabel, details: t.yieldScenADetails, yield: "4,6 %" },
-              { label: t.yieldScenBLabel, details: t.yieldScenBDetails, yield: "5,8 %" },
-              { label: t.yieldScenCLabel, details: t.yieldScenCDetails, yield: "7,0 %" },
+              { label: t.yieldScenALabel, details: t.yieldScenADetails, yield: "3,8 %" },
+              { label: t.yieldScenBLabel, details: t.yieldScenBDetails, yield: "4,4 %" },
+              { label: t.yieldScenCLabel, details: t.yieldScenCDetails, yield: "5,0 %" },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 120}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow text-center">
@@ -486,7 +486,7 @@ export default function Home() {
           <FadeIn>
             <p className="text-amber-400 text-sm lg:text-base font-semibold tracking-widest uppercase mb-3 text-center">{t.floorPlanBadge}</p>
             <h2 className="text-3xl lg:text-5xl font-bold text-center mb-3 text-white">{t.floorPlanTitle}</h2>
-            <p className="text-slate-400 text-sm lg:text-lg text-center mb-10 lg:mb-16 whitespace-nowrap">{t.floorPlanSub}</p>
+            <p className="text-slate-400 text-sm lg:text-lg text-center mb-10 lg:mb-16">{t.floorPlanSub}</p>
           </FadeIn>
           <FadeIn delay={150}>
             <div className="rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-white/10">

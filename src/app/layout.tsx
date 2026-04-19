@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Pitkänsillankatu 33 Kokkola",
   },
   description:
-    "Laadukas kaksio Kokkolan ydinkeskustassa – myytävänä 99 200 € tai vuokrattavissa yrityksille. 69 m², ylin kerros, kalustettu tai kalustamaton. Bruttovuokratuotto 9–10 %. BioRexin vieressä. Ota yhteyttä: +358 50 306 0635.",
+    "Laadukas kaksio Kokkolan ydinkeskustassa – myytävänä 99 200 € tai vuokrattavissa yrityksille. 69 m², ylin kerros, kalustettu tai kalustamaton. Bruttovuokratuotto 7,8–9,0 %. BioRexin vieressä. Ota yhteyttä: +358 50 306 0635.",
   keywords: [
     // ── SUOMI ──────────────────────────────────────────────────────
     // Myynti
@@ -137,7 +137,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Pitkänsillankatu 33 A 13 – Myynti tai yritysuvokraus | Kokkola",
+    title: "Pitkänsillankatu 33 A 13 – Myynti tai yritysvuokraus | Kokkola",
     description:
       "69 m² kaksio Kokkolan ydinkeskustassa. Myytävänä tai vuokrattavissa yrityksille. Kalustettu tai kalustamaton.",
     images: ["/og-image.jpg"],
@@ -146,8 +146,8 @@ export const metadata: Metadata = {
   other: {
     "geo.region": "FI-07",
     "geo.placename": "Kokkola",
-    "geo.position": "63.83768;23.13045",
-    "ICBM": "63.83768, 23.13045",
+    "geo.position": "63.83726;23.13320",
+    "ICBM": "63.83726, 23.13320",
   },
 };
 
@@ -159,7 +159,7 @@ const jsonLd = {
       "@id": `${BASE_URL}/#apartment`,
       name: "Pitkänsillankatu 33 A 13",
       description:
-        "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², ylin kerros, bruttovuokratuotto 9–10 %.",
+        "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², ylin kerros, bruttovuokratuotto 7,8–9,0 %.",
       url: BASE_URL,
       image: `${BASE_URL}/og-image.jpg`,
       address: {
@@ -172,8 +172,8 @@ const jsonLd = {
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 63.83768,
-        longitude: 23.13045,
+        latitude: 63.83726,
+        longitude: 23.13320,
       },
       floorSize: {
         "@type": "QuantitativeValue",
@@ -201,8 +201,8 @@ const jsonLd = {
           description: "Kalustettu tai kalustamaton. Sopii yritysasunnoksi tai väliaikaismajoitukseksi.",
           priceSpecification: {
             "@type": "PriceSpecification",
-            minPrice: 700,
-            maxPrice: 850,
+            minPrice: 650,
+            maxPrice: 750,
             priceCurrency: "EUR",
             unitCode: "MON",
           },

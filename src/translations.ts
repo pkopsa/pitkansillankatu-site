@@ -37,11 +37,11 @@ export const translations = {
     grossDesc: "Kokkolan ydinkeskustan vahvalla vuokrakysyntäalueella",
     rentLabel: "Arvioitu markkinavuokra",
     rentSub: "kuukaudessa",
-    rentDesc: "650 € konservatiivinen · 750 € markkinataso · 850 € kalustettu",
+    rentDesc: "650 € konservatiivinen · 700 € markkinataso · 750 € kalustettu",
     netLabel: "Nettotuotto",
     netSub: "vuodessa",
     netDesc: "Vastikekulujen jälkeen laskettuna",
-    investorSummary: "Hankintahinta 99 200 € ja hoitovastike 269 €/kk (1.7.2026 alkaen) tekevät tästä yhden Kokkolan houkuttelevimmista sijoitusasunnoista.",
+    investorSummary: "Hankintahinta 99 200 € ja kokonaisvastike arviolta ~332 €/kk (1.7.2026 alkaen) tekevät tästä yhden Kokkolan houkuttelevimmista sijoitusasunnoista.",
 
     // Muuttovalmis
     readyTitle: "Muuttovalmis & freesi",
@@ -140,13 +140,13 @@ export const translations = {
 
     // Tuottolaskelma
     yieldTitle: "Tuottolaskelma sijoittajalle",
-    yieldBasis: "Huoneistoala 69 m² · Hoitovastike 3,90 €/m²/kk = 269,10 €/kk · Velaton hinta 99 854 €",
+    yieldBasis: "Huoneistoala 69 m² · Kokonaisvastike 1.7.2026 alkaen arviolta ~332 €/kk (hoito 269 + RL2 ~33 + RL3 ~30) · Velaton hinta 99 854 €",
     yieldScenALabel: "Skenaario A — Konservatiivinen",
-    yieldScenADetails: "Vuokra 650 €/kk − hoitovastike 269 € = nettovuokra ~381 €/kk · Vuosituotto ~4 572 € = ~4,6 %",
+    yieldScenADetails: "Vuokra 650 €/kk − kokonaisvastike 332 € = nettovuokra ~318 €/kk · Vuosituotto ~3 816 € = ~3,8 %",
     yieldScenBLabel: "Skenaario B — Markkinataso (tyhjänä)",
-    yieldScenBDetails: "Vuokra 750 €/kk − hoitovastike 269 € = nettovuokra ~481 €/kk · Vuosituotto ~5 772 € = ~5,8 %",
+    yieldScenBDetails: "Vuokra 700 €/kk − kokonaisvastike 332 € = nettovuokra ~368 €/kk · Vuosituotto ~4 416 € = ~4,4 %",
     yieldScenCLabel: "Skenaario C — Markkinataso (kalustettu)",
-    yieldScenCDetails: "Vuokra 850 €/kk − hoitovastike 269 € = nettovuokra ~581 €/kk · Vuosituotto ~6 972 € = ~7,0 %",
+    yieldScenCDetails: "Vuokra 750 €/kk − kokonaisvastike 332 € = nettovuokra ~418 €/kk · Vuosituotto ~5 016 € = ~5,0 %",
     yieldDisclaimer: "Pääomavastikkeiden tarkka osuus vahvistetaan isännöitsijäntodistuksesta. Tuottolaskelma on suuntaa-antava ennen veroja.",
 
     // Tulevat remontit
@@ -202,11 +202,11 @@ export const translations = {
     grossDesc: "I Karlebys stadskärna med stark efterfrågan på hyresbostäder",
     rentLabel: "Uppskattad marknadshyra",
     rentSub: "per månad",
-    rentDesc: "650 € konservativt · 750 € marknadsnivå · 850 € möblerat",
+    rentDesc: "650 € konservativt · 700 € marknadsnivå · 750 € möblerat",
     netLabel: "Nettoavkastning",
     netSub: "per år",
     netDesc: "Beräknat efter vederlagsavgifter",
-    investorSummary: "Anskaffningspriset 99 200 € och underhållsvederlaget 269 €/mån (fr.o.m. 1.7.2026) gör detta till en av Karlebys mest attraktiva investeringslägenheter.",
+    investorSummary: "Anskaffningspriset 99 200 € och totalt vederlag uppskattat till ~332 €/mån (fr.o.m. 1.7.2026) gör detta till en av Karlebys mest attraktiva investeringslägenheter.",
 
     readyTitle: "Inflyttningsklar & fräsch",
     readySub: "Inget renoveringsbehov — du kan hyra ut eller flytta in direkt",
@@ -300,13 +300,13 @@ export const translations = {
 
     // Avkastningsberäkning
     yieldTitle: "Avkastningsberäkning för investeraren",
-    yieldBasis: "Lägenhetsyta 69 m² · Underhållsvederlag 3,90 €/m²/mån = 269,10 €/mån · Skuldfritt pris 99 854 €",
+    yieldBasis: "Lägenhetsyta 69 m² · Totalt vederlag fr.o.m. 1.7.2026 ca ~332 €/mån (underhåll 269 + RL2 ~33 + RL3 ~30) · Skuldfritt pris 99 854 €",
     yieldScenALabel: "Scenario A — Konservativt",
-    yieldScenADetails: "Hyra 650 €/mån − underhållsvederlag 269 € = nettohyra ~381 €/mån · Årsavkastning ~4 572 € = ~4,6 %",
+    yieldScenADetails: "Hyra 650 €/mån − totalt vederlag 332 € = nettohyra ~318 €/mån · Årsavkastning ~3 816 € = ~3,8 %",
     yieldScenBLabel: "Scenario B — Marknadsnivå (omöblerat)",
-    yieldScenBDetails: "Hyra 750 €/mån − underhållsvederlag 269 € = nettohyra ~481 €/mån · Årsavkastning ~5 772 € = ~5,8 %",
+    yieldScenBDetails: "Hyra 700 €/mån − totalt vederlag 332 € = nettohyra ~368 €/mån · Årsavkastning ~4 416 € = ~4,4 %",
     yieldScenCLabel: "Scenario C — Marknadsnivå (möblerat)",
-    yieldScenCDetails: "Hyra 850 €/mån − underhållsvederlag 269 € = nettohyra ~581 €/mån · Årsavkastning ~6 972 € = ~7,0 %",
+    yieldScenCDetails: "Hyra 750 €/mån − totalt vederlag 332 € = nettohyra ~418 €/mån · Årsavkastning ~5 016 € = ~5,0 %",
     yieldDisclaimer: "Den exakta andelen kapitalvederlag bekräftas i förvaltarintyget. Avkastningsberäkningen är vägledande före skatt.",
 
     // Kommande renoveringar
@@ -362,11 +362,11 @@ export const translations = {
     grossDesc: "In Kokkola city centre with strong rental demand",
     rentLabel: "Estimated market rent",
     rentSub: "per month",
-    rentDesc: "€650 conservative · €750 market rate · €850 furnished",
+    rentDesc: "€650 conservative · €700 market rate · €750 furnished",
     netLabel: "Net yield",
     netSub: "per year",
     netDesc: "Calculated after maintenance fees",
-    investorSummary: "The acquisition price of €99,200 and maintenance charge of €269/mo (from 1 July 2026) make this one of Kokkola's most attractive investment apartments.",
+    investorSummary: "The acquisition price of €99,200 and estimated total charge of ~€332/mo (from 1 July 2026) make this one of Kokkola's most attractive investment apartments.",
 
     readyTitle: "Move-in ready & fresh",
     readySub: "No renovation needed — rent out or move in immediately",
@@ -460,13 +460,13 @@ export const translations = {
 
     // Yield calculation
     yieldTitle: "Yield Calculation for Investors",
-    yieldBasis: "Floor area 69 m² · Maintenance charge 3.90 €/m²/mo = €269.10/mo · Debt-free price €99,854",
+    yieldBasis: "Floor area 69 m² · Total charge from 1 July 2026 approx. ~€332/mo (maintenance 269 + RL2 ~33 + RL3 ~30) · Debt-free price €99,854",
     yieldScenALabel: "Scenario A — Conservative",
-    yieldScenADetails: "Rent €650/mo − maintenance €269 = net rent ~€381/mo · Annual yield ~€4,572 = ~4.6%",
+    yieldScenADetails: "Rent €650/mo − total charge €332 = net rent ~€318/mo · Annual yield ~€3,816 = ~3.8%",
     yieldScenBLabel: "Scenario B — Market rate (unfurnished)",
-    yieldScenBDetails: "Rent €750/mo − maintenance €269 = net rent ~€481/mo · Annual yield ~€5,772 = ~5.8%",
+    yieldScenBDetails: "Rent €700/mo − total charge €332 = net rent ~€368/mo · Annual yield ~€4,416 = ~4.4%",
     yieldScenCLabel: "Scenario C — Market rate (furnished)",
-    yieldScenCDetails: "Rent €850/mo − maintenance €269 = net rent ~€581/mo · Annual yield ~€6,972 = ~7.0%",
+    yieldScenCDetails: "Rent €750/mo − total charge €332 = net rent ~€418/mo · Annual yield ~€5,016 = ~5.0%",
     yieldDisclaimer: "The exact share of capital charges is confirmed in the property manager's certificate. Yield calculation is indicative before taxes.",
 
     // Upcoming renovations
