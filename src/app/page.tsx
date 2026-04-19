@@ -359,7 +359,7 @@ export default function Home() {
               { label: t.netLabel,   value: "4,6–7,0 %", sub: t.netSub,   desc: t.netDesc   },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 150}>
-                <div className="relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+                <div className="relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow text-center">
                   <div className="absolute top-0 right-0 w-32 h-32 lg:w-40 lg:h-40 bg-emerald-50 rounded-full -translate-y-12 translate-x-12 lg:-translate-y-16 lg:translate-x-16" />
                   <p className="text-slate-500 text-[1.2rem] lg:text-[1.5rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
                   <p className="text-[3.24rem] lg:text-[4.06rem] font-black mb-1 text-emerald-700 whitespace-nowrap leading-none">{item.value}</p>
@@ -394,10 +394,10 @@ export default function Home() {
               { label: t.yieldScenCLabel, details: t.yieldScenCDetails, yield: "7,0 %" },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 120}>
-                <div className="bg-white rounded-2xl p-5 lg:p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
-                  <p className="text-xs lg:text-sm font-semibold text-slate-500 mb-3 leading-snug">{item.label}</p>
-                  <p className="text-[3.24rem] lg:text-[4.06rem] font-black mb-3 text-emerald-700 whitespace-nowrap leading-none">{item.yield}</p>
-                  <p className="text-xs lg:text-sm text-slate-500 leading-relaxed">{item.details}</p>
+                <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow text-center">
+                  <p className="text-slate-500 text-[1.2rem] lg:text-[1.5rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
+                  <p className="text-[3.24rem] lg:text-[4.06rem] font-black mb-1 lg:mb-2 text-emerald-700 whitespace-nowrap leading-none">{item.yield}</p>
+                  <p className="text-slate-400 text-[1.05rem] lg:text-[1.2rem] leading-relaxed mt-2">{item.details}</p>
                 </div>
               </FadeIn>
             ))}
