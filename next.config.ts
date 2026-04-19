@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  transpilePackages: ["qrcode.react"],
   async redirects() {
     return [
       // www → non-www (canonical redirect)

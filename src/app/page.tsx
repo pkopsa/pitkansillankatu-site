@@ -305,6 +305,9 @@ export default function Home() {
                 </tbody>
               </table>
             </div>
+            <div className="bg-amber-50 border border-amber-200 rounded-xl lg:rounded-2xl px-6 py-4 mb-3">
+              <p className="text-amber-800 text-sm lg:text-base">ℹ️ {t.chargesEstimateNote}</p>
+            </div>
             <div className="bg-emerald-50 border border-emerald-200 rounded-xl lg:rounded-2xl px-6 py-4 text-center">
               <p className="text-emerald-800 text-sm lg:text-base font-medium">↓ {t.chargesNote}</p>
             </div>
