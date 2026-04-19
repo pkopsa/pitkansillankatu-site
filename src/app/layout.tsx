@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Pitkänsillankatu 33 Kokkola",
   },
   description:
-    "Laadukas kaksio Kokkolan ydinkeskustassa – myytävänä 99 200 € tai vuokrattavissa yrityksille. 69 m², ylin kerros, kalustettu tai kalustamaton. Bruttovuokratuotto 7,8–9,0 %. BioRexin vieressä. Ota yhteyttä: +358 50 306 0635.",
+    "Laadukas kaksio Kokkolan ydinkeskustassa – myytävänä 89 900 € tai vuokrattavissa yrityksille. 69 m², ylin kerros, kalustettu tai kalustamaton. Bruttovuokratuotto 8,7–10,0 %. BioRexin vieressä. Ota yhteyttä: +358 50 306 0635.",
   keywords: [
     // ── SUOMI ──────────────────────────────────────────────────────
     // Myynti
@@ -124,7 +124,7 @@ export const metadata: Metadata = {
     siteName: "Pitkänsillankatu 33 – Kokkola",
     title: "Pitkänsillankatu 33 A 13 – Asunto myyntiin tai vuokralle yrityksille | Kokkola",
     description:
-      "Laadukas kaksio Kokkolan ydinkeskustassa. Myytävänä 99 200 € tai vuokrattavissa yrityksille. 69 m², kalustettu tai kalustamaton, BioRexin vieressä.",
+      "Laadukas kaksio Kokkolan ydinkeskustassa. Myytävänä 89 900 € tai vuokrattavissa yrityksille. 69 m², kalustettu tai kalustamaton, BioRexin vieressä.",
     images: [
       {
         url: "/og-image.jpg",
@@ -159,7 +159,7 @@ const jsonLd = {
       "@id": `${BASE_URL}/#apartment`,
       name: "Pitkänsillankatu 33 A 13",
       description:
-        "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², ylin kerros, bruttovuokratuotto 7,8–9,0 %.",
+        "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², ylin kerros, bruttovuokratuotto 8,7–10,0 %.",
       url: BASE_URL,
       image: `${BASE_URL}/og-image.jpg`,
       address: {
@@ -185,7 +185,7 @@ const jsonLd = {
         {
           "@type": "Offer",
           name: "Myynti",
-          price: 99200,
+          price: 89900,
           priceCurrency: "EUR",
           availability: "https://schema.org/InStock",
           seller: {

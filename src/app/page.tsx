@@ -1,9 +1,14 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { useEffect, useRef, useState, ReactNode } from "react";
-import { QRCodeSVG } from "qrcode.react";
 import ContactSection from "@/components/ContactSection";
+
+const QRCodeSVG = dynamic(
+  () => import("qrcode.react").then((mod) => ({ default: mod.QRCodeSVG })),
+  { ssr: false }
+);
 import PropertyMap from "@/components/PropertyMap";
 import FloorPlan from "@/components/FloorPlan";
 import Lightbox from "@/components/Lightbox";
@@ -357,9 +362,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 mb-8 lg:mb-16">
             {[
-              { label: t.grossLabel, value: "7,8–9,0 %", sub: t.grossSub, desc: t.grossDesc },
+              { label: t.grossLabel, value: "8,7–10,0 %", sub: t.grossSub, desc: t.grossDesc },
               { label: t.rentLabel,  value: "650–750 €",  sub: t.rentSub,  desc: t.rentDesc  },
-              { label: t.netLabel,   value: "3,8–5,0 %", sub: t.netSub,   desc: t.netDesc   },
+              { label: t.netLabel,   value: "4,2–6,2 %", sub: t.netSub,   desc: t.netDesc   },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 150}>
                 <div className="relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow text-center">
@@ -392,9 +397,9 @@ export default function Home() {
           </FadeIn>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
             {[
-              { label: t.yieldScenALabel, details: t.yieldScenADetails, yield: "3,8 %" },
-              { label: t.yieldScenBLabel, details: t.yieldScenBDetails, yield: "4,4 %" },
-              { label: t.yieldScenCLabel, details: t.yieldScenCDetails, yield: "5,0 %" },
+              { label: t.yieldScenALabel, details: t.yieldScenADetails, yield: "4,2 %" },
+              { label: t.yieldScenBLabel, details: t.yieldScenBDetails, yield: "4,9 %" },
+              { label: t.yieldScenCLabel, details: t.yieldScenCDetails, yield: "5,6 %" },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 120}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow text-center">

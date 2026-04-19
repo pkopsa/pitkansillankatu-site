@@ -11,9 +11,9 @@ export const translations = {
     heroLine1: "Valoisa koti tai",
     heroLine2: "huipputuottava\nsijoitus",
     heroLine3: "ydinkeskustasta",
-    heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Ylin kerros · 99 200 €",
+    heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Ylin kerros · 89 900 €",
     heroAddress: "Pitkänsillankatu 33 A 13 · 69 m² · Ylin kerros",
-    heroPrice: "99 200 €",
+    heroPrice: "89 900 €",
     heroBtn: "Ota yhteyttä",
     heroScroll: "Tutustu",
 
@@ -24,7 +24,7 @@ export const translations = {
     detailFloor: "Kerros",
     detailFloorSub: "Ei ylänaapuria",
     detailPrice: "Hinta",
-    detailPriceVal: "99 200 €",
+    detailPriceVal: "89 900 €",
     detailPriceSub: "Neuvoteltavissa",
     detailMaint: "Vastike",
     detailMaintSub: "1.7.2026 alkaen",
@@ -41,7 +41,7 @@ export const translations = {
     netLabel: "Nettotuotto",
     netSub: "vuodessa",
     netDesc: "Vastikekulujen jälkeen laskettuna",
-    investorSummary: "Hankintahinta 99 200 € ja kokonaisvastike arviolta ~332 €/kk (1.7.2026 alkaen) tekevät tästä yhden Kokkolan houkuttelevimmista sijoitusasunnoista.",
+    investorSummary: "Hankintahinta 89 900 € ja kokonaisvastike arviolta ~332 €/kk (1.7.2026 alkaen) tekevät tästä yhden Kokkolan houkuttelevimmista sijoitusasunnoista.",
 
     // Muuttovalmis
     readyTitle: "Muuttovalmis & freesi",
@@ -93,7 +93,7 @@ export const translations = {
     maintLine1: "Kunnossapito-",
     maintLine2: "tarveselvitys",
     maintDownload: "Lataa PDF ↓",
-    footer: "Pitkänsillankatu 33 A 13 · 67100 Kokkola · 69 m² · 99 200 €",
+    footer: "Pitkänsillankatu 33 A 13 · 67100 Kokkola · 69 m² · 89 900 €",
 
     // Yhteydenottolomake
     formBadge: "Lomake",
@@ -140,13 +140,13 @@ export const translations = {
 
     // Tuottolaskelma
     yieldTitle: "Tuottolaskelma sijoittajalle",
-    yieldBasis: "Huoneistoala 69 m² · Kokonaisvastike 1.7.2026 alkaen arviolta ~332 €/kk (hoito 269 + RL2 ~33 + RL3 ~30) · Velaton hinta 99 854 €",
+    yieldBasis: "Huoneistoala 69 m² · Kokonaisvastike 1.7.2026 alkaen arviolta ~332 €/kk (hoito 269 + RL2 ~33 + RL3 ~30) · Velaton hinta 89 900 €",
     yieldScenALabel: "Skenaario A — Konservatiivinen",
-    yieldScenADetails: "Vuokra 650 €/kk − kokonaisvastike 332 € = nettovuokra ~318 €/kk · Vuosituotto ~3 816 € = ~3,8 %",
+    yieldScenADetails: "Vuokra 650 €/kk − kokonaisvastike 332 € = nettovuokra ~318 €/kk · Kassavirta ~3 816 € / 89 900 € = ~4,2 % · Sijoitustuotto ~4,8 %",
     yieldScenBLabel: "Skenaario B — Markkinataso (tyhjänä)",
-    yieldScenBDetails: "Vuokra 700 €/kk − kokonaisvastike 332 € = nettovuokra ~368 €/kk · Vuosituotto ~4 416 € = ~4,4 %",
+    yieldScenBDetails: "Vuokra 700 €/kk − kokonaisvastike 332 € = nettovuokra ~368 €/kk · Kassavirta ~4 416 € / 89 900 € = ~4,9 % · Sijoitustuotto ~5,5 %",
     yieldScenCLabel: "Skenaario C — Markkinataso (kalustettu)",
-    yieldScenCDetails: "Vuokra 750 €/kk − kokonaisvastike 332 € = nettovuokra ~418 €/kk · Vuosituotto ~5 016 € = ~5,0 %",
+    yieldScenCDetails: "Vuokra 750 €/kk − kokonaisvastike 332 € = nettovuokra ~418 €/kk · Kassavirta ~5 016 € / 89 900 € = ~5,6 % · Sijoitustuotto ~6,2 %",
     yieldDisclaimer: "Pääomavastikkeiden tarkka osuus vahvistetaan isännöitsijäntodistuksesta. Tuottolaskelma on suuntaa-antava ennen veroja.",
 
     // Tulevat remontit
@@ -167,7 +167,7 @@ export const translations = {
     renovPast2025Item3: "Läpivientien tiivistys Enkopur-massalla",
 
     // Päiväys
-    dataUpdated: "Taloustiedot päivitetty 19.4.2026 isännöitsijän toimittamien yhtiökokousmateriaalien (kokous 28.4.2026) perusteella.",
+    dataUpdated: "Hinta päivitetty 19.4.2026 Kokkolan keskustan markkina-analyysin perusteella. Taloustiedot 9.4.2026 yhtiökokousmateriaalien (kokous 28.4.2026) mukaisesti.",
   },
 
   sv: {
@@ -178,9 +178,9 @@ export const translations = {
     heroLine1: "Ett ljust hem eller",
     heroLine2: "toppavkastande\ninvestering",
     heroLine3: "i stadskärnan",
-    heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Översta våningen · 99 200 €",
+    heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Översta våningen · 89 900 €",
     heroAddress: "Pitkänsillankatu 33 A 13 · 69 m² · Översta våningen",
-    heroPrice: "99 200 €",
+    heroPrice: "89 900 €",
     heroBtn: "Kontakta oss",
     heroScroll: "Utforska",
 
@@ -190,7 +190,7 @@ export const translations = {
     detailFloor: "Våning",
     detailFloorSub: "Ingen granne ovan",
     detailPrice: "Pris",
-    detailPriceVal: "99 200 €",
+    detailPriceVal: "89 900 €",
     detailPriceSub: "Förhandlingsbart",
     detailMaint: "Vederlag",
     detailMaintSub: "fr.o.m. 1.7.2026",
@@ -206,7 +206,7 @@ export const translations = {
     netLabel: "Nettoavkastning",
     netSub: "per år",
     netDesc: "Beräknat efter vederlagsavgifter",
-    investorSummary: "Anskaffningspriset 99 200 € och totalt vederlag uppskattat till ~332 €/mån (fr.o.m. 1.7.2026) gör detta till en av Karlebys mest attraktiva investeringslägenheter.",
+    investorSummary: "Anskaffningspriset 89 900 € och totalt vederlag uppskattat till ~332 €/mån (fr.o.m. 1.7.2026) gör detta till en av Karlebys mest attraktiva investeringslägenheter.",
 
     readyTitle: "Inflyttningsklar & fräsch",
     readySub: "Inget renoveringsbehov — du kan hyra ut eller flytta in direkt",
@@ -254,7 +254,7 @@ export const translations = {
     maintLine1: "Underhålls-",
     maintLine2: "utredning",
     maintDownload: "Ladda PDF ↓",
-    footer: "Pitkänsillankatu 33 A 13 · 67100 Karleby · 69 m² · 99 200 €",
+    footer: "Pitkänsillankatu 33 A 13 · 67100 Karleby · 69 m² · 89 900 €",
 
     formBadge: "Formulär",
     formTitle: "Skicka meddelande",
@@ -300,13 +300,13 @@ export const translations = {
 
     // Avkastningsberäkning
     yieldTitle: "Avkastningsberäkning för investeraren",
-    yieldBasis: "Lägenhetsyta 69 m² · Totalt vederlag fr.o.m. 1.7.2026 ca ~332 €/mån (underhåll 269 + RL2 ~33 + RL3 ~30) · Skuldfritt pris 99 854 €",
+    yieldBasis: "Lägenhetsyta 69 m² · Totalt vederlag fr.o.m. 1.7.2026 ca ~332 €/mån (underhåll 269 + RL2 ~33 + RL3 ~30) · Skuldfritt pris 89 900 €",
     yieldScenALabel: "Scenario A — Konservativt",
-    yieldScenADetails: "Hyra 650 €/mån − totalt vederlag 332 € = nettohyra ~318 €/mån · Årsavkastning ~3 816 € = ~3,8 %",
+    yieldScenADetails: "Hyra 650 €/mån − totalt vederlag 332 € = nettohyra ~318 €/mån · Kassaflöde ~3 816 € / 89 900 € = ~4,2 % · Investeringsavk. ~4,8 %",
     yieldScenBLabel: "Scenario B — Marknadsnivå (omöblerat)",
-    yieldScenBDetails: "Hyra 700 €/mån − totalt vederlag 332 € = nettohyra ~368 €/mån · Årsavkastning ~4 416 € = ~4,4 %",
+    yieldScenBDetails: "Hyra 700 €/mån − totalt vederlag 332 € = nettohyra ~368 €/mån · Kassaflöde ~4 416 € / 89 900 € = ~4,9 % · Investeringsavk. ~5,5 %",
     yieldScenCLabel: "Scenario C — Marknadsnivå (möblerat)",
-    yieldScenCDetails: "Hyra 750 €/mån − totalt vederlag 332 € = nettohyra ~418 €/mån · Årsavkastning ~5 016 € = ~5,0 %",
+    yieldScenCDetails: "Hyra 750 €/mån − totalt vederlag 332 € = nettohyra ~418 €/mån · Kassaflöde ~5 016 € / 89 900 € = ~5,6 % · Investeringsavk. ~6,2 %",
     yieldDisclaimer: "Den exakta andelen kapitalvederlag bekräftas i förvaltarintyget. Avkastningsberäkningen är vägledande före skatt.",
 
     // Kommande renoveringar
@@ -327,7 +327,7 @@ export const translations = {
     renovPast2025Item3: "Tätning av genomföringar med Enkopur-massa",
 
     // Datum
-    dataUpdated: "Ekonomiuppgifterna uppdaterade 19.4.2026 baserat på material från bolagsstämman (stämma 28.4.2026) levererat av disponent.",
+    dataUpdated: "Priset uppdaterat 19.4.2026 baserat på marknadsanalys för Karlebys centrum. Ekonomiuppgifterna 9.4.2026 enligt bolagsstämmomaterial (stämma 28.4.2026).",
   },
 
   en: {
@@ -338,9 +338,9 @@ export const translations = {
     heroLine1: "A bright home or",
     heroLine2: "top-yield\ninvestment",
     heroLine3: "in the city centre",
-    heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Top Floor · €99,200",
+    heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Top Floor · €89,900",
     heroAddress: "Pitkänsillankatu 33 A 13 · 69 m² · Top floor",
-    heroPrice: "99 200 €",
+    heroPrice: "89 900 €",
     heroBtn: "Contact us",
     heroScroll: "Explore",
 
@@ -350,7 +350,7 @@ export const translations = {
     detailFloor: "Floor",
     detailFloorSub: "No upstairs neighbour",
     detailPrice: "Price",
-    detailPriceVal: "€99,200",
+    detailPriceVal: "€89,900",
     detailPriceSub: "Negotiable",
     detailMaint: "Maintenance",
     detailMaintSub: "from 1 July 2026",
@@ -366,7 +366,7 @@ export const translations = {
     netLabel: "Net yield",
     netSub: "per year",
     netDesc: "Calculated after maintenance fees",
-    investorSummary: "The acquisition price of €99,200 and estimated total charge of ~€332/mo (from 1 July 2026) make this one of Kokkola's most attractive investment apartments.",
+    investorSummary: "The acquisition price of €89,900 and estimated total charge of ~€332/mo (from 1 July 2026) make this one of Kokkola's most attractive investment apartments.",
 
     readyTitle: "Move-in ready & fresh",
     readySub: "No renovation needed — rent out or move in immediately",
@@ -414,7 +414,7 @@ export const translations = {
     maintLine1: "Maintenance",
     maintLine2: "Report",
     maintDownload: "Download PDF ↓",
-    footer: "Pitkänsillankatu 33 A 13 · 67100 Kokkola · 69 m² · €99,200",
+    footer: "Pitkänsillankatu 33 A 13 · 67100 Kokkola · 69 m² · €89,900",
 
     formBadge: "Form",
     formTitle: "Send a message",
@@ -460,13 +460,13 @@ export const translations = {
 
     // Yield calculation
     yieldTitle: "Yield Calculation for Investors",
-    yieldBasis: "Floor area 69 m² · Total charge from 1 July 2026 approx. ~€332/mo (maintenance 269 + RL2 ~33 + RL3 ~30) · Debt-free price €99,854",
+    yieldBasis: "Floor area 69 m² · Total charge from 1 July 2026 approx. ~€332/mo (maintenance 269 + RL2 ~33 + RL3 ~30) · Debt-free price €89,900",
     yieldScenALabel: "Scenario A — Conservative",
-    yieldScenADetails: "Rent €650/mo − total charge €332 = net rent ~€318/mo · Annual yield ~€3,816 = ~3.8%",
+    yieldScenADetails: "Rent €650/mo − total charge €332 = net rent ~€318/mo · Cash yield ~€3,816 / €89,900 = ~4.2% · Investment yield ~4.8%",
     yieldScenBLabel: "Scenario B — Market rate (unfurnished)",
-    yieldScenBDetails: "Rent €700/mo − total charge €332 = net rent ~€368/mo · Annual yield ~€4,416 = ~4.4%",
+    yieldScenBDetails: "Rent €700/mo − total charge €332 = net rent ~€368/mo · Cash yield ~€4,416 / €89,900 = ~4.9% · Investment yield ~5.5%",
     yieldScenCLabel: "Scenario C — Market rate (furnished)",
-    yieldScenCDetails: "Rent €750/mo − total charge €332 = net rent ~€418/mo · Annual yield ~€5,016 = ~5.0%",
+    yieldScenCDetails: "Rent €750/mo − total charge €332 = net rent ~€418/mo · Cash yield ~€5,016 / €89,900 = ~5.6% · Investment yield ~6.2%",
     yieldDisclaimer: "The exact share of capital charges is confirmed in the property manager's certificate. Yield calculation is indicative before taxes.",
 
     // Upcoming renovations
@@ -487,6 +487,6 @@ export const translations = {
     renovPast2025Item3: "Sealing of pipe penetrations with Enkopur compound",
 
     // Date notice
-    dataUpdated: "Financial information updated 19 April 2026 based on AGM materials (meeting 28 April 2026) provided by property manager.",
+    dataUpdated: "Price updated 19 April 2026 based on Kokkola city centre market analysis. Financial data 9 April 2026 per AGM materials (meeting 28 April 2026).",
   },
 } as const;
