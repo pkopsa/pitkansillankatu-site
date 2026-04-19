@@ -40,3 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+*.zip
+yhtikokous*
+*_reference_code.txt
+*_koodipohja.txt
