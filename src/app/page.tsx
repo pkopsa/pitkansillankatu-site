@@ -244,17 +244,93 @@ export default function Home() {
               { label: t.detailSize,  value: "69 m²",            sub: t.detailSizeSub,   inline: false },
               { label: t.detailFloor, value: "3 / 3",            sub: t.detailFloorSub,  inline: false },
               { label: t.detailPrice, value: t.detailPriceVal,   sub: t.detailPriceSub,  inline: false },
-              { label: t.detailMaint, value: "324 €/kk",         sub: t.detailMaintSub,  inline: false },
+              { label: t.detailMaint, value: "269 €/kk",         sub: t.detailMaintSub,  inline: false },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 text-center shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
                   <p className="text-slate-500 text-[1.05rem] lg:text-[1.35rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
-                  <p className="text-[3.24rem] lg:text-[4.06rem] font-black text-slate-900 mb-1 lg:mb-2 whitespace-nowrap leading-none">{item.value}</p>
+                  <p className="text-[3.08rem] lg:text-[3.86rem] font-black text-slate-900 mb-1 lg:mb-2 whitespace-nowrap leading-none">{item.value}</p>
                   {!item.inline && <p className="text-slate-400 text-[1.2rem] lg:text-[1.5rem] font-medium mt-2">{item.sub}</p>}
                 </div>
               </FadeIn>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── VASTIKKEET ──────────────────────────────────────────────── */}
+      <section className="py-14 px-4 lg:py-24 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <h2 className="text-2xl lg:text-4xl font-bold text-center mb-2 text-slate-800">{t.chargesTitle}</h2>
+            <p className="text-sm lg:text-base text-slate-400 text-center mb-8 lg:mb-12">{t.chargesFromDate}</p>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <div className="bg-slate-50 rounded-2xl lg:rounded-3xl overflow-hidden border border-slate-200 shadow-lg mb-6">
+              <table className="w-full text-sm lg:text-base">
+                <thead>
+                  <tr className="bg-slate-800 text-white">
+                    <th className="text-left px-4 lg:px-8 py-3 lg:py-4 font-semibold">Vastike</th>
+                    <th className="text-right px-4 lg:px-8 py-3 lg:py-4 font-semibold">{t.chargesRateHeader}</th>
+                    <th className="text-right px-4 lg:px-8 py-3 lg:py-4 font-semibold">{t.chargesMonthHeader}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-slate-200">
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-slate-700 font-medium">{t.chargesMaintLabel}</td>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right text-slate-600">{t.chargesMaintRate}</td>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right font-bold text-slate-900">{t.chargesMaintTotal}</td>
+                  </tr>
+                  <tr className="border-b border-slate-200 bg-amber-50">
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-slate-700">{t.chargesRL2Label}</td>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right text-slate-600">{t.chargesRL2Rate}</td>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right font-semibold text-amber-700">{t.chargesRL2Total}</td>
+                  </tr>
+                  <tr className="border-b border-slate-200 bg-amber-50">
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-slate-700">{t.chargesRL3Label}</td>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right text-slate-600">{t.chargesRL3Rate}</td>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right font-semibold text-amber-700">{t.chargesRL3Total}</td>
+                  </tr>
+                  <tr>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-slate-700">{t.chargesWaterLabel}</td>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right text-slate-400 text-xs lg:text-sm">—</td>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right text-slate-600">{t.chargesWaterRate}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="bg-emerald-50 border border-emerald-200 rounded-xl lg:rounded-2xl px-6 py-4 text-center">
+              <p className="text-emerald-800 text-sm lg:text-base font-medium">↓ {t.chargesNote}</p>
+            </div>
+
+            {/* ── YHTIÖKOKOUKSEN ASIAKIRJAT ── */}
+            <div className="mt-6 bg-slate-800 border border-white/10 rounded-xl lg:rounded-2xl p-6 lg:p-8">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-emerald-400 text-lg">📄</span>
+                <h3 className="text-white font-bold text-base lg:text-lg">{t.agmDocsTitle}</h3>
+              </div>
+              <p className="text-slate-400 text-sm lg:text-base mb-4">{t.agmDocsDesc}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {[
+                  { label: t.agmDoc1, href: "/docs/tilinpaatos2025.pdf" },
+                  { label: t.agmDoc2, href: "/docs/talousarvio2026.pdf" },
+                  { label: t.agmDoc3, href: "/docs/yhtiokokouskutsu2026.pdf" },
+                  { label: t.agmDoc4, href: "/docs/kunnossapitotarveselvitys2026.pdf" },
+                ].map((doc) => (
+                  <a
+                    key={doc.href}
+                    href={doc.href}
+                    download
+                    className="flex items-center gap-3 bg-slate-700 hover:bg-slate-600 border border-white/10 rounded-lg px-4 py-3 transition-colors group"
+                  >
+                    <span className="text-emerald-400 text-lg shrink-0">⬇</span>
+                    <span className="text-slate-200 text-sm lg:text-base font-medium group-hover:text-white transition-colors">{doc.label}</span>
+                    <span className="ml-auto text-slate-500 text-xs">PDF</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -272,9 +348,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 mb-8 lg:mb-16">
             {[
-              { label: t.grossLabel, value: "8,5–10 %", sub: t.grossSub, desc: t.grossDesc },
-              { label: t.rentLabel,  value: "700–850 €", sub: t.rentSub,  desc: t.rentDesc  },
-              { label: t.netLabel,   value: "4,5–6 %",  sub: t.netSub,   desc: t.netDesc   },
+              { label: t.grossLabel, value: "7,8–9,0 %", sub: t.grossSub, desc: t.grossDesc },
+              { label: t.rentLabel,  value: "650–750 €", sub: t.rentSub,  desc: t.rentDesc  },
+              { label: t.netLabel,   value: "4,6–5,8 %", sub: t.netSub,   desc: t.netDesc   },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 150}>
                 <div className="relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
@@ -294,6 +370,34 @@ export default function Home() {
                 {t.investorSummary}
               </p>
             </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── TUOTTOLASKELMA ──────────────────────────────────────────── */}
+      <section className="py-14 px-4 lg:py-24 lg:px-8 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <h2 className="text-2xl lg:text-4xl font-bold text-center mb-3 text-slate-800">{t.yieldTitle}</h2>
+            <p className="text-xs lg:text-sm text-slate-400 text-center mb-8 lg:mb-12">{t.yieldBasis}</p>
+          </FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-6">
+            {[
+              { label: t.yieldScenALabel, details: t.yieldScenADetails, yield: "4,6 %" },
+              { label: t.yieldScenBLabel, details: t.yieldScenBDetails, yield: "5,8 %" },
+              { label: t.yieldScenCLabel, details: t.yieldScenCDetails, yield: "7,0 %" },
+            ].map((item, i) => (
+              <FadeIn key={i} delay={i * 120}>
+                <div className="bg-white rounded-2xl p-5 lg:p-8 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
+                  <p className="text-xs lg:text-sm font-semibold text-slate-500 mb-3 leading-snug">{item.label}</p>
+                  <p className="text-4xl lg:text-5xl font-black mb-3 text-emerald-700">{item.yield}</p>
+                  <p className="text-xs lg:text-sm text-slate-500 leading-relaxed">{item.details}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+          <FadeIn delay={400}>
+            <p className="text-center text-xs lg:text-sm text-slate-400 italic">{t.yieldDisclaimer}</p>
           </FadeIn>
         </div>
       </section>
@@ -394,37 +498,51 @@ export default function Home() {
 
           <FadeIn delay={0} className="mb-8 lg:mb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
-              {/* Ikkunanäkymä */}
-              <div className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] shadow-xl group">
-                <Image src="/nakyma.webp" alt="Ikkunanäkymä Pitkänsillankadulle" fill className="object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 lg:p-6">
-                  <p className="text-white text-sm lg:text-xl font-semibold mb-2">{t.historyCaption}</p>
-                  <button
-                    onClick={() => openLightbox([
-                      { src: "/nakyma.webp",   alt: "Näkymä ikkunasta" },
-                      { src: "/katu-nyt.jpeg", alt: "Pitkänsillankatu kadulta – BioRex" },
-                    ], 1)}
-                    className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold text-xs lg:text-sm px-3 lg:px-5 py-2 rounded-full transition-colors duration-200 shadow-lg"
-                  >
-                    <span>📸</span>
-                    <span>Näkymä kadulta</span>
-                  </button>
-                </div>
-              </div>
-              {/* Historiallinen katukuva */}
+              {/* Ikkunanäkymä — iso vasen */}
               <button
                 onClick={() => openLightbox([
-                  { src: "/katu-historia.jpeg", alt: "Historiallinen näkymä Kokkolan keskustasta" },
-                  { src: "/katu-nyt.jpeg",      alt: "Pitkänsillankatu tänään – BioRex" },
+                  { src: "/nakyma.webp", alt: "Näkymä ikkunasta" },
                 ], 0)}
                 className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] shadow-xl cursor-zoom-in group"
               >
-                <Image src="/katu-historia.jpeg" alt="Historiallinen katukuva Kokkolasta" fill className="object-cover brightness-100 contrast-105 sepia-[0.2] group-hover:scale-105 transition-transform duration-500" />
+                <Image src="/nakyma.webp" alt="Ikkunanäkymä Pitkänsillankadulle" fill className="object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 lg:p-6">
-                  <p className="text-white text-sm lg:text-xl font-semibold">Historiallinen näkymä Kokkolan keskustasta</p>
+                  <p className="text-white text-sm lg:text-xl font-semibold">{t.historyCaption}</p>
                   <p className="text-amber-400 text-xs lg:text-sm mt-1">🔍 Klikkaa suurentaaksesi</p>
                 </div>
               </button>
+
+              {/* Oikea sarake: historia + nykypäivä päällekkäin */}
+              <div className="flex flex-col gap-4 lg:gap-6">
+                {/* Historiallinen katukuva */}
+                <button
+                  onClick={() => openLightbox([
+                    { src: "/katu-historia.jpeg", alt: "Historiallinen näkymä Kokkolan keskustasta" },
+                    { src: "/katu-nyt.jpeg",      alt: "Pitkänsillankatu tänään – BioRex" },
+                  ], 0)}
+                  className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[16/9] shadow-xl cursor-zoom-in group flex-1"
+                >
+                  <Image src="/katu-historia.jpeg" alt="Historiallinen katukuva Kokkolasta" fill className="object-cover brightness-100 contrast-105 sepia-[0.2] group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 lg:p-5">
+                    <p className="text-white text-sm lg:text-lg font-semibold">Historiallinen näkymä</p>
+                    <p className="text-amber-400 text-xs lg:text-sm mt-0.5">🔍 Klikkaa suurentaaksesi</p>
+                  </div>
+                </button>
+                {/* Nykypäivän katukuva */}
+                <button
+                  onClick={() => openLightbox([
+                    { src: "/katu-nyt.jpeg",      alt: "Pitkänsillankatu tänään – BioRex" },
+                    { src: "/katu-historia.jpeg", alt: "Historiallinen näkymä Kokkolan keskustasta" },
+                  ], 0)}
+                  className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[16/9] shadow-xl cursor-zoom-in group flex-1"
+                >
+                  <Image src="/katu-nyt.jpeg" alt="Pitkänsillankatu nykypäivänä" fill className="object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 lg:p-5">
+                    <p className="text-white text-sm lg:text-lg font-semibold">Pitkänsillankatu tänään</p>
+                    <p className="text-amber-400 text-xs lg:text-sm mt-0.5">🔍 Klikkaa suurentaaksesi</p>
+                  </div>
+                </button>
+              </div>
             </div>
           </FadeIn>
 
@@ -443,6 +561,52 @@ export default function Home() {
                   </div>
                 ))}
               </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── TULEVAT REMONTIT ────────────────────────────────────────── */}
+      <section className="py-14 px-4 lg:py-24 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <h2 className="text-2xl lg:text-4xl font-bold text-center mb-2 text-slate-800">{t.renovTitle}</h2>
+            <p className="text-sm lg:text-lg text-slate-500 text-center mb-8 lg:mb-14">{t.renovSubtitle}</p>
+          </FadeIn>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-8">
+            {[
+              { item: t.renovItem1, year: t.renovItem1Year, note: t.renovItem1Note },
+              { item: t.renovItem2, year: t.renovItem2Year, note: null },
+              { item: t.renovItem3, year: t.renovItem3Year, note: t.renovItem3Note },
+            ].map((r, i) => (
+              <FadeIn key={i} delay={i * 100}>
+                <div className="bg-slate-50 rounded-2xl p-5 lg:p-7 border border-slate-200 shadow-sm">
+                  <span className="inline-block bg-slate-800 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">{r.year}</span>
+                  <p className="text-sm lg:text-base font-semibold text-slate-800 mb-2 leading-snug">{r.item}</p>
+                  {r.note && <p className="text-xs lg:text-sm text-slate-400 italic">{r.note}</p>}
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={350}>
+            <div className="bg-amber-50 border border-amber-200 rounded-xl lg:rounded-2xl px-6 py-4 mb-8">
+              <p className="text-amber-800 text-sm lg:text-base">ℹ️ {t.renovAGMNote}</p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={450}>
+            <div className="bg-emerald-50 border border-emerald-200 rounded-xl lg:rounded-2xl p-5 lg:p-7">
+              <p className="text-sm lg:text-base font-semibold text-emerald-800 mb-3">✓ {t.renovPast2025Title}</p>
+              <ul className="space-y-1">
+                {[t.renovPast2025Item1, t.renovPast2025Item2, t.renovPast2025Item3].map((item, i) => (
+                  <li key={i} className="text-xs lg:text-sm text-emerald-700 flex items-start gap-2">
+                    <span className="mt-0.5 shrink-0">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </FadeIn>
         </div>
@@ -506,7 +670,7 @@ export default function Home() {
                 <div className="bg-white rounded-2xl p-3 shadow-lg w-40 h-40 flex items-center justify-center">
                   <QRCodeSVG value="https://pitkansillankatu33.com/" size={120} bgColor="#ffffff" fgColor="#1e293b" level="M" />
                 </div>
-                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.qrCaption}</p>
+                <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">{t.qrCaption}</p>
               </div>
 
               {/* Etuovi */}
@@ -528,7 +692,7 @@ export default function Home() {
                     {t.etuoviOpen}
                   </span>
                 </a>
-                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide text-center">Etuovi</p>
+                <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">Etuovi</p>
               </div>
 
               {/* Retta */}
@@ -543,7 +707,7 @@ export default function Home() {
                     {t.rettaDownload}
                   </span>
                 </a>
-                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.rettaCaption}</p>
+                <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">{t.rettaCaption}</p>
               </div>
 
               {/* Kunnossapito */}
@@ -563,7 +727,7 @@ export default function Home() {
                     {t.maintDownload}
                   </span>
                 </a>
-                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.maintCaption}</p>
+                <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">{t.maintCaption}</p>
               </div>
 
               {/* Vuokrausilmoitus */}
@@ -584,7 +748,7 @@ export default function Home() {
                     {t.rentalOpen}
                   </span>
                 </a>
-                <p className="text-amber-400 font-semibold text-base lg:text-lg tracking-wide text-center">{t.rentalCaption}</p>
+                <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">{t.rentalCaption}</p>
               </div>
 
             </div>
@@ -593,6 +757,7 @@ export default function Home() {
           <FadeIn delay={500}>
             <div className="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-white/10">
               <p className="text-slate-500 text-sm lg:text-xl">{t.footer}</p>
+              <p className="text-slate-600 text-xs lg:text-sm mt-3 italic">{t.dataUpdated}</p>
             </div>
           </FadeIn>
         </div>
