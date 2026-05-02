@@ -174,6 +174,12 @@ export const translations = {
     locationTitle: "Kohteen sijainti",
     locationSub: "Pitkänsillankatu 33, 67100 Kokkola — BioRexin vieressä",
     locationOpenMaps: "Avaa Google Mapsissa →",
+
+    // Yritysasuntolaatikko (Manus-markkinointisivu)
+    corpHousingLine1: "Yritys-",
+    corpHousingLine2: "asunnoksi",
+    corpHousingOpen: "Avaa →",
+    corpHousingCaption: "Yritysasunnoksi",
   },
 
   sv: {
@@ -340,6 +346,12 @@ export const translations = {
     locationTitle: "Objektets läge",
     locationSub: "Pitkänsillankatu 33, 67100 Karleby — bredvid BioRex",
     locationOpenMaps: "Öppna i Google Maps →",
+
+    // Företagsboende (Manus-marknadsföringssida)
+    corpHousingLine1: "Företags-",
+    corpHousingLine2: "boende",
+    corpHousingOpen: "Öppna →",
+    corpHousingCaption: "Företagsboende",
   },
 
   en: {
@@ -506,5 +518,11 @@ export const translations = {
     locationTitle: "Property location",
     locationSub: "Pitkänsillankatu 33, 67100 Kokkola — next to BioRex",
     locationOpenMaps: "Open in Google Maps →",
+
+    // Corporate housing (Manus marketing site)
+    corpHousingLine1: "Corporate",
+    corpHousingLine2: "housing",
+    corpHousingOpen: "Open →",
+    corpHousingCaption: "Corporate housing",
   },
 } as const;
