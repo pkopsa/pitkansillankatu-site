@@ -82,6 +82,15 @@ const maalaattuImages = [
   { src: "/maalattu2.jpeg", alt: "Makuuhuone" },
 ];
 
+const kalustetutImages = [
+  { src: "/kalustettu-olohuone-1.jpeg",  alt: "Olohuone kalustettuna – kermasohva ja kruunuvalaisin" },
+  { src: "/kalustettu-olohuone-2.jpeg",  alt: "Olohuone – kirjahylly ja läpitalon näkymä" },
+  { src: "/kalustettu-makuuhuone-1.jpeg", alt: "Makuuhuone – parisänky ja kaapistot" },
+  { src: "/kalustettu-makuuhuone-2.jpeg", alt: "Makuuhuone – sänky ja paperivalaisin" },
+  { src: "/kalustettu-tyopiste.jpeg",    alt: "Työpiste – pöytä ikkunan vieressä" },
+  { src: "/kalustettu-eteinen.jpeg",     alt: "Eteinen – kaapistot ja spottivalot" },
+];
+
 const PAUSE_MS = 2000;
 const LANGS_CYCLE: Lang[] = ["fi", "sv", "en"];
 function getScrollSpeed() {
@@ -427,7 +436,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 items-stretch">
             {[
               { icon: "🖌️", title: t.card1Title, desc: t.card1Desc, images: maalaattuImages },
-              { icon: "🪟", title: t.card2Title, desc: t.card2Desc, images: null },
+              { icon: "🛋️", title: t.card2Title, desc: t.card2Desc, images: kalustetutImages },
               { icon: "✨", title: t.card3Title, desc: t.card3Desc, images: freesiImages },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 120}>
