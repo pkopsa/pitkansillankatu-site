@@ -56,29 +56,12 @@ function FadeIn({
 }
 
 const galleryImages = [
-  // Olohuone
-  { src: "/olohuone3.webp",                    alt: "Olohuone – tilava ja valoisa" },
-  { src: "/olohuoneesta-keittioon.webp",       alt: "Olohuoneesta keittiöön" },
-  { src: "/uusi1.webp",                        alt: "Olohuone – freesi ilme" },
-  { src: "/kalustettu-olohuone-1.webp",        alt: "Olohuone kalustettuna – kermasohva ja kruunuvalaisin" },
-  { src: "/kalustettu-olohuone-2.webp",        alt: "Olohuone kalustettuna – kirjahylly ja läpitalon näkymä" },
-  // Makuuhuone & työpiste
-  { src: "/makuuhuone1.webp",                  alt: "Makuuhuone" },
-  { src: "/makuuhuoneesta-olohuoneeseen.webp", alt: "Makuuhuone ja kaapisto" },
-  { src: "/uusi3.webp",                        alt: "Makuuhuone – freesi ilme" },
-  { src: "/kalustettu-makuuhuone-1.webp",      alt: "Makuuhuone kalustettuna – parisänky ja kaapistot" },
-  { src: "/kalustettu-makuuhuone-2.webp",      alt: "Makuuhuone kalustettuna – sänky ja paperivalaisin" },
-  { src: "/kalustettu-tyopiste.webp",          alt: "Työpiste – pöytä ikkunan vieressä" },
-  // Keittiö
-  { src: "/keittio3.webp",                     alt: "Keittiö – kodinkoneet" },
-  { src: "/uusi2.webp",                        alt: "Keittiö – freesi ilme" },
-  // Säilytys & käytävä
-  { src: "/vaatehuone-kaapisto.webp",          alt: "Iso kaapistoseinä" },
-  { src: "/kaytava1.webp",                     alt: "Käytävä ja eteinen" },
-  { src: "/kalustettu-eteinen.webp",           alt: "Eteinen kalustettuna – spottivalot ja kaapistot" },
-  // Pesutila
-  { src: "/suihkukaappi.webp",                 alt: "Kylpyhuone" },
-  { src: "/pesukone.webp",                     alt: "Pesutila ja suihku" },
+  { src: "/kalustettu-olohuone-1.webp",   alt: "Olohuone kalustettuna – kermasohva ja kruunuvalaisin" },
+  { src: "/kalustettu-olohuone-2.webp",   alt: "Olohuone kalustettuna – kirjahylly ja läpitalon näkymä" },
+  { src: "/kalustettu-makuuhuone-1.webp", alt: "Makuuhuone kalustettuna – parisänky ja kaapistot" },
+  { src: "/kalustettu-makuuhuone-2.webp", alt: "Makuuhuone kalustettuna – sänky ja paperivalaisin" },
+  { src: "/kalustettu-tyopiste.webp",     alt: "Työpiste – pöytä ikkunan vieressä" },
+  { src: "/kalustettu-eteinen.webp",      alt: "Eteinen kalustettuna – spottivalot ja kaapistot" },
 ];
 
 const freesiImages = [
@@ -498,7 +481,7 @@ export default function HomeContent({ lang }: { lang: Lang }) {
                 onClick={() => openLightbox(galleryImages, 0)}
                 className="relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg w-full block cursor-zoom-in"
               >
-                <Image src="/olohuone3.webp" alt="Olohuone" fill className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
+                <Image src="/kalustettu-olohuone-1.webp" alt="Olohuone kalustettuna" fill className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
               </button>
             </FadeIn>
             {galleryImages.slice(1).map((img, i) => (
@@ -784,7 +767,7 @@ export default function HomeContent({ lang }: { lang: Lang }) {
               {/* Yritysasunnoksi — Manus-markkinointisivu */}
               <div className="flex flex-col items-center gap-3 w-40">
                 <a
-                  href="https://pitkanshop-gatafh9w.manus.space/"
+                  href="https://pitkanshopv2.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 rounded-2xl p-4 shadow-lg w-40 h-40 hover:shadow-xl transition-all duration-300 group"
