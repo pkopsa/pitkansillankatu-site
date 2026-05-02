@@ -168,6 +168,12 @@ export const translations = {
 
     // Päiväys
     dataUpdated: "Hinta päivitetty 19.4.2026 Kokkolan keskustan markkina-analyysin perusteella. Taloustiedot 9.4.2026 yhtiökokousmateriaalien (kokous 28.4.2026) mukaisesti.",
+
+    // Sijainti (sivun loppu)
+    locationBadge: "Sijainti",
+    locationTitle: "Kohteen sijainti",
+    locationSub: "Pitkänsillankatu 33, 67100 Kokkola — BioRexin vieressä",
+    locationOpenMaps: "Avaa Google Mapsissa →",
   },
 
   sv: {
@@ -328,6 +334,12 @@ export const translations = {
 
     // Datum
     dataUpdated: "Priset uppdaterat 19.4.2026 baserat på marknadsanalys för Karlebys centrum. Ekonomiuppgifterna 9.4.2026 enligt bolagsstämmomaterial (stämma 28.4.2026).",
+
+    // Läge (sidans slut)
+    locationBadge: "Läge",
+    locationTitle: "Objektets läge",
+    locationSub: "Pitkänsillankatu 33, 67100 Karleby — bredvid BioRex",
+    locationOpenMaps: "Öppna i Google Maps →",
   },
 
   en: {
@@ -488,5 +500,11 @@ export const translations = {
 
     // Date notice
     dataUpdated: "Price updated 19 April 2026 based on Kokkola city centre market analysis. Financial data 9 April 2026 per AGM materials (meeting 28 April 2026).",
+
+    // Location (page end)
+    locationBadge: "Location",
+    locationTitle: "Property location",
+    locationSub: "Pitkänsillankatu 33, 67100 Kokkola — next to BioRex",
+    locationOpenMaps: "Open in Google Maps →",
   },
 } as const;
