@@ -56,18 +56,29 @@ function FadeIn({
 }
 
 const galleryImages = [
-  { src: "/olohuone3.webp",               alt: "Olohuone – tilava ja valoisa" },
-  { src: "/olohuoneesta-keittioon.webp",  alt: "Olohuoneesta keittiöön" },
-  { src: "/uusi1.webp",                   alt: "Olohuone – freesi ilme" },
-  { src: "/makuuhuone1.webp",             alt: "Makuuhuone" },
+  // Olohuone
+  { src: "/olohuone3.webp",                    alt: "Olohuone – tilava ja valoisa" },
+  { src: "/olohuoneesta-keittioon.webp",       alt: "Olohuoneesta keittiöön" },
+  { src: "/uusi1.webp",                        alt: "Olohuone – freesi ilme" },
+  { src: "/kalustettu-olohuone-1.webp",        alt: "Olohuone kalustettuna – kermasohva ja kruunuvalaisin" },
+  { src: "/kalustettu-olohuone-2.webp",        alt: "Olohuone kalustettuna – kirjahylly ja läpitalon näkymä" },
+  // Makuuhuone & työpiste
+  { src: "/makuuhuone1.webp",                  alt: "Makuuhuone" },
   { src: "/makuuhuoneesta-olohuoneeseen.webp", alt: "Makuuhuone ja kaapisto" },
-  { src: "/uusi3.webp",                   alt: "Makuuhuone – freesi ilme" },
-  { src: "/keittio3.webp",               alt: "Keittiö – kodinkoneet" },
-  { src: "/uusi2.webp",                   alt: "Keittiö – freesi ilme" },
-  { src: "/vaatehuone-kaapisto.webp",     alt: "Iso kaapistoseinä" },
-  { src: "/kaytava1.webp",               alt: "Käytävä ja eteinen" },
-  { src: "/suihkukaappi.webp",           alt: "Kylpyhuone" },
-  { src: "/pesukone.webp",               alt: "Pesutila ja suihku" },
+  { src: "/uusi3.webp",                        alt: "Makuuhuone – freesi ilme" },
+  { src: "/kalustettu-makuuhuone-1.webp",      alt: "Makuuhuone kalustettuna – parisänky ja kaapistot" },
+  { src: "/kalustettu-makuuhuone-2.webp",      alt: "Makuuhuone kalustettuna – sänky ja paperivalaisin" },
+  { src: "/kalustettu-tyopiste.webp",          alt: "Työpiste – pöytä ikkunan vieressä" },
+  // Keittiö
+  { src: "/keittio3.webp",                     alt: "Keittiö – kodinkoneet" },
+  { src: "/uusi2.webp",                        alt: "Keittiö – freesi ilme" },
+  // Säilytys & käytävä
+  { src: "/vaatehuone-kaapisto.webp",          alt: "Iso kaapistoseinä" },
+  { src: "/kaytava1.webp",                     alt: "Käytävä ja eteinen" },
+  { src: "/kalustettu-eteinen.webp",           alt: "Eteinen kalustettuna – spottivalot ja kaapistot" },
+  // Pesutila
+  { src: "/suihkukaappi.webp",                 alt: "Kylpyhuone" },
+  { src: "/pesukone.webp",                     alt: "Pesutila ja suihku" },
 ];
 
 const freesiImages = [
@@ -266,16 +277,16 @@ export default function HomeContent({ lang }: { lang: Lang }) {
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
             {[
-              { label: t.detailSize,  value: "69 m²",          sub: t.detailSizeSub   },
-              { label: t.detailFloor, value: "3 / 3",           sub: t.detailFloorSub  },
-              { label: t.detailPrice, value: t.detailPriceVal,  sub: t.detailPriceSub  },
-              { label: t.detailMaint, value: "~332 €/kk",       sub: t.detailMaintSub  },
+              { label: t.detailSize,  value: <>69 m²</>,         sub: t.detailSizeSub   },
+              { label: t.detailFloor, value: <>3 / 3</>,          sub: t.detailFloorSub  },
+              { label: t.detailPrice, value: <>{t.detailPriceVal}</>, sub: t.detailPriceSub  },
+              { label: t.detailMaint, value: <>~332</>,         sub: t.detailMaintSub  },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 text-center shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
-                  <p className="text-slate-500 text-[1.2rem] lg:text-[1.5rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
-                  <p className="text-[3.24rem] lg:text-[4.06rem] font-black text-emerald-700 mb-1 lg:mb-2 whitespace-nowrap leading-none">{item.value}</p>
-                  <p className="text-slate-400 text-[1.2rem] lg:text-[1.5rem] font-medium mt-2">{item.sub}</p>
+                  <p className="text-slate-500 text-[1.14rem] lg:text-[1.43rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
+                  <p className="text-[2.64rem] lg:text-[3.3rem] font-black text-emerald-700 mb-1 lg:mb-2 whitespace-nowrap leading-none text-center">{item.value}</p>
+                  <p className="text-slate-400 text-[1.14rem] lg:text-[1.43rem] font-medium mt-2 text-center">{item.sub}</p>
                 </div>
               </FadeIn>
             ))}
@@ -376,17 +387,19 @@ export default function HomeContent({ lang }: { lang: Lang }) {
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 mb-8 lg:mb-16">
             {[
-              { label: t.grossLabel, value: "8,7–10,0 %", sub: t.grossSub, desc: t.grossDesc },
-              { label: t.rentLabel,  value: "650–750 €",  sub: t.rentSub,  desc: t.rentDesc  },
-              { label: t.netLabel,   value: "4,2–6,2 %", sub: t.netSub,   desc: t.netDesc   },
+              { label: t.grossLabel, value: "9–16 %",     sub: t.grossSub, desc: t.grossDesc },
+              { label: t.rentLabel,  value: "700–1200",   sub: t.rentSub,  desc: t.rentDesc  },
+              { label: t.netLabel,   value: "5–12 %",     sub: t.netSub,   desc: t.netDesc   },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 150}>
                 <div className="relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow text-center">
-                  <div className="absolute top-0 right-0 w-32 h-32 lg:w-40 lg:h-40 bg-emerald-50 rounded-full -translate-y-12 translate-x-12 lg:-translate-y-16 lg:translate-x-16" />
-                  <p className="text-slate-500 text-[1.2rem] lg:text-[1.5rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
-                  <p className="text-[3.24rem] lg:text-[4.06rem] font-black mb-1 text-emerald-700 whitespace-nowrap leading-none">{item.value}</p>
-                  <p className="text-[1.2rem] lg:text-[1.5rem] font-medium mb-4 lg:mb-6 text-slate-400">{item.sub}</p>
-                  <p className="text-[1.05rem] lg:text-[1.2rem] text-slate-600 leading-relaxed">{item.desc}</p>
+                  <div aria-hidden className="absolute top-0 right-0 w-32 h-32 lg:w-40 lg:h-40 bg-emerald-50 rounded-full -translate-y-12 translate-x-12 lg:-translate-y-16 lg:translate-x-16 z-0" />
+                  <div className="relative z-10">
+                    <p className="text-slate-500 text-[1.14rem] lg:text-[1.43rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
+                    <p className="text-[2.93rem] lg:text-[3.67rem] font-black mb-1 text-emerald-700 whitespace-nowrap leading-none">{item.value}</p>
+                    <p className="text-[1.14rem] lg:text-[1.43rem] font-medium mb-4 lg:mb-6 text-slate-400">{item.sub}</p>
+                    <p className="text-[1rem] lg:text-[1.14rem] text-slate-600 leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
               </FadeIn>
             ))}
@@ -411,15 +424,18 @@ export default function HomeContent({ lang }: { lang: Lang }) {
           </FadeIn>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mb-6">
             {[
-              { label: t.yieldScenALabel, details: t.yieldScenADetails, yield: "4,2 %" },
-              { label: t.yieldScenBLabel, details: t.yieldScenBDetails, yield: "4,9 %" },
-              { label: t.yieldScenCLabel, details: t.yieldScenCDetails, yield: "5,6 %" },
+              { label: t.yieldScenALabel, details: t.yieldScenADetails, yield: "5 %" },
+              { label: t.yieldScenBLabel, details: t.yieldScenBDetails, yield: "6 %" },
+              { label: t.yieldScenCLabel, details: t.yieldScenCDetails, yield: "12 %" },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 120}>
-                <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 shadow-lg border border-slate-100 hover:shadow-xl transition-shadow text-center">
-                  <p className="text-slate-500 text-[1.2rem] lg:text-[1.5rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
-                  <p className="text-[3.24rem] lg:text-[4.06rem] font-black mb-1 lg:mb-2 text-emerald-700 whitespace-nowrap leading-none">{item.yield}</p>
-                  <p className="text-slate-400 text-[1.05rem] lg:text-[1.2rem] leading-relaxed mt-2">{item.details}</p>
+                <div className="relative bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 overflow-hidden shadow-lg border border-slate-100 hover:shadow-xl transition-shadow text-center">
+                  <div aria-hidden className="absolute top-0 right-0 w-32 h-32 lg:w-40 lg:h-40 bg-emerald-50 rounded-full -translate-y-12 translate-x-12 lg:-translate-y-16 lg:translate-x-16 z-0" />
+                  <div className="relative z-10">
+                    <p className="text-slate-500 text-[1.14rem] lg:text-[1.43rem] font-semibold mb-3 lg:mb-4">{item.label}</p>
+                    <p className="text-[2.93rem] lg:text-[3.67rem] font-black mb-1 lg:mb-2 text-emerald-700 whitespace-nowrap leading-none">{item.yield}</p>
+                    <p className="text-slate-400 text-[1rem] lg:text-[1.14rem] leading-relaxed mt-2">{item.details}</p>
+                  </div>
                 </div>
               </FadeIn>
             ))}
@@ -655,19 +671,19 @@ export default function HomeContent({ lang }: { lang: Lang }) {
                 icon: "👤",
                 label: t.sellerLabel,
                 lines: [
-                  { text: "Petri Kopsa", href: null },
-                  { text: "petri.kopsa@gmail.com", href: "mailto:petri.kopsa@gmail.com" },
+                  { text: "Petri Kopsa", href: null, small: false },
+                  { text: "petri.kopsa@gmail.com", href: "mailto:petri.kopsa@gmail.com", small: true },
                 ],
               },
               {
                 icon: "📞",
                 label: t.phoneLabel,
-                lines: [{ text: "+358 50 306 0635", href: "tel:+358503060635" }],
+                lines: [{ text: "+358 50 306 0635", href: "tel:+358503060635", small: false }],
               },
               {
                 icon: "✉️",
                 label: t.emailLabel,
-                lines: [{ text: "info@terassitalo.com", href: "mailto:info@terassitalo.com" }],
+                lines: [{ text: "info@terassitalo.com", href: "mailto:info@terassitalo.com", small: false }],
               },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 120}>
@@ -675,15 +691,22 @@ export default function HomeContent({ lang }: { lang: Lang }) {
                   <div className="text-4xl lg:text-5xl">{item.icon}</div>
                   <p className="text-slate-400 text-sm lg:text-xl">{item.label}</p>
                   <div className="flex flex-col gap-1">
-                    {item.lines.map((line) =>
-                      line.href ? (
-                        <a key={line.text} href={line.href} className="text-[0.9rem] lg:text-[1.13rem] font-bold text-amber-400 hover:text-amber-300 transition-colors break-all">
-                          {line.text}
-                        </a>
-                      ) : (
-                        <p key={line.text} className="text-[0.9rem] lg:text-[1.13rem] font-bold text-white break-all">{line.text}</p>
-                      )
-                    )}
+                    {item.lines.map((line) => {
+                      const sizeCls = line.small
+                        ? "text-[0.72rem] lg:text-[0.9rem] whitespace-nowrap"
+                        : "text-[0.9rem] lg:text-[1.13rem] break-all";
+                      if (line.href) {
+                        const colorCls = line.small
+                          ? "text-slate-400 hover:text-slate-300"
+                          : "text-amber-400 hover:text-amber-300";
+                        return (
+                          <a key={line.text} href={line.href} className={`${sizeCls} ${colorCls} font-bold transition-colors`}>
+                            {line.text}
+                          </a>
+                        );
+                      }
+                      return <p key={line.text} className={`${sizeCls} font-bold text-amber-400`}>{line.text}</p>;
+                    })}
                   </div>
                 </div>
               </FadeIn>
