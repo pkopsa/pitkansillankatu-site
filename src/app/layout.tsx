@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 const BASE_URL = "https://pitkansillankatu33.com";
+const AIRBNB_URL = "https://www.airbnb.fi/rooms/1704146913497501882";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -31,14 +32,17 @@ export const metadata: Metadata = {
     "vuokra-asunto yritykselle Kokkola", "kalustettu asunto Kokkola",
     "yritysasunto Kokkola", "lyhytaikainen vuokra Kokkola",
     "työsuhde-asunto Kokkola", "majoitus yrityksille Kokkola",
+    "kesävuokra Kokkola", "loma-asunto Kokkola ydinkeskusta", "Airbnb Kokkola",
     // ── RUOTSI ──
     "lägenhet till salu Karleby", "tvårummare Karleby centrum",
     "investering lägenhet Karleby", "möblerad lägenhet Karleby",
     "hyra lägenhet företag Karleby", "korttidsuthyrning Karleby",
+    "sommarhyra Karleby", "semesterlägenhet Karleby", "Airbnb Karleby",
     // ── ENGLANTI ──
     "apartment for sale Kokkola", "investment property Kokkola",
     "furnished apartment Kokkola", "corporate housing Kokkola",
     "short term rental Kokkola", "serviced apartment Kokkola Finland",
+    "summer rental Kokkola", "holiday apartment Kokkola", "Airbnb Kokkola Finland",
   ],
 
   authors: [{ name: "Petri Kopsa", url: BASE_URL }],
@@ -75,6 +79,7 @@ const jsonLd = {
         "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², ylin kerros, bruttovuokratuotto 8,7–10,0 %. Kalustettavissa yritysvuokraukseen.",
       url: BASE_URL,
       image: `${BASE_URL}/og-image.jpg`,
+      sameAs: [AIRBNB_URL],
       address: {
         "@type": "PostalAddress",
         streetAddress: "Pitkänsillankatu 33 A 13",
@@ -123,6 +128,20 @@ const jsonLd = {
             priceCurrency: "EUR",
             unitCode: "MON",
           },
+          availability: "https://schema.org/InStock",
+          seller: {
+            "@type": "Person",
+            name: "Petri Kopsa",
+            telephone: "+358503060635",
+            email: "petri.kopsa@gmail.com",
+          },
+        },
+        {
+          "@type": "Offer",
+          name: "Kesävuokraus Airbnb:ssä",
+          description:
+            "Lyhytaikainen kalustettu kesävuokraus Kokkolan ydinkeskustassa Airbnb-palvelun kautta.",
+          url: AIRBNB_URL,
           availability: "https://schema.org/InStock",
           seller: {
             "@type": "Person",

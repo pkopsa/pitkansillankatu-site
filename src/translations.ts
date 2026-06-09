@@ -17,6 +17,12 @@ export const translations = {
     heroBtn: "Ota yhteyttä",
     heroScroll: "Tutustu",
 
+    // Airbnb kesäkampanja
+    airbnbBadge: "Kesäkampanja",
+    airbnbTitle: "Kesävuokralle Kokkolan ydinkeskustassa",
+    airbnbText: "Varaa kesäksi – AirBnB palvelun kautta",
+    airbnbBtn: "Varaa Airbnb:ssä",
+
     // Perustiedot
     detailsTitle: "Kohteen tiedot",
     detailSize: "Koko",
@@ -196,6 +202,12 @@ export const translations = {
     heroBtn: "Kontakta oss",
     heroScroll: "Utforska",
 
+    // Airbnb sommarkampanj
+    airbnbBadge: "Sommarkampanj",
+    airbnbTitle: "Sommarhyra i Karleby centrum",
+    airbnbText: "Boka för sommaren – via AirBnB",
+    airbnbBtn: "Boka på Airbnb",
+
     detailsTitle: "Objektinformation",
     detailSize: "Storlek",
     detailSizeSub: "2r + k + bd + wc",
@@ -367,6 +379,12 @@ export const translations = {
     heroPrice: "89 900 €",
     heroBtn: "Contact us",
     heroScroll: "Explore",
+
+    // Airbnb summer campaign
+    airbnbBadge: "Summer campaign",
+    airbnbTitle: "Summer rental in Kokkola city centre",
+    airbnbText: "Book for the summer – via Airbnb",
+    airbnbBtn: "Book on Airbnb",
 
     detailsTitle: "Property Details",
     detailSize: "Size",

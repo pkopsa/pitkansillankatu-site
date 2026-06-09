@@ -252,6 +252,31 @@ export default function HomeContent({ lang }: { lang: Lang }) {
         </a>
       </section>
 
+      {/* ── AIRBNB KESÄKAMPANJA ─────────────────────────────────────── */}
+      <section className="py-8 px-4 lg:py-12 lg:px-8 bg-gradient-to-r from-amber-500 to-amber-400">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
+          <div className="flex items-center gap-4 lg:gap-6">
+            <span className="text-5xl lg:text-7xl shrink-0" aria-hidden>☀️</span>
+            <div>
+              <p className="text-xs lg:text-sm font-bold tracking-widest uppercase text-slate-900/60 mb-1">{t.airbnbBadge}</p>
+              <h2 className="text-2xl lg:text-4xl font-black text-slate-900 leading-tight">{t.airbnbTitle}</h2>
+              <p className="text-sm lg:text-xl text-slate-900/80 mt-1 lg:mt-2">{t.airbnbText}</p>
+            </div>
+          </div>
+          <a
+            href="https://www.airbnb.fi/rooms/1704146913497501882"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-base lg:text-xl font-bold px-8 lg:px-12 py-4 lg:py-5 rounded-full transition-colors duration-300 shadow-xl shrink-0 whitespace-nowrap"
+          >
+            {t.airbnbBtn}
+            <svg viewBox="0 0 24 24" className="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
       {/* ── PERUSTIEDOT ──────────────────────────────────────────────── */}
       <section className="py-14 px-4 lg:py-28 lg:px-8 bg-slate-50">
         <div className="max-w-6xl mx-auto">
