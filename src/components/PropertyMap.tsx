@@ -36,10 +36,10 @@ export default function PropertyMap() {
         attributionControl: true,
       });
 
-      // Voyager — värikäs ja selkeä, hyvä kontrasti
-      L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-        attribution: '&copy; <a href="https://carto.com/">CARTO</a> &copy; <a href="https://www.openstreetmap.org/copyright">OSM</a>',
-        maxZoom: 20,
+      // OpenStreetMap-vakiokartta — ei vaadi API-avainta (CARTOn ilmaistiilet vaativat avaimen 10/2026 alkaen)
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        maxZoom: 19,
       }).addTo(map);
 
       // Oma tyylitelty markeri
