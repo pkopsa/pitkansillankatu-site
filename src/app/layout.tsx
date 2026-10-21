@@ -32,17 +32,17 @@ export const metadata: Metadata = {
     "vuokra-asunto yritykselle Kokkola", "kalustettu asunto Kokkola",
     "yritysasunto Kokkola", "lyhytaikainen vuokra Kokkola",
     "työsuhde-asunto Kokkola", "majoitus yrityksille Kokkola",
-    "kesävuokra Kokkola", "loma-asunto Kokkola ydinkeskusta", "Airbnb Kokkola",
+    "majoitus Kokkola keskusta", "loma-asunto Kokkola ydinkeskusta", "Airbnb Kokkola",
     // ── RUOTSI ──
     "lägenhet till salu Karleby", "tvårummare Karleby centrum",
     "investering lägenhet Karleby", "möblerad lägenhet Karleby",
     "hyra lägenhet företag Karleby", "korttidsuthyrning Karleby",
-    "sommarhyra Karleby", "semesterlägenhet Karleby", "Airbnb Karleby",
+    "boende Karleby centrum", "semesterlägenhet Karleby", "Airbnb Karleby",
     // ── ENGLANTI ──
     "apartment for sale Kokkola", "investment property Kokkola",
     "furnished apartment Kokkola", "corporate housing Kokkola",
     "short term rental Kokkola", "serviced apartment Kokkola Finland",
-    "summer rental Kokkola", "holiday apartment Kokkola", "Airbnb Kokkola Finland",
+    "accommodation Kokkola city centre", "holiday apartment Kokkola", "Airbnb Kokkola Finland",
   ],
 
   authors: [{ name: "Petri Kopsa", url: BASE_URL }],
@@ -76,7 +76,7 @@ const jsonLd = {
       "@id": `${BASE_URL}/#apartment`,
       name: "Pitkänsillankatu 33 A 13",
       description:
-        "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², ylin kerros, bruttovuokratuotto 8,7–10,0 %. Kalustettavissa yritysvuokraukseen.",
+        "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², ylin kerros, bruttovuokratuotto 8,8–10,1 %. Kalustettavissa yritysvuokraukseen.",
       url: BASE_URL,
       image: `${BASE_URL}/og-image.jpg`,
       sameAs: [AIRBNB_URL],
@@ -106,14 +106,20 @@ const jsonLd = {
         {
           "@type": "Offer",
           name: "Myynti",
-          price: 89900,
+          price: 89000,
           priceCurrency: "EUR",
           availability: "https://schema.org/InStock",
-          seller: {
-            "@type": "Person",
-            name: "Petri Kopsa",
-            telephone: "+358503060635",
-            email: "petri.kopsa@gmail.com",
+          offeredBy: {
+            "@type": "RealEstateAgent",
+            name: "Asunto Björndahl Kokkola LKV Oy",
+            url: "https://www.asuntobjorndahl.fi",
+            employee: {
+              "@type": "Person",
+              name: "Petri Kaskilahti",
+              jobTitle: "Kiinteistönvälittäjä LKV",
+              telephone: "+358401480636",
+              email: "petri@asuntobjorndahl.fi",
+            },
           },
         },
         {
@@ -138,9 +144,9 @@ const jsonLd = {
         },
         {
           "@type": "Offer",
-          name: "Kesävuokraus Airbnb:ssä",
+          name: "Lyhytaikainen majoitus Airbnb:ssä",
           description:
-            "Lyhytaikainen kalustettu kesävuokraus Kokkolan ydinkeskustassa Airbnb-palvelun kautta.",
+            "Kalustettu kaksio Kokkolan ydinkeskustassa Airbnb-palvelun kautta. Viikon varaus −15 %, kuukauden varaus −50 %, vähintään 2 vrk.",
           url: AIRBNB_URL,
           availability: "https://schema.org/InStock",
           seller: {

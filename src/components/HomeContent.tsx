@@ -86,6 +86,9 @@ const kalustetutImages = [
   { src: "/kalustettu-eteinen.webp",     alt: "Eteinen – kaapistot ja spottivalot" },
 ];
 
+// Myynti-ilmoitus: toistaiseksi välittäjän etusivu, vaihdetaan Etuovi-ilmoitukseen kun se julkaistaan
+const BROKER_LISTING_URL = "https://www.asuntobjorndahl.fi";
+
 const PAUSE_MS = 2000;
 const LANGS_CYCLE: Lang[] = ["fi", "sv", "en"];
 const LANG_PATH: Record<Lang, string> = { fi: "/", sv: "/sv", en: "/en" };
@@ -252,11 +255,11 @@ export default function HomeContent({ lang }: { lang: Lang }) {
         </a>
       </section>
 
-      {/* ── AIRBNB KESÄKAMPANJA ─────────────────────────────────────── */}
+      {/* ── AIRBNB-MAJOITUS ──────────────────────────────────────────── */}
       <section className="py-8 px-4 lg:py-12 lg:px-8 bg-gradient-to-r from-amber-500 to-amber-400">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
           <div className="flex items-center gap-4 lg:gap-6">
-            <span className="text-5xl lg:text-7xl shrink-0" aria-hidden>☀️</span>
+            <span className="text-5xl lg:text-7xl shrink-0" aria-hidden>🏡</span>
             <div>
               <p className="text-xs lg:text-sm font-bold tracking-widest uppercase text-slate-900/60 mb-1">{t.airbnbBadge}</p>
               <h2 className="text-2xl lg:text-4xl font-black text-slate-900 leading-tight">{t.airbnbTitle}</h2>
@@ -274,6 +277,24 @@ export default function HomeContent({ lang }: { lang: Lang }) {
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </a>
+        </div>
+        <div className="max-w-6xl mx-auto mt-6 lg:mt-8 flex flex-col items-center lg:items-start gap-3 text-center lg:text-left">
+          <ul className="flex flex-wrap justify-center lg:justify-start gap-2 lg:gap-3">
+            {t.airbnbTerms.map((term) => (
+              <li key={term} className="bg-slate-900/10 text-slate-900 text-sm lg:text-lg font-bold px-4 py-1.5 rounded-full">
+                {term}
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm lg:text-base text-slate-900/80">{t.airbnbNote}</p>
+          <p className="text-sm lg:text-base text-slate-900/80">
+            <span className="font-bold text-slate-900">{t.airbnbLongTerm}</span>{" "}
+            Petri Kopsa,{" "}
+            <a href="tel:+358503060635" className="font-bold text-slate-900 underline underline-offset-2 whitespace-nowrap">050 306 0635</a>
+            {" · "}
+            Petri Kaskilahti, Asunto Björndahl LKV,{" "}
+            <a href="tel:+358401480636" className="font-bold text-slate-900 underline underline-offset-2 whitespace-nowrap">040 148 0636</a>
+          </p>
         </div>
       </section>
 
@@ -361,7 +382,6 @@ export default function HomeContent({ lang }: { lang: Lang }) {
                 {[
                   { label: t.agmDoc1, href: "/docs/tilinpaatos2025.pdf" },
                   { label: t.agmDoc2, href: "/docs/talousarvio2026.pdf" },
-                  { label: t.agmDoc3, href: "/docs/yhtiokokouskutsu2026.pdf" },
                   { label: t.agmDoc4, href: "/docs/kunnossapitotarveselvitys2026.pdf" },
                 ].map((doc) => (
                   <a
@@ -673,48 +693,45 @@ export default function HomeContent({ lang }: { lang: Lang }) {
             <p className="text-base lg:text-2xl text-slate-300 mb-10 lg:mb-20 leading-relaxed">{t.contactSub}</p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 items-stretch text-left">
             {[
               {
-                icon: "👤",
-                label: t.sellerLabel,
-                lines: [
-                  { text: "Petri Kopsa", href: null, small: false },
-                  { text: "petri.kopsa@gmail.com", href: "mailto:petri.kopsa@gmail.com", small: true },
-                ],
+                icon: "🏷️",
+                label: t.contactSaleLabel,
+                name: "Petri Kaskilahti",
+                sub: "Kiinteistönvälittäjä LKV · Asunto Björndahl Kokkola LKV Oy",
+                phone: { text: "040 148 0636", href: "tel:+358401480636" },
+                emails: ["petri@asuntobjorndahl.fi"],
+                button: { text: t.saleListingBtn, href: BROKER_LISTING_URL, external: true },
               },
               {
-                icon: "📞",
-                label: t.phoneLabel,
-                lines: [{ text: "+358 50 306 0635", href: "tel:+358503060635", small: false }],
-              },
-              {
-                icon: "✉️",
-                label: t.emailLabel,
-                lines: [{ text: "info@terassitalo.com", href: "mailto:info@terassitalo.com", small: false }],
+                icon: "🔑",
+                label: t.contactRentLabel,
+                name: "Petri Kopsa",
+                sub: "Terassitalo",
+                phone: { text: "050 306 0635", href: "tel:+358503060635" },
+                emails: ["info@terassitalo.com", "petri.kopsa@gmail.com"],
+                button: { text: t.contactFormBtn, href: "#lomake", external: false },
               },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 120}>
-                <div className="bg-slate-700 hover:bg-slate-600 border border-white/10 rounded-2xl lg:rounded-3xl p-6 lg:p-10 transition-colors duration-300 flex flex-col gap-2">
-                  <div className="text-4xl lg:text-5xl">{item.icon}</div>
-                  <p className="text-slate-400 text-sm lg:text-xl">{item.label}</p>
-                  <div className="flex flex-col gap-1">
-                    {item.lines.map((line) => {
-                      const sizeCls = line.small
-                        ? "text-[0.72rem] lg:text-[0.9rem] whitespace-nowrap"
-                        : "text-[0.9rem] lg:text-[1.13rem] break-all";
-                      if (line.href) {
-                        const colorCls = line.small
-                          ? "text-slate-400 hover:text-slate-300"
-                          : "text-amber-400 hover:text-amber-300";
-                        return (
-                          <a key={line.text} href={line.href} className={`${sizeCls} ${colorCls} font-bold transition-colors`}>
-                            {line.text}
-                          </a>
-                        );
-                      }
-                      return <p key={line.text} className={`${sizeCls} font-bold text-amber-400`}>{line.text}</p>;
-                    })}
+                <div className="bg-slate-700 border border-white/10 rounded-2xl lg:rounded-3xl p-6 lg:p-10 flex flex-col gap-1 h-full">
+                  <div className="text-4xl lg:text-5xl mb-2" aria-hidden>{item.icon}</div>
+                  <p className="text-slate-400 text-sm lg:text-lg uppercase tracking-wider">{item.label}</p>
+                  <p className="text-lg lg:text-2xl font-bold text-white">{item.name}</p>
+                  <p className="text-slate-300 text-sm lg:text-base mb-2">{item.sub}</p>
+                  <a href={item.phone.href} className="text-base lg:text-lg font-bold text-amber-400 hover:text-amber-300 transition-colors">{item.phone.text}</a>
+                  {item.emails.map((email) => (
+                    <a key={email} href={`mailto:${email}`} className="text-base lg:text-lg font-bold text-amber-400 hover:text-amber-300 transition-colors break-all">{email}</a>
+                  ))}
+                  <div className="mt-auto pt-4">
+                    <a
+                      href={item.button.href}
+                      {...(item.button.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="inline-block bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold text-base px-6 py-3 rounded-full transition-colors"
+                    >
+                      {item.button.text}
+                    </a>
                   </div>
                 </div>
               </FadeIn>
@@ -732,10 +749,10 @@ export default function HomeContent({ lang }: { lang: Lang }) {
                 <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">{t.qrCaption}</p>
               </div>
 
-              {/* Etuovi */}
+              {/* Myynti-ilmoitus — toistaiseksi välittäjän sivustolle, Etuovi-linkki päivitetään myöhemmin */}
               <div className="flex flex-col items-center gap-3 w-40">
                 <a
-                  href="https://www.etuovi.com/kohde/w24967"
+                  href={BROKER_LISTING_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-40 h-40 hover:shadow-xl transition-shadow group"
@@ -751,7 +768,7 @@ export default function HomeContent({ lang }: { lang: Lang }) {
                     {t.etuoviOpen}
                   </span>
                 </a>
-                <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">Etuovi</p>
+                <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">Asunto Björndahl</p>
               </div>
 
               {/* Retta */}
@@ -787,27 +804,6 @@ export default function HomeContent({ lang }: { lang: Lang }) {
                   </span>
                 </a>
                 <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">{t.maintCaption}</p>
-              </div>
-
-              {/* Yritysasunnoksi — Manus-markkinointisivu */}
-              <div className="flex flex-col items-center gap-3 w-40">
-                <a
-                  href="https://pitkanshopv2.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 rounded-2xl p-4 shadow-lg w-40 h-40 hover:shadow-xl transition-all duration-300 group"
-                >
-                  <svg viewBox="0 0 24 24" className="w-10 h-10 shrink-0" fill="none" stroke="#1e293b" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.44A1.5 1.5 0 015.378 3h13.243a1.5 1.5 0 011.06.44l1.19 1.189a3 3 0 01-.621 4.72m-13.5 8.65h3.75a.75.75 0 00.75-.75V13.5a.75.75 0 00-.75-.75H6.75a.75.75 0 00-.75.75v3.75c0 .415.336.75.75.75z" />
-                  </svg>
-                  <span className="text-slate-900 font-black text-base text-center leading-tight">
-                    {t.corpHousingLine1}<br />{t.corpHousingLine2}
-                  </span>
-                  <span className="text-slate-700 font-semibold text-sm group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                    {t.corpHousingOpen}
-                  </span>
-                </a>
-                <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">{t.corpHousingCaption}</p>
               </div>
 
             </div>

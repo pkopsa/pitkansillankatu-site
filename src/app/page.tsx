@@ -4,9 +4,9 @@ import HomeContent from "@/components/HomeContent";
 const BASE_URL = "https://pitkansillankatu33.com";
 
 export const metadata: Metadata = {
-  title: { absolute: "Kaksio Kokkolan ydinkeskustassa, 89 900 € — Pitkänsillankatu 33" },
+  title: { absolute: "Kaksio Kokkolan ydinkeskustassa, 89 000 € — Pitkänsillankatu 33" },
   description:
-    "Muuttovalmis 69 m² kaksio Kokkolan ydinkeskustassa. Myydään 89 900 € tai vuokrataan yrityksille kalustettuna. Bruttovuokratuotto 8,7–10,0 %. Ylin kerros, BioRexin vieressä.",
+    "Muuttovalmis 69 m² kaksio Kokkolan ydinkeskustassa. Myydään 89 000 € tai vuokrataan yrityksille kalustettuna. Bruttovuokratuotto 8,8–10,1 %. Ylin kerros, BioRexin vieressä.",
   alternates: {
     canonical: BASE_URL,
     languages: {
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     alternateLocale: ["sv_FI", "en_US"],
     url: BASE_URL,
     siteName: "Pitkänsillankatu 33 – Kokkola",
-    title: "Kaksio Kokkolan ydinkeskustassa, 89 900 €",
+    title: "Kaksio Kokkolan ydinkeskustassa, 89 000 €",
     description:
-      "69 m² kaksio Kokkolan ydinkeskustassa. Myynti 89 900 € tai yritysvuokraus kalustettuna. Ylin kerros, BioRexin vieressä.",
+      "69 m² kaksio Kokkolan ydinkeskustassa. Myynti 89 000 € tai yritysvuokraus kalustettuna. Ylin kerros, BioRexin vieressä.",
     images: [
       {
         url: "/og-image.jpg",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kaksio Kokkolan ydinkeskustassa, 89 900 €",
+    title: "Kaksio Kokkolan ydinkeskustassa, 89 000 €",
     description: "69 m² kaksio Kokkolan ydinkeskustassa. Myynti tai yritysvuokraus.",
     images: ["/og-image.jpg"],
   },

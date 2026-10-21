@@ -11,16 +11,19 @@ export const translations = {
     heroLine1: "Valoisa koti tai",
     heroLine2: "huipputuottava\nsijoitus",
     heroLine3: "ydinkeskustasta",
-    heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Ylin kerros · 89 900 €",
+    heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Ylin kerros · 89 000 €",
     heroAddress: "Pitkänsillankatu 33 A 13 · 69 m² · Ylin kerros",
-    heroPrice: "89 900 €",
+    heroPrice: "89 000 €",
     heroBtn: "Ota yhteyttä",
     heroScroll: "Tutustu",
 
-    // Airbnb kesäkampanja
-    airbnbBadge: "Kesäkampanja",
-    airbnbTitle: "Kesävuokralle Kokkolan ydinkeskustassa",
-    airbnbText: "Varaa kesäksi – AirBnB palvelun kautta",
+    // Airbnb-majoitus
+    airbnbBadge: "Lyhytaikainen majoitus",
+    airbnbTitle: "Varaa huoneisto Airbnb:n kautta",
+    airbnbText: "Kalustettu 69 m² kaksio Kokkolan ydinkeskustassa – työmatkalle, remontin ajaksi tai pidemmälle vierailulle.",
+    airbnbTerms: ["1 kk varaus −50 %", "7 vrk varaus −15 %", "Vähintään 2 vrk", "Varaus viim. 2 pv ennen saapumista"],
+    airbnbNote: "Alennukset Airbnb:n listahinnoista. Lyhytaikaiset varaukset vain Airbnb:n kautta.",
+    airbnbLongTerm: "Pidempiaikainen vuokraus:",
     airbnbBtn: "Varaa Airbnb:ssä",
 
     // Perustiedot
@@ -30,7 +33,7 @@ export const translations = {
     detailFloor: "Kerros",
     detailFloorSub: "Ei ylänaapuria",
     detailPrice: "Hinta",
-    detailPriceVal: "89 900",
+    detailPriceVal: "89 000",
     detailPriceSub: "Velaton",
     detailMaint: "Vastike",
     detailMaintSub: "1.7.2026 alkaen",
@@ -47,7 +50,7 @@ export const translations = {
     netLabel: "Nettotuotto",
     netSub: "vuodessa",
     netDesc: "Vastikekulujen jälkeen laskettuna",
-    investorSummary: "Hankintahinta 89 900 € ja kokonaisvastike arviolta ~332 €/kk (1.7.2026 alkaen) tekevät tästä yhden Kokkolan houkuttelevimmista sijoitusasunnoista.",
+    investorSummary: "Hankintahinta 89 000 € ja kokonaisvastike arviolta ~332 €/kk (1.7.2026 alkaen) tekevät tästä yhden Kokkolan houkuttelevimmista sijoitusasunnoista.",
 
     // Muuttovalmis
     readyTitle: "Muuttovalmis & freesi",
@@ -77,13 +80,14 @@ export const translations = {
     // Yhteystiedot
     contactBadge: "Kiinnostuitko?",
     contactTitle: "Ota yhteyttä",
-    contactSub: "Varaa näyttöaika tai pyydä lisätietoja — vastataan nopeasti.",
-    sellerLabel: "Myyjä",
-    phoneLabel: "Puhelin",
-    emailLabel: "Sähköposti",
+    contactSub: "Kaupasta välittäjälle, vuokrauksesta ja esittelyistä suoraan omistajalle — vastaamme nopeasti.",
+    contactSaleLabel: "Myynti",
+    contactRentLabel: "Vuokraus ja esittelyt",
+    saleListingBtn: "Katso myynti-ilmoitus",
+    contactFormBtn: "Lähetä viesti",
     qrCaption: "Skannaa ja varaa",
     etuoviLine1: "Katso ilmoitus",
-    etuoviLine2: "Etuovessa",
+    etuoviLine2: "välittäjältä",
     etuoviOpen: "Avaa →",
     rentalLine1: "Vuokrataan",
     rentalLine2: "yrityksille",
@@ -99,7 +103,7 @@ export const translations = {
     maintLine1: "Kunnossapito-",
     maintLine2: "tarveselvitys",
     maintDownload: "Lataa PDF ↓",
-    footer: "Pitkänsillankatu 33 A 13 · 67100 Kokkola · 69 m² · 89 900 €",
+    footer: "Pitkänsillankatu 33 A 13 · 67100 Kokkola · 69 m² · 89 000 €",
 
     // Yhteydenottolomake
     formBadge: "Lomake",
@@ -118,6 +122,15 @@ export const translations = {
     formSuccess: "Viesti lähetetty!",
     formSuccessSub: "Kiitos yhteydenotosta. Vastataan sinulle pian.",
     formSuccessBtn: "Lähetä uusi viesti",
+    formError: "Lähetys epäonnistui. Yritä uudelleen.",
+    formSubjectLabel: "Asiasi",
+    formSubjectDefault: "Valitse aihe…",
+    formSubjectBuy: "Olen kiinnostunut ostamaan asunnon",
+    formSubjectRentLong: "Haluan vuokrata asunnon pidemmäksi aikaa",
+    formSubjectRentShort: "Kysymys lyhytaikaisesta majoituksesta (Airbnb)",
+    formSubjectViewing: "Haluan varata esittelyn",
+    formBookViewing: "Varaa virtuaalinen tai fyysinen esittely",
+    formOr: "tai",
 
     // Vastikkeet
     chargesTitle: "Vastikkeet 1.7.2026 alkaen",
@@ -127,7 +140,6 @@ export const translations = {
     agmDocsDesc: "Avoimuuden nimissä — kaikki taloyhtiön taloudelliset tiedot saatavilla:",
     agmDoc1: "Tilinpäätös 2025",
     agmDoc2: "Talousarvio 2026",
-    agmDoc3: "Yhtiökokouksen kutsu ja esityslista",
     agmDoc4: "Kunnossapitotarveselvitys 2026",
     chargesMaintLabel: "Hoitovastike",
     chargesMaintRate: "3,90",
@@ -146,13 +158,13 @@ export const translations = {
 
     // Tuottolaskelma
     yieldTitle: "Tuottolaskelma sijoittajalle",
-    yieldBasis: "Huoneistoala 69 m² · Kokonaisvastike 1.7.2026 alkaen arviolta ~332 €/kk (hoito 269 + RL2 ~33 + RL3 ~30) · Velaton hinta 89 900 €",
+    yieldBasis: "Huoneistoala 69 m² · Kokonaisvastike 1.7.2026 alkaen arviolta ~332 €/kk (hoito 269 + RL2 ~33 + RL3 ~30) · Velaton hinta 89 000 €",
     yieldScenALabel: "Skenaario A — Konservatiivinen",
-    yieldScenADetails: "Vuokra 700 €/kk − kokonaisvastike 332 € = nettovuokra ~368 €/kk · Kassavirta ~4 416 € / 89 900 € = ~5 % · Sijoitustuotto ~6 %",
+    yieldScenADetails: "Vuokra 700 €/kk − kokonaisvastike 332 € = nettovuokra ~368 €/kk · Kassavirta ~4 416 € / 89 000 € = ~5 % · Sijoitustuotto ~6 %",
     yieldScenBLabel: "Skenaario B — Markkinataso",
-    yieldScenBDetails: "Vuokra 750 €/kk − kokonaisvastike 332 € = nettovuokra ~418 €/kk · Kassavirta ~5 016 € / 89 900 € = ~6 % · Sijoitustuotto ~6 %",
+    yieldScenBDetails: "Vuokra 750 €/kk − kokonaisvastike 332 € = nettovuokra ~418 €/kk · Kassavirta ~5 016 € / 89 000 € = ~6 % · Sijoitustuotto ~6 %",
     yieldScenCLabel: "Skenaario C — Kalustettuna yrityksille",
-    yieldScenCDetails: "Vuokra 1200 €/kk − kokonaisvastike 332 € = nettovuokra ~868 €/kk · Kassavirta ~10 416 € / 89 900 € = ~12 % · Sijoitustuotto ~12 %",
+    yieldScenCDetails: "Vuokra 1200 €/kk − kokonaisvastike 332 € = nettovuokra ~868 €/kk · Kassavirta ~10 416 € / 89 000 € = ~12 % · Sijoitustuotto ~12 %",
     yieldDisclaimer: "Pääomavastikkeiden tarkka osuus vahvistetaan isännöitsijäntodistuksesta. Tuottolaskelma on suuntaa-antava ennen veroja.",
 
     // Tulevat remontit
@@ -180,12 +192,6 @@ export const translations = {
     locationTitle: "Kohteen sijainti",
     locationSub: "Pitkänsillankatu 33, 67100 Kokkola — BioRexin vieressä",
     locationOpenMaps: "Avaa Google Mapsissa →",
-
-    // Yritysasuntolaatikko (Manus-markkinointisivu)
-    corpHousingLine1: "Yritys-",
-    corpHousingLine2: "asunnoksi",
-    corpHousingOpen: "Avaa →",
-    corpHousingCaption: "Yritysasunnoksi",
   },
 
   sv: {
@@ -196,16 +202,19 @@ export const translations = {
     heroLine1: "Ett ljust hem eller",
     heroLine2: "toppavkastande\ninvestering",
     heroLine3: "i stadskärnan",
-    heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Översta våningen · 89 900 €",
+    heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Översta våningen · 89 000 €",
     heroAddress: "Pitkänsillankatu 33 A 13 · 69 m² · Översta våningen",
-    heroPrice: "89 900 €",
+    heroPrice: "89 000 €",
     heroBtn: "Kontakta oss",
     heroScroll: "Utforska",
 
-    // Airbnb sommarkampanj
-    airbnbBadge: "Sommarkampanj",
-    airbnbTitle: "Sommarhyra i Karleby centrum",
-    airbnbText: "Boka för sommaren – via AirBnB",
+    // Airbnb-boende
+    airbnbBadge: "Korttidsboende",
+    airbnbTitle: "Boka lägenheten via Airbnb",
+    airbnbText: "Möblerad tvåa på 69 m² i Karlebys stadskärna – för arbetsresor, under renovering eller för ett längre besök.",
+    airbnbTerms: ["1 mån bokning −50 %", "7 dygn bokning −15 %", "Minst 2 dygn", "Boka senast 2 dagar före ankomst"],
+    airbnbNote: "Rabatterna gäller Airbnbs listpriser. Korttidsbokningar endast via Airbnb.",
+    airbnbLongTerm: "Längre uthyrning:",
     airbnbBtn: "Boka på Airbnb",
 
     detailsTitle: "Objektinformation",
@@ -214,7 +223,7 @@ export const translations = {
     detailFloor: "Våning",
     detailFloorSub: "Ingen granne ovan",
     detailPrice: "Pris",
-    detailPriceVal: "89 900",
+    detailPriceVal: "89 000",
     detailPriceSub: "Skuldfritt",
     detailMaint: "Vederlag",
     detailMaintSub: "fr.o.m. 1.7.2026",
@@ -230,7 +239,7 @@ export const translations = {
     netLabel: "Nettoavkastning",
     netSub: "per år",
     netDesc: "Beräknat efter vederlagsavgifter",
-    investorSummary: "Anskaffningspriset 89 900 € och totalt vederlag uppskattat till ~332 €/mån (fr.o.m. 1.7.2026) gör detta till en av Karlebys mest attraktiva investeringslägenheter.",
+    investorSummary: "Anskaffningspriset 89 000 € och totalt vederlag uppskattat till ~332 €/mån (fr.o.m. 1.7.2026) gör detta till en av Karlebys mest attraktiva investeringslägenheter.",
 
     readyTitle: "Inflyttningsklar & fräsch",
     readySub: "Inget renoveringsbehov — du kan hyra ut eller flytta in direkt",
@@ -256,13 +265,14 @@ export const translations = {
 
     contactBadge: "Intresserad?",
     contactTitle: "Kontakta oss",
-    contactSub: "Boka en visning eller be om mer information — vi svarar snabbt.",
-    sellerLabel: "Säljare",
-    phoneLabel: "Telefon",
-    emailLabel: "E-post",
+    contactSub: "Om köpet till mäklaren, om hyra och visningar direkt till ägaren — vi svarar snabbt.",
+    contactSaleLabel: "Försäljning",
+    contactRentLabel: "Uthyrning och visningar",
+    saleListingBtn: "Se försäljningsannonsen",
+    contactFormBtn: "Skicka meddelande",
     qrCaption: "Skanna och boka",
     etuoviLine1: "Se annonsen",
-    etuoviLine2: "på Etuovi",
+    etuoviLine2: "hos mäklaren",
     etuoviOpen: "Öppna →",
     rentalLine1: "Uthyres",
     rentalLine2: "till företag",
@@ -278,7 +288,7 @@ export const translations = {
     maintLine1: "Underhålls-",
     maintLine2: "utredning",
     maintDownload: "Ladda PDF ↓",
-    footer: "Pitkänsillankatu 33 A 13 · 67100 Karleby · 69 m² · 89 900 €",
+    footer: "Pitkänsillankatu 33 A 13 · 67100 Karleby · 69 m² · 89 000 €",
 
     formBadge: "Formulär",
     formTitle: "Skicka meddelande",
@@ -296,6 +306,15 @@ export const translations = {
     formSuccess: "Meddelande skickat!",
     formSuccessSub: "Tack för att du kontaktade oss. Vi återkommer snart.",
     formSuccessBtn: "Skicka nytt meddelande",
+    formError: "Sändningen misslyckades. Försök igen.",
+    formSubjectLabel: "Ditt ärende",
+    formSubjectDefault: "Välj ämne…",
+    formSubjectBuy: "Jag är intresserad av att köpa lägenheten",
+    formSubjectRentLong: "Jag vill hyra lägenheten för en längre tid",
+    formSubjectRentShort: "Fråga om korttidsboende (Airbnb)",
+    formSubjectViewing: "Jag vill boka en visning",
+    formBookViewing: "Boka virtuell eller fysisk visning",
+    formOr: "eller",
 
     // Avgifter
     chargesTitle: "Avgifter fr.o.m. 1.7.2026",
@@ -305,7 +324,6 @@ export const translations = {
     agmDocsDesc: "I transparensens anda — all ekonomisk information om bostadsbolaget tillgänglig:",
     agmDoc1: "Bokslut 2025",
     agmDoc2: "Budget 2026",
-    agmDoc3: "Bolagsstämmans kallelse och föredragningslista",
     agmDoc4: "Underhållsbehovsutredning 2026",
     chargesMaintLabel: "Underhållsvederlag",
     chargesMaintRate: "3,90",
@@ -324,13 +342,13 @@ export const translations = {
 
     // Avkastningsberäkning
     yieldTitle: "Avkastningsberäkning för investeraren",
-    yieldBasis: "Lägenhetsyta 69 m² · Totalt vederlag fr.o.m. 1.7.2026 ca ~332 €/mån (underhåll 269 + RL2 ~33 + RL3 ~30) · Skuldfritt pris 89 900 €",
+    yieldBasis: "Lägenhetsyta 69 m² · Totalt vederlag fr.o.m. 1.7.2026 ca ~332 €/mån (underhåll 269 + RL2 ~33 + RL3 ~30) · Skuldfritt pris 89 000 €",
     yieldScenALabel: "Scenario A — Konservativt",
-    yieldScenADetails: "Hyra 700 €/mån − totalt vederlag 332 € = nettohyra ~368 €/mån · Kassaflöde ~4 416 € / 89 900 € = ~5 % · Investeringsavk. ~6 %",
+    yieldScenADetails: "Hyra 700 €/mån − totalt vederlag 332 € = nettohyra ~368 €/mån · Kassaflöde ~4 416 € / 89 000 € = ~5 % · Investeringsavk. ~6 %",
     yieldScenBLabel: "Scenario B — Marknadsnivå",
-    yieldScenBDetails: "Hyra 750 €/mån − totalt vederlag 332 € = nettohyra ~418 €/mån · Kassaflöde ~5 016 € / 89 900 € = ~6 % · Investeringsavk. ~6 %",
+    yieldScenBDetails: "Hyra 750 €/mån − totalt vederlag 332 € = nettohyra ~418 €/mån · Kassaflöde ~5 016 € / 89 000 € = ~6 % · Investeringsavk. ~6 %",
     yieldScenCLabel: "Scenario C — Möblerat för företag",
-    yieldScenCDetails: "Hyra 1200 €/mån − totalt vederlag 332 € = nettohyra ~868 €/mån · Kassaflöde ~10 416 € / 89 900 € = ~12 % · Investeringsavk. ~12 %",
+    yieldScenCDetails: "Hyra 1200 €/mån − totalt vederlag 332 € = nettohyra ~868 €/mån · Kassaflöde ~10 416 € / 89 000 € = ~12 % · Investeringsavk. ~12 %",
     yieldDisclaimer: "Den exakta andelen kapitalvederlag bekräftas i förvaltarintyget. Avkastningsberäkningen är vägledande före skatt.",
 
     // Kommande renoveringar
@@ -358,12 +376,6 @@ export const translations = {
     locationTitle: "Objektets läge",
     locationSub: "Pitkänsillankatu 33, 67100 Karleby — bredvid BioRex",
     locationOpenMaps: "Öppna i Google Maps →",
-
-    // Företagsboende (Manus-marknadsföringssida)
-    corpHousingLine1: "Företags-",
-    corpHousingLine2: "boende",
-    corpHousingOpen: "Öppna →",
-    corpHousingCaption: "Företagsboende",
   },
 
   en: {
@@ -374,16 +386,19 @@ export const translations = {
     heroLine1: "A bright home or",
     heroLine2: "top-yield\ninvestment",
     heroLine3: "in the city centre",
-    heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Top Floor · €89,900",
+    heroSub: "Pitkänsillankatu 33 A 13 · 69 m² · Top Floor · €89,000",
     heroAddress: "Pitkänsillankatu 33 A 13 · 69 m² · Top floor",
-    heroPrice: "89 900 €",
+    heroPrice: "89 000 €",
     heroBtn: "Contact us",
     heroScroll: "Explore",
 
-    // Airbnb summer campaign
-    airbnbBadge: "Summer campaign",
-    airbnbTitle: "Summer rental in Kokkola city centre",
-    airbnbText: "Book for the summer – via Airbnb",
+    // Airbnb stays
+    airbnbBadge: "Short stays",
+    airbnbTitle: "Book the apartment on Airbnb",
+    airbnbText: "Furnished 69 m² apartment in Kokkola city centre – for business trips, renovations or longer visits.",
+    airbnbTerms: ["1-month stay −50%", "7-night stay −15%", "Minimum 2 nights", "Book at least 2 days before arrival"],
+    airbnbNote: "Discounts off Airbnb list prices. Short-term bookings only via Airbnb.",
+    airbnbLongTerm: "Long-term rental:",
     airbnbBtn: "Book on Airbnb",
 
     detailsTitle: "Property Details",
@@ -392,7 +407,7 @@ export const translations = {
     detailFloor: "Floor",
     detailFloorSub: "No upstairs neighbour",
     detailPrice: "Price",
-    detailPriceVal: "89,900",
+    detailPriceVal: "89,000",
     detailPriceSub: "Debt-free",
     detailMaint: "Maintenance",
     detailMaintSub: "from 1 July 2026",
@@ -408,7 +423,7 @@ export const translations = {
     netLabel: "Net yield",
     netSub: "per year",
     netDesc: "Calculated after maintenance fees",
-    investorSummary: "The acquisition price of €89,900 and estimated total charge of ~€332/mo (from 1 July 2026) make this one of Kokkola's most attractive investment apartments.",
+    investorSummary: "The acquisition price of €89,000 and estimated total charge of ~€332/mo (from 1 July 2026) make this one of Kokkola's most attractive investment apartments.",
 
     readyTitle: "Move-in ready & fresh",
     readySub: "No renovation needed — rent out or move in immediately",
@@ -434,13 +449,14 @@ export const translations = {
 
     contactBadge: "Interested?",
     contactTitle: "Contact us",
-    contactSub: "Book a viewing or request more information — we respond quickly.",
-    sellerLabel: "Seller",
-    phoneLabel: "Phone",
-    emailLabel: "Email",
+    contactSub: "Purchase enquiries to the agent, rentals and viewings directly to the owner — we respond quickly.",
+    contactSaleLabel: "Sale",
+    contactRentLabel: "Rentals and viewings",
+    saleListingBtn: "View the sales listing",
+    contactFormBtn: "Send a message",
     qrCaption: "Scan and book",
     etuoviLine1: "View listing",
-    etuoviLine2: "on Etuovi",
+    etuoviLine2: "at the agent",
     etuoviOpen: "Open →",
     rentalLine1: "For rent",
     rentalLine2: "to companies",
@@ -456,7 +472,7 @@ export const translations = {
     maintLine1: "Maintenance",
     maintLine2: "Report",
     maintDownload: "Download PDF ↓",
-    footer: "Pitkänsillankatu 33 A 13 · 67100 Kokkola · 69 m² · €89,900",
+    footer: "Pitkänsillankatu 33 A 13 · 67100 Kokkola · 69 m² · €89,000",
 
     formBadge: "Form",
     formTitle: "Send a message",
@@ -474,6 +490,15 @@ export const translations = {
     formSuccess: "Message sent!",
     formSuccessSub: "Thank you for reaching out. We'll get back to you soon.",
     formSuccessBtn: "Send another message",
+    formError: "Sending failed. Please try again.",
+    formSubjectLabel: "Your enquiry",
+    formSubjectDefault: "Choose a topic…",
+    formSubjectBuy: "I'm interested in buying the apartment",
+    formSubjectRentLong: "I'd like to rent the apartment long-term",
+    formSubjectRentShort: "Question about a short stay (Airbnb)",
+    formSubjectViewing: "I'd like to book a viewing",
+    formBookViewing: "Book a virtual or in-person viewing",
+    formOr: "or",
 
     // Charges
     chargesTitle: "Charges from 1 July 2026",
@@ -483,7 +508,6 @@ export const translations = {
     agmDocsDesc: "Full transparency — all financial details of the housing company available:",
     agmDoc1: "Financial Statements 2025",
     agmDoc2: "Budget 2026",
-    agmDoc3: "AGM Notice and Agenda",
     agmDoc4: "Maintenance Needs Assessment 2026",
     chargesMaintLabel: "Maintenance charge",
     chargesMaintRate: "3.90",
@@ -502,13 +526,13 @@ export const translations = {
 
     // Yield calculation
     yieldTitle: "Yield Calculation for Investors",
-    yieldBasis: "Floor area 69 m² · Total charge from 1 July 2026 approx. ~€332/mo (maintenance 269 + RL2 ~33 + RL3 ~30) · Debt-free price €89,900",
+    yieldBasis: "Floor area 69 m² · Total charge from 1 July 2026 approx. ~€332/mo (maintenance 269 + RL2 ~33 + RL3 ~30) · Debt-free price €89,000",
     yieldScenALabel: "Scenario A — Conservative",
-    yieldScenADetails: "Rent €700/mo − total charge €332 = net rent ~€368/mo · Cash yield ~€4,416 / €89,900 = ~5% · Investment yield ~6%",
+    yieldScenADetails: "Rent €700/mo − total charge €332 = net rent ~€368/mo · Cash yield ~€4,416 / €89,000 = ~5% · Investment yield ~6%",
     yieldScenBLabel: "Scenario B — Market rate",
-    yieldScenBDetails: "Rent €750/mo − total charge €332 = net rent ~€418/mo · Cash yield ~€5,016 / €89,900 = ~6% · Investment yield ~6%",
+    yieldScenBDetails: "Rent €750/mo − total charge €332 = net rent ~€418/mo · Cash yield ~€5,016 / €89,000 = ~6% · Investment yield ~6%",
     yieldScenCLabel: "Scenario C — Furnished for companies",
-    yieldScenCDetails: "Rent €1200/mo − total charge €332 = net rent ~€868/mo · Cash yield ~€10,416 / €89,900 = ~12% · Investment yield ~12%",
+    yieldScenCDetails: "Rent €1200/mo − total charge €332 = net rent ~€868/mo · Cash yield ~€10,416 / €89,000 = ~12% · Investment yield ~12%",
     yieldDisclaimer: "The exact share of capital charges is confirmed in the property manager's certificate. Yield calculation is indicative before taxes.",
 
     // Upcoming renovations
@@ -536,11 +560,5 @@ export const translations = {
     locationTitle: "Property location",
     locationSub: "Pitkänsillankatu 33, 67100 Kokkola — next to BioRex",
     locationOpenMaps: "Open in Google Maps →",
-
-    // Corporate housing (Manus marketing site)
-    corpHousingLine1: "Corporate",
-    corpHousingLine2: "housing",
-    corpHousingOpen: "Open →",
-    corpHousingCaption: "Corporate housing",
   },
 } as const;
