@@ -786,7 +786,6 @@ export default function HomeContent({ lang }: { lang: Lang }) {
           <FadeIn delay={500}>
             <div className="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-white/10">
               <p className="text-slate-500 text-sm lg:text-xl">{t.footer}</p>
-              <p className="text-slate-600 text-xs lg:text-sm mt-3 italic">{t.dataUpdated}</p>
             </div>
           </FadeIn>
         </div>

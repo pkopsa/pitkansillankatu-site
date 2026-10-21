@@ -183,7 +183,6 @@ export const translations = {
     renovPast2025Item3: "Läpivientien tiivistys Enkopur-massalla",
 
     // Päiväys
-    dataUpdated: "Hinta päivitetty 19.4.2026 Kokkolan keskustan markkina-analyysin perusteella. Taloustiedot 9.4.2026 yhtiökokousmateriaalien (kokous 28.4.2026) mukaisesti.",
 
     // Sijainti (sivun loppu)
     locationBadge: "Sijainti",
@@ -365,7 +364,6 @@ export const translations = {
     renovPast2025Item3: "Tätning av genomföringar med Enkopur-massa",
 
     // Datum
-    dataUpdated: "Priset uppdaterat 19.4.2026 baserat på marknadsanalys för Karlebys centrum. Ekonomiuppgifterna 9.4.2026 enligt bolagsstämmomaterial (stämma 28.4.2026).",
 
     // Läge (sidans slut)
     locationBadge: "Läge",
@@ -547,7 +545,6 @@ export const translations = {
     renovPast2025Item3: "Sealing of pipe penetrations with Enkopur compound",
 
     // Date notice
-    dataUpdated: "Price updated 19 April 2026 based on Kokkola city centre market analysis. Financial data 9 April 2026 per AGM materials (meeting 28 April 2026).",
 
     // Location (page end)
     locationBadge: "Location",
