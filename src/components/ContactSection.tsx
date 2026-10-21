@@ -209,13 +209,13 @@ export default function ContactSection({ lang = "fi" }: { lang?: Lang }) {
                 {t.formBookViewing}
               </h3>
               <a
-                href="tel:+358503060635"
+                href="tel:+358401480636"
                 className="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm lg:text-base px-6 py-3 rounded-xl transition-colors duration-200 shadow-sm"
               >
                 <svg viewBox="0 0 24 24" className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.28 11.8 19.79 19.79 0 011.22 3.22 2 2 0 013.22 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
                 </svg>
-                +358 50 306 0635
+                +358 40 148 0636
               </a>
             </div>
           </div>

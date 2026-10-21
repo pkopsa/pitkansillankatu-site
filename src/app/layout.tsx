@@ -135,11 +135,17 @@ const jsonLd = {
             unitCode: "MON",
           },
           availability: "https://schema.org/InStock",
-          seller: {
-            "@type": "Person",
-            name: "Petri Kopsa",
-            telephone: "+358503060635",
-            email: "petri.kopsa@gmail.com",
+          offeredBy: {
+            "@type": "RealEstateAgent",
+            name: "Asunto Björndahl Kokkola LKV Oy",
+            url: "https://www.asuntobjorndahl.fi",
+            employee: {
+              "@type": "Person",
+              name: "Petri Kaskilahti",
+              jobTitle: "Kiinteistönvälittäjä LKV",
+              telephone: "+358401480636",
+              email: "petri@asuntobjorndahl.fi",
+            },
           },
         },
         {

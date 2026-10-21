@@ -289,10 +289,8 @@ export default function HomeContent({ lang }: { lang: Lang }) {
           <p className="text-sm lg:text-base text-slate-900/80">{t.airbnbNote}</p>
           <p className="text-sm lg:text-base text-slate-900/80">
             <span className="font-bold text-slate-900">{t.airbnbLongTerm}</span>{" "}
-            Petri Kopsa,{" "}
-            <a href="tel:+358503060635" className="font-bold text-slate-900 underline underline-offset-2 whitespace-nowrap">050 306 0635</a>
-            {" · "}
-            Petri Kaskilahti, Asunto Björndahl LKV,{" "}
+            Petri Kaskilahti,{" "}
+            <a href={BROKER_LISTING_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-slate-900 underline underline-offset-2">Asunto Björndahl LKV</a>,{" "}
             <a href="tel:+358401480636" className="font-bold text-slate-900 underline underline-offset-2 whitespace-nowrap">040 148 0636</a>
           </p>
         </div>
@@ -693,50 +691,26 @@ export default function HomeContent({ lang }: { lang: Lang }) {
             <p className="text-base lg:text-2xl text-slate-300 mb-10 lg:mb-20 leading-relaxed">{t.contactSub}</p>
           </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-8 items-stretch text-left">
-            {[
-              {
-                icon: "🏷️",
-                label: t.contactSaleLabel,
-                name: "Petri Kaskilahti",
-                sub: "Kiinteistönvälittäjä LKV · Asunto Björndahl Kokkola LKV Oy",
-                phone: { text: "040 148 0636", href: "tel:+358401480636" },
-                emails: ["petri@asuntobjorndahl.fi"],
-                button: { text: t.saleListingBtn, href: BROKER_LISTING_URL, external: true },
-              },
-              {
-                icon: "🔑",
-                label: t.contactRentLabel,
-                name: "Petri Kopsa",
-                sub: "Terassitalo",
-                phone: { text: "050 306 0635", href: "tel:+358503060635" },
-                emails: ["info@terassitalo.com", "petri.kopsa@gmail.com"],
-                button: { text: t.contactFormBtn, href: "#lomake", external: false },
-              },
-            ].map((item, i) => (
-              <FadeIn key={i} delay={i * 120}>
-                <div className="bg-slate-700 border border-white/10 rounded-2xl lg:rounded-3xl p-6 lg:p-10 flex flex-col gap-1 h-full">
-                  <div className="text-4xl lg:text-5xl mb-2" aria-hidden>{item.icon}</div>
-                  <p className="text-slate-400 text-sm lg:text-lg uppercase tracking-wider">{item.label}</p>
-                  <p className="text-lg lg:text-2xl font-bold text-white">{item.name}</p>
-                  <p className="text-slate-300 text-sm lg:text-base mb-2">{item.sub}</p>
-                  <a href={item.phone.href} className="text-base lg:text-lg font-bold text-amber-400 hover:text-amber-300 transition-colors">{item.phone.text}</a>
-                  {item.emails.map((email) => (
-                    <a key={email} href={`mailto:${email}`} className="text-base lg:text-lg font-bold text-amber-400 hover:text-amber-300 transition-colors break-all">{email}</a>
-                  ))}
-                  <div className="mt-auto pt-4">
-                    <a
-                      href={item.button.href}
-                      {...(item.button.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                      className="inline-block bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold text-base px-6 py-3 rounded-full transition-colors"
-                    >
-                      {item.button.text}
-                    </a>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
+          <FadeIn>
+            <div className="max-w-xl mx-auto bg-slate-700 border border-white/10 rounded-2xl lg:rounded-3xl p-6 lg:p-10 flex flex-col gap-1 text-left">
+              <div className="text-4xl lg:text-5xl mb-2" aria-hidden>🏷️</div>
+              <p className="text-slate-400 text-sm lg:text-lg uppercase tracking-wider">{t.contactSaleLabel}</p>
+              <p className="text-lg lg:text-2xl font-bold text-white">Petri Kaskilahti</p>
+              <p className="text-slate-300 text-sm lg:text-base mb-2">Kiinteistönvälittäjä LKV · Asunto Björndahl Kokkola LKV Oy</p>
+              <a href="tel:+358401480636" className="text-base lg:text-lg font-bold text-amber-400 hover:text-amber-300 transition-colors">040 148 0636</a>
+              <a href="mailto:petri@asuntobjorndahl.fi" className="text-base lg:text-lg font-bold text-amber-400 hover:text-amber-300 transition-colors break-all">petri@asuntobjorndahl.fi</a>
+              <div className="pt-4">
+                <a
+                  href={BROKER_LISTING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold text-base px-6 py-3 rounded-full transition-colors"
+                >
+                  {t.saleListingBtn}
+                </a>
+              </div>
+            </div>
+          </FadeIn>
 
           <FadeIn delay={400}>
             <div className="mt-12 lg:mt-20 flex flex-wrap justify-center gap-4 lg:gap-6">
