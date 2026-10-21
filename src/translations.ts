@@ -132,9 +132,8 @@ export const translations = {
 
     // Vastikkeet
     chargesTitle: "Vastikkeet 1.7.2026 alkaen",
-    chargesFromDate: "Voimaan 1.7.2026, jos yhtiökokous hyväksyy 28.4.2026",
     chargesNote: "Pääomavastikkeet laskevat 1.7.2026 alkaen — yhtiölainat lyhentyvät suunnitellusti.",
-    agmDocsTitle: "Yhtiökokouksen asiakirjat 28.4.2026",
+    agmDocsTitle: "Taloyhtiön asiakirjat",
     agmDocsDesc: "Avoimuuden nimissä — kaikki taloyhtiön taloudelliset tiedot saatavilla:",
     agmDoc1: "Tilinpäätös 2025",
     agmDoc2: "Talousarvio 2026",
@@ -176,7 +175,6 @@ export const translations = {
     renovItem3: "Käyttövesiputkien uusiminen vaiheittain",
     renovItem3Year: "suositeltu 2030 alkaen",
     renovItem3Note: "Suunnittelu käynnistyy 2026",
-    renovAGMNote: "28.4.2026 yhtiökokouksessa päätettiin käynnistää myös ilmanvaihdon selvitystyö, jonka pohjalta huoneistoon mahdollisesti voidaan hankkia erillinen koneellinen ilmastointi.",
     renovPast2025Title: "Vuonna 2025 tehdyt kunnossapitotyöt",
     renovPast2025Item1: "Jätevesiviemäreiden huuhtelu ja sisäpuolinen laaja kuvaus",
     renovPast2025Item2: "Palovaroittimien asennus asuinhuoneistoihin",
@@ -313,9 +311,8 @@ export const translations = {
 
     // Avgifter
     chargesTitle: "Avgifter fr.o.m. 1.7.2026",
-    chargesFromDate: "Träder i kraft 1.7.2026, om bolagsstämman godkänner 28.4.2026",
     chargesNote: "Kapitalvederlagen sjunker fr.o.m. 1.7.2026 — bolagslånen amorteras enligt plan.",
-    agmDocsTitle: "Bolagsstämmohandlingar 28.4.2026",
+    agmDocsTitle: "Bostadsbolagets handlingar",
     agmDocsDesc: "I transparensens anda — all ekonomisk information om bostadsbolaget tillgänglig:",
     agmDoc1: "Bokslut 2025",
     agmDoc2: "Budget 2026",
@@ -357,7 +354,6 @@ export const translations = {
     renovItem3: "Förnyelse av tappvattenledningar i etapper",
     renovItem3Year: "rekommenderas fr.o.m. 2030",
     renovItem3Note: "Planeringen inleds 2026",
-    renovAGMNote: "Vid bolagsstämman 28.4.2026 beslutades att inleda en utredning av ventilationen, utifrån vilken lägenheten eventuellt kan utrustas med separat mekanisk luftkonditionering.",
     renovPast2025Title: "Underhållsarbeten utförda 2025",
     renovPast2025Item1: "Spolning av spillvattenledningar och omfattande invändig inspektion",
     renovPast2025Item2: "Installation av brandvarnare i bostadslägenheterna",
@@ -494,9 +490,8 @@ export const translations = {
 
     // Charges
     chargesTitle: "Charges from 1 July 2026",
-    chargesFromDate: "Effective 1 July 2026, subject to AGM approval on 28 April 2026",
     chargesNote: "Capital charges decrease from 1 July 2026 — company loans amortising as planned.",
-    agmDocsTitle: "AGM Documents 28 April 2026",
+    agmDocsTitle: "Housing company documents",
     agmDocsDesc: "Full transparency — all financial details of the housing company available:",
     agmDoc1: "Financial Statements 2025",
     agmDoc2: "Budget 2026",
@@ -538,7 +533,6 @@ export const translations = {
     renovItem3: "Renewal of domestic water pipes in phases",
     renovItem3Year: "recommended from 2030",
     renovItem3Note: "Planning commences 2026",
-    renovAGMNote: "The AGM on 28 April 2026 also decided to launch a ventilation feasibility study, based on which the apartment may potentially be equipped with separate mechanical air conditioning.",
     renovPast2025Title: "Maintenance work completed in 2025",
     renovPast2025Item1: "Flushing of sewage pipes and comprehensive internal CCTV survey",
     renovPast2025Item2: "Installation of smoke detectors in residential apartments",

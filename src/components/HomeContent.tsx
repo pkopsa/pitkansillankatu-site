@@ -325,8 +325,7 @@ export default function HomeContent({ lang }: { lang: Lang }) {
       <section className="py-14 px-4 lg:py-24 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h2 className="text-2xl lg:text-4xl font-bold text-center mb-2 text-slate-800">{t.chargesTitle}</h2>
-            <p className="text-sm lg:text-base text-slate-400 text-center mb-8 lg:mb-12">{t.chargesFromDate}</p>
+            <h2 className="text-2xl lg:text-4xl font-bold text-center mb-8 lg:mb-12 text-slate-800">{t.chargesTitle}</h2>
           </FadeIn>
           <FadeIn delay={100}>
             <div className="bg-slate-50 rounded-2xl lg:rounded-3xl overflow-hidden border border-slate-200 shadow-lg mb-6">
@@ -660,11 +659,6 @@ export default function HomeContent({ lang }: { lang: Lang }) {
             ))}
           </div>
 
-          <FadeIn delay={350}>
-            <div className="bg-amber-50 border border-amber-200 rounded-xl lg:rounded-2xl px-6 py-4 mb-8">
-              <p className="text-amber-800 text-sm lg:text-base">ℹ️ {t.renovAGMNote}</p>
-            </div>
-          </FadeIn>
 
           <FadeIn delay={450}>
             <div className="bg-emerald-50 border border-emerald-200 rounded-xl lg:rounded-2xl p-5 lg:p-7">
