@@ -287,12 +287,6 @@ export default function HomeContent({ lang }: { lang: Lang }) {
             ))}
           </ul>
           <p className="text-sm lg:text-base text-slate-900/80">{t.airbnbNote}</p>
-          <p className="text-sm lg:text-base text-slate-900/80">
-            <span className="font-bold text-slate-900">{t.airbnbLongTerm}</span>{" "}
-            Petri Kaskilahti,{" "}
-            <a href={BROKER_LISTING_URL} target="_blank" rel="noopener noreferrer" className="font-bold text-slate-900 underline underline-offset-2">Asunto Björndahl LKV</a>,{" "}
-            <a href="tel:+358401480636" className="font-bold text-slate-900 underline underline-offset-2 whitespace-nowrap">040 148 0636</a>
-          </p>
         </div>
       </section>
 

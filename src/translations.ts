@@ -23,7 +23,6 @@ export const translations = {
     airbnbText: "Kalustettu 69 m² kaksio Kokkolan ydinkeskustassa – työmatkalle, remontin ajaksi tai pidemmälle vierailulle.",
     airbnbTerms: ["1 kk varaus −50 %", "7 vrk varaus −15 %", "Vähintään 2 vrk", "Varaus viim. 2 pv ennen saapumista"],
     airbnbNote: "Alennukset Airbnb:n listahinnoista. Lyhytaikaiset varaukset vain Airbnb:n kautta.",
-    airbnbLongTerm: "Pidempiaikainen vuokraus:",
     airbnbBtn: "Varaa Airbnb:ssä",
 
     // Perustiedot
@@ -209,7 +208,6 @@ export const translations = {
     airbnbText: "Möblerad tvåa på 69 m² i Karlebys stadskärna – för arbetsresor, under renovering eller för ett längre besök.",
     airbnbTerms: ["1 mån bokning −50 %", "7 dygn bokning −15 %", "Minst 2 dygn", "Boka senast 2 dagar före ankomst"],
     airbnbNote: "Rabatterna gäller Airbnbs listpriser. Korttidsbokningar endast via Airbnb.",
-    airbnbLongTerm: "Längre uthyrning:",
     airbnbBtn: "Boka på Airbnb",
 
     detailsTitle: "Objektinformation",
@@ -388,7 +386,6 @@ export const translations = {
     airbnbText: "Furnished 69 m² apartment in Kokkola city centre – for business trips, renovations or longer visits.",
     airbnbTerms: ["1-month stay −50%", "7-night stay −15%", "Minimum 2 nights", "Book at least 2 days before arrival"],
     airbnbNote: "Discounts off Airbnb list prices. Short-term bookings only via Airbnb.",
-    airbnbLongTerm: "Long-term rental:",
     airbnbBtn: "Book on Airbnb",
 
     detailsTitle: "Property Details",
