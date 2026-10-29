@@ -7,7 +7,7 @@ const BASE_URL = "https://pitkansillankatu33.com";
 export const metadata: Metadata = {
   title: { absolute: "2-room apt in Kokkola city centre, €89,000 — Pitkänsillankatu 33" },
   description:
-    "Move-in ready 69 m² apartment in Kokkola city centre. For sale at €89,000 or furnished corporate rental. Gross rental yield 8.8–10.1%. Top floor, next to BioRex cinema.",
+    "Move-in ready 69 m² apartment in Kokkola city centre. For sale at €89,000 or furnished corporate rental. Gross rental yield 9–16%. Top residential floor, next to BioRex cinema.",
   alternates: {
     canonical: `${BASE_URL}/en`,
     languages: {
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     alternateLocale: ["fi_FI", "sv_FI"],
     url: `${BASE_URL}/en`,
     siteName: "Pitkänsillankatu 33 – Kokkola",
-    title: "Top-floor 2-room apartment in Kokkola, €89,000",
+    title: "2-room apartment in Kokkola city centre, €89,000",
     description:
-      "69 m² apartment in Kokkola city centre. For sale at €89,000 or furnished corporate rental. Top floor, next to BioRex.",
+      "69 m² apartment in Kokkola city centre. For sale at €89,000 or furnished corporate rental. Top residential floor, next to BioRex.",
     images: [
       {
         url: OG_IMAGE,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Top-floor 2-room apartment in Kokkola, €89,000",
+    title: "2-room apartment in Kokkola city centre, €89,000",
     description: "69 m² apartment in Kokkola city centre. For sale or furnished rental.",
     images: [OG_IMAGE],
   },

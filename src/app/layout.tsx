@@ -77,7 +77,7 @@ const jsonLd = {
       "@id": `${BASE_URL}/#apartment`,
       name: "Pitkänsillankatu 33 A 13",
       description:
-        "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², ylin kerros, bruttovuokratuotto 8,8–10,1 %. Kalustettavissa yritysvuokraukseen.",
+        "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², ylin asuinkerros, bruttovuokratuotto 9–16 %. Kalustettavissa yritysvuokraukseen.",
       url: BASE_URL,
       image: `${BASE_URL}${OG_IMAGE}`,
       sameAs: [AIRBNB_URL],
@@ -101,8 +101,8 @@ const jsonLd = {
       },
       numberOfRooms: 2,
       numberOfBathroomsTotal: 1,
-      yearBuilt: 1930,
-      floorLevel: "Top floor (3/3)",
+      yearBuilt: 1937,
+      floorLevel: "3/4 (top residential floor)",
       offers: [
         {
           "@type": "Offer",
@@ -165,7 +165,7 @@ const jsonLd = {
         },
       ],
       amenityFeature: [
-        { "@type": "LocationFeatureSpecification", name: "Ylin kerros — ei ylänaapuria", value: true },
+        { "@type": "LocationFeatureSpecification", name: "Ylin asuinkerros — ei ylänaapuria", value: true },
         { "@type": "LocationFeatureSpecification", name: "Maalattu 2026", value: true },
         { "@type": "LocationFeatureSpecification", name: "Kalustettavissa", value: true },
         { "@type": "LocationFeatureSpecification", name: "Ydinkeskusta", value: true },

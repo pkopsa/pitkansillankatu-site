@@ -7,7 +7,7 @@ const BASE_URL = "https://pitkansillankatu33.com";
 export const metadata: Metadata = {
   title: { absolute: "Kaksio Kokkolan ydinkeskustassa, 89 000 € — Pitkänsillankatu 33" },
   description:
-    "Muuttovalmis 69 m² kaksio Kokkolan ydinkeskustassa. Myydään 89 000 € tai vuokrataan yrityksille kalustettuna. Bruttovuokratuotto 8,8–10,1 %. Ylin kerros, BioRexin vieressä.",
+    "Muuttovalmis 69 m² kaksio Kokkolan ydinkeskustassa. Myydään 89 000 € tai vuokrataan yrityksille kalustettuna. Bruttovuokratuotto 9–16 %. Ylin asuinkerros, BioRexin vieressä.",
   alternates: {
     canonical: BASE_URL,
     languages: {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Pitkänsillankatu 33 – Kokkola",
     title: "Kaksio Kokkolan ydinkeskustassa, 89 000 €",
     description:
-      "69 m² kaksio Kokkolan ydinkeskustassa. Myynti 89 000 € tai yritysvuokraus kalustettuna. Ylin kerros, BioRexin vieressä.",
+      "69 m² kaksio Kokkolan ydinkeskustassa. Myynti 89 000 € tai yritysvuokraus kalustettuna. Ylin asuinkerros, BioRexin vieressä.",
     images: [
       {
         url: OG_IMAGE,

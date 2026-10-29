@@ -79,8 +79,8 @@ function indexOfBase(images: GalleryImage[], base: string): number {
   return Math.max(0, images.findIndex((img) => img.base === base));
 }
 
-// Myynti-ilmoitus: toistaiseksi välittäjän etusivu, vaihdetaan Etuovi-ilmoitukseen kun se julkaistaan
-const BROKER_LISTING_URL = "https://www.asuntobjorndahl.fi";
+// Myynti-ilmoitus Etuovessa (välittäjä Asunto Björndahl)
+const ETUOVI_LISTING_URL = "https://www.etuovi.com/kohde/80538515";
 
 const PAUSE_MS = 2000;
 const LANGS_CYCLE: Lang[] = ["fi", "sv", "en"];
@@ -246,12 +246,22 @@ export default function HomeContent({ lang }: { lang: Lang }) {
           <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-amber-600 font-black mb-8 lg:mb-12 tracking-tight">
             {t.heroPrice}
           </p>
-          <a
-            href="#yhteystiedot"
-            className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-lg lg:text-2xl font-bold px-8 lg:px-14 py-4 lg:py-6 rounded-full transition-colors duration-300 shadow-2xl"
-          >
-            {t.heroBtn}
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 lg:gap-5">
+            <a
+              href="#yhteystiedot"
+              className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-lg lg:text-2xl font-bold px-8 lg:px-14 py-4 lg:py-6 rounded-full transition-colors duration-300 shadow-2xl"
+            >
+              {t.heroBtn}
+            </a>
+            <a
+              href={ETUOVI_LISTING_URL}
+              target="_blank"
+              rel="noopener"
+              className="inline-block bg-white/90 hover:bg-white text-slate-900 border border-slate-200 text-lg lg:text-2xl font-bold px-8 lg:px-14 py-4 lg:py-6 rounded-full transition-colors duration-300 shadow-2xl"
+            >
+              {t.heroEtuoviBtn}
+            </a>
+          </div>
         </div>
 
         <a
@@ -309,9 +319,9 @@ export default function HomeContent({ lang }: { lang: Lang }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
             {[
               { label: t.detailSize,  value: <>69 m²</>,         sub: t.detailSizeSub   },
-              { label: t.detailFloor, value: <>3 / 3</>,          sub: t.detailFloorSub  },
+              { label: t.detailFloor, value: <>3 / 4</>,          sub: t.detailFloorSub  },
               { label: t.detailPrice, value: <>{t.detailPriceVal}</>, sub: t.detailPriceSub  },
-              { label: t.detailMaint, value: <>~332</>,         sub: t.detailMaintSub  },
+              { label: t.detailMaint, value: <>{t.detailMaintVal}</>, sub: t.detailMaintSub  },
             ].map((item, i) => (
               <FadeIn key={i} delay={i * 100}>
                 <div className="bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 text-center shadow-lg border border-slate-100 hover:shadow-xl transition-shadow">
@@ -322,6 +332,27 @@ export default function HomeContent({ lang }: { lang: Lang }) {
               </FadeIn>
             ))}
           </div>
+
+          {/* Etuovi-ilmoituksen faktat: rakennus, tontti, hinnan erittely */}
+          <FadeIn delay={200}>
+            <div className="mt-6 lg:mt-10 bg-white rounded-2xl lg:rounded-3xl p-6 lg:p-10 shadow-lg border border-slate-100">
+              <dl className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 text-center">
+                {[
+                  { label: t.factBuiltLabel,  value: "1937"            },
+                  { label: t.factEnergyLabel, value: "E (2018)"        },
+                  { label: t.factPlotLabel,   value: t.factPlotValue   },
+                  { label: t.factAvailLabel,  value: t.factAvailValue  },
+                ].map((fact) => (
+                  <div key={fact.label}>
+                    <dt className="text-slate-500 text-sm lg:text-lg font-semibold">{fact.label}</dt>
+                    <dd className="text-slate-800 text-base lg:text-2xl font-bold mt-1">{fact.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p className="mt-6 lg:mt-8 text-sm lg:text-base text-slate-600 text-center leading-relaxed">{t.detailPriceBreakdown}</p>
+              <p className="mt-3 text-xs lg:text-sm text-slate-500 text-center leading-relaxed">{t.airUnitNote}</p>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -336,7 +367,7 @@ export default function HomeContent({ lang }: { lang: Lang }) {
               <table className="w-full text-sm lg:text-base">
                 <thead>
                   <tr className="bg-slate-800 text-white">
-                    <th className="text-left px-4 lg:px-8 py-3 lg:py-4 font-semibold">Vastike</th>
+                    <th className="text-left px-4 lg:px-8 py-3 lg:py-4 font-semibold">{t.chargesNameHeader}</th>
                     <th className="text-right px-4 lg:px-8 py-3 lg:py-4 font-semibold">{t.chargesRateHeader}</th>
                     <th className="text-right px-4 lg:px-8 py-3 lg:py-4 font-semibold">{t.chargesMonthHeader}</th>
                   </tr>
@@ -348,14 +379,14 @@ export default function HomeContent({ lang }: { lang: Lang }) {
                     <td className="px-4 lg:px-8 py-3 lg:py-4 text-right font-bold text-slate-900">{t.chargesMaintTotal}</td>
                   </tr>
                   <tr className="border-b border-slate-200 bg-amber-50">
-                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-slate-700">{t.chargesRL2Label}</td>
-                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right text-slate-600">{t.chargesRL2Rate}</td>
-                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right font-semibold text-amber-700">{t.chargesRL2Total}</td>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-slate-700">{t.chargesCapitalLabel}</td>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right text-slate-400 text-xs lg:text-sm">—</td>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right font-semibold text-amber-700">{t.chargesCapitalTotal}</td>
                   </tr>
-                  <tr className="border-b border-slate-200 bg-amber-50">
-                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-slate-700">{t.chargesRL3Label}</td>
-                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right text-slate-600">{t.chargesRL3Rate}</td>
-                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right font-semibold text-amber-700">{t.chargesRL3Total}</td>
+                  <tr className="border-b border-slate-200 bg-slate-100">
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-slate-900 font-bold">{t.chargesTotalLabel}</td>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right text-slate-400 text-xs lg:text-sm">—</td>
+                    <td className="px-4 lg:px-8 py-3 lg:py-4 text-right font-black text-slate-900">{t.chargesTotalTotal}</td>
                   </tr>
                   <tr>
                     <td className="px-4 lg:px-8 py-3 lg:py-4 text-slate-700">{t.chargesWaterLabel}</td>
@@ -365,13 +396,6 @@ export default function HomeContent({ lang }: { lang: Lang }) {
                 </tbody>
               </table>
             </div>
-            <div className="bg-amber-50 border border-amber-200 rounded-xl lg:rounded-2xl px-6 py-4 mb-3">
-              <p className="text-amber-800 text-sm lg:text-base">ℹ️ {t.chargesEstimateNote}</p>
-            </div>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl lg:rounded-2xl px-6 py-4 text-center">
-              <p className="text-emerald-800 text-sm lg:text-base font-medium">↓ {t.chargesNote}</p>
-            </div>
-
             {/* ── YHTIÖKOKOUKSEN ASIAKIRJAT ── */}
             <div className="mt-6 bg-slate-800 border border-white/10 rounded-xl lg:rounded-2xl p-6 lg:p-8">
               <div className="flex items-center gap-2 mb-2">
@@ -760,9 +784,9 @@ export default function HomeContent({ lang }: { lang: Lang }) {
               <a href="mailto:petri@asuntobjorndahl.fi" className="text-base lg:text-lg font-bold text-amber-400 hover:text-amber-300 transition-colors break-all">petri@asuntobjorndahl.fi</a>
               <div className="pt-4">
                 <a
-                  href={BROKER_LISTING_URL}
+                  href={ETUOVI_LISTING_URL}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className="inline-block bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold text-base px-6 py-3 rounded-full transition-colors"
                 >
                   {t.saleListingBtn}
@@ -782,12 +806,12 @@ export default function HomeContent({ lang }: { lang: Lang }) {
                 <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">{t.qrCaption}</p>
               </div>
 
-              {/* Myynti-ilmoitus — toistaiseksi välittäjän sivustolle, Etuovi-linkki päivitetään myöhemmin */}
+              {/* Myynti-ilmoitus Etuovessa */}
               <div className="flex flex-col items-center gap-3 w-40">
                 <a
-                  href={BROKER_LISTING_URL}
+                  href={ETUOVI_LISTING_URL}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-40 h-40 hover:shadow-xl transition-shadow group"
                 >
                   <svg viewBox="0 0 24 24" className="w-10 h-10 shrink-0" fill="none">

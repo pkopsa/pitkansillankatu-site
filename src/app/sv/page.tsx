@@ -7,7 +7,7 @@ const BASE_URL = "https://pitkansillankatu33.com";
 export const metadata: Metadata = {
   title: { absolute: "Tvårummare i Karleby centrum, 89 000 € — Pitkänsillankatu 33" },
   description:
-    "Inflyttningsklar tvårummare på 69 m² i Karlebys stadskärna. Säljes 89 000 € eller uthyres möblerad till företag. Bruttohyresavkastning 8,8–10,1 %. Översta våningen, bredvid BioRex.",
+    "Inflyttningsklar tvårummare på 69 m² i Karlebys stadskärna. Säljes 89 000 € eller uthyres möblerad till företag. Bruttohyresavkastning 9–16 %. Översta bostadsvåningen, bredvid BioRex.",
   alternates: {
     canonical: `${BASE_URL}/sv`,
     languages: {
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Pitkänsillankatu 33 – Karleby",
     title: "Tvårummare i Karlebys stadskärna, 89 000 €",
     description:
-      "69 m² tvårummare i Karlebys stadskärna. Säljes 89 000 € eller uthyres möblerad till företag. Översta våningen, bredvid BioRex.",
+      "69 m² tvårummare i Karlebys stadskärna. Säljes 89 000 € eller uthyres möblerad till företag. Översta bostadsvåningen, bredvid BioRex.",
     images: [
       {
         url: OG_IMAGE,
