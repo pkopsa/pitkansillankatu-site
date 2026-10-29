@@ -1,18 +1,19 @@
 {
   "name": "pitkansillankatu-site",
-  "version": "2.5.6",
+  "version": "2.6.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "images": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
     "@types/leaflet": "^1.9.21",
     "@types/nodemailer": "^8.0.0",
     "leaflet": "^1.9.4",
-    "next": "^15.5.14",
+    "next": "^15.5.28",
     "nodemailer": "^8.0.4",
     "qrcode.react": "^4.2.0",
     "react": "^19.2.4",
@@ -24,7 +25,8 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "^15",
+    "eslint-config-next": "^15.5.28",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

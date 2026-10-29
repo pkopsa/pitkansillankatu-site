@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { OG_IMAGE } from "@/data/pk33-images";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -78,7 +79,7 @@ const jsonLd = {
       description:
         "Muuttovalmis sijoitusasunto Kokkolan ydinkeskustassa. 69 m², ylin kerros, bruttovuokratuotto 8,8–10,1 %. Kalustettavissa yritysvuokraukseen.",
       url: BASE_URL,
-      image: `${BASE_URL}/og-image.jpg`,
+      image: `${BASE_URL}${OG_IMAGE}`,
       sameAs: [AIRBNB_URL],
       address: {
         "@type": "PostalAddress",

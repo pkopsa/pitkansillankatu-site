@@ -49,8 +49,8 @@ export default function PropertyMap() {
           filter: drop-shadow(0 4px 12px rgba(0,0,0,0.7));
         ">
           <div style="
-            background: #f59e0b;
-            color: #1e293b;
+            background: #f59055;
+            color: #201b18;
             font-weight: 900;
             font-size: 13px;
             font-family: sans-serif;
@@ -63,13 +63,13 @@ export default function PropertyMap() {
           <div style="
             width: 3px;
             height: 18px;
-            background: #f59e0b;
+            background: #f59055;
             margin-top: -1px;
           "></div>
           <div style="
             width: 14px;
             height: 14px;
-            background: #f59e0b;
+            background: #f59055;
             border-radius: 50%;
             border: 3px solid white;
             box-shadow: 0 2px 8px rgba(0,0,0,0.6);

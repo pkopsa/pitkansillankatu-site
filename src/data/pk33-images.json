@@ -1,0 +1,255 @@
+{
+  "pk33-eteinen-kaytava": {
+    "width": 1600,
+    "height": 1064,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "b344ceb6"
+  },
+  "pk33-ilmakuva-kaupunki-meri": {
+    "width": 1360,
+    "height": 907,
+    "widths": [
+      800,
+      1200,
+      1360,
+      2400
+    ],
+    "v": "8aeaa99c"
+  },
+  "pk33-ilmakuva-keskusta-1": {
+    "width": 1120,
+    "height": 746,
+    "widths": [
+      800,
+      1120,
+      1200,
+      2400
+    ],
+    "v": "fdfcd352"
+  },
+  "pk33-ilmakuva-keskusta-2": {
+    "width": 1360,
+    "height": 907,
+    "widths": [
+      800,
+      1200,
+      1360,
+      2400
+    ],
+    "v": "014e7756"
+  },
+  "pk33-ilmakuva-rakennus": {
+    "width": 1600,
+    "height": 1067,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "757c5d1a"
+  },
+  "pk33-julkisivu-katukulma-1": {
+    "width": 1600,
+    "height": 1067,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "2a04a69c"
+  },
+  "pk33-julkisivu-katukulma-2": {
+    "width": 1600,
+    "height": 1067,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "7047e967"
+  },
+  "pk33-julkisivu-muraali": {
+    "width": 1600,
+    "height": 1067,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "1cbd4c7b"
+  },
+  "pk33-katunakyma-pitkansillankatu": {
+    "width": 1600,
+    "height": 1067,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "6192c3f2"
+  },
+  "pk33-keittio-kaapistot": {
+    "width": 1600,
+    "height": 1065,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "4f1a55ad"
+  },
+  "pk33-keittio-ruokailutila": {
+    "width": 1600,
+    "height": 1065,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "e7b75e83"
+  },
+  "pk33-keittio-ruokapoyta": {
+    "width": 1600,
+    "height": 1065,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "5c4858fe"
+  },
+  "pk33-keittiosta-olohuoneeseen": {
+    "width": 1600,
+    "height": 2405,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "e26aea8e"
+  },
+  "pk33-kylpyhuone-suihku": {
+    "width": 1600,
+    "height": 1064,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "200332b4"
+  },
+  "pk33-makuuhuone-kaapistot": {
+    "width": 1600,
+    "height": 1064,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "0f370323"
+  },
+  "pk33-makuuhuone-sanky-ikkuna": {
+    "width": 1600,
+    "height": 1065,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "a2821218"
+  },
+  "pk33-makuuhuone-tyopoyta-1": {
+    "width": 1600,
+    "height": 1064,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "1c7333d4"
+  },
+  "pk33-makuuhuone-tyopoyta-2": {
+    "width": 1600,
+    "height": 1064,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "8213a3e3"
+  },
+  "pk33-olohuone-ikkuna-tv": {
+    "width": 1600,
+    "height": 1064,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "a0ff1072"
+  },
+  "pk33-olohuone-nojatuoli": {
+    "width": 1600,
+    "height": 1064,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "e8647a7b"
+  },
+  "pk33-olohuone-sohva": {
+    "width": 1600,
+    "height": 1064,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "8d9b7641"
+  },
+  "pk33-olohuone-tv-kirjahylly": {
+    "width": 1600,
+    "height": 1065,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "2459143f"
+  },
+  "pk33-wc": {
+    "width": 1600,
+    "height": 2405,
+    "widths": [
+      800,
+      1200,
+      1600,
+      2400
+    ],
+    "v": "ccba8955"
+  }
+}

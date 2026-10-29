@@ -12,9 +12,18 @@ const QRCodeSVG = dynamic(
 );
 import PropertyMap from "@/components/PropertyMap";
 import FloorPlan from "@/components/FloorPlan";
-import Lightbox from "@/components/Lightbox";
+import Lightbox, { type LightboxImage } from "@/components/Lightbox";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { Lang, translations } from "@/translations";
+import {
+  GALLERY,
+  HERO_IMAGE,
+  LOCATION_IMAGE,
+  READY_CARD_IMAGES,
+  STREET_IMAGE,
+  webpLoader,
+  type GalleryImage,
+} from "@/data/pk33-images";
 
 function FadeIn({
   children,
@@ -55,36 +64,20 @@ function FadeIn({
   );
 }
 
-const galleryImages = [
-  { src: "/kalustettu-olohuone-1.webp",   alt: "Olohuone kalustettuna – kermasohva ja kruunuvalaisin" },
-  { src: "/kalustettu-olohuone-2.webp",   alt: "Olohuone kalustettuna – kirjahylly ja läpitalon näkymä" },
-  { src: "/kalustettu-makuuhuone-1.webp", alt: "Makuuhuone kalustettuna – parisänky ja kaapistot" },
-  { src: "/kalustettu-makuuhuone-2.webp", alt: "Makuuhuone kalustettuna – sänky ja paperivalaisin" },
-  { src: "/kalustettu-tyopiste.webp",     alt: "Työpiste – pöytä ikkunan vieressä" },
-  { src: "/kalustettu-eteinen.webp",      alt: "Eteinen kalustettuna – spottivalot ja kaapistot" },
-];
+type T = (typeof translations)[Lang];
 
-const freesiImages = [
-  { src: "/IMG_1504.webp", alt: "Makuuhuone" },
-  { src: "/IMG_1505.webp", alt: "Säilytystilaa" },
-  { src: "/IMG_1507.webp", alt: "Käytävä" },
-  { src: "/IMG_1501.webp", alt: "Olohuone" },
-  { src: "/IMG_1503.webp", alt: "Keittiö" },
-];
+// Kuvien alt-tekstit ovat translations.ts:ssä (alt) kaikilla kielillä
+function altOf(t: T, base: string): string {
+  return (t.alt as Record<string, string>)[base] ?? "";
+}
 
-const maalaattuImages = [
-  { src: "/maalattu1.webp", alt: "Olohuone ja keittiö" },
-  { src: "/maalattu2.webp", alt: "Makuuhuone" },
-];
+function toLightbox(images: GalleryImage[], t: T): LightboxImage[] {
+  return images.map((img) => ({ src: img.src, alt: altOf(t, img.base) }));
+}
 
-const kalustetutImages = [
-  { src: "/kalustettu-olohuone-1.webp",  alt: "Olohuone kalustettuna – kermasohva ja kruunuvalaisin" },
-  { src: "/kalustettu-olohuone-2.webp",  alt: "Olohuone – kirjahylly ja läpitalon näkymä" },
-  { src: "/kalustettu-makuuhuone-1.webp", alt: "Makuuhuone – parisänky ja kaapistot" },
-  { src: "/kalustettu-makuuhuone-2.webp", alt: "Makuuhuone – sänky ja paperivalaisin" },
-  { src: "/kalustettu-tyopiste.webp",    alt: "Työpiste – pöytä ikkunan vieressä" },
-  { src: "/kalustettu-eteinen.webp",     alt: "Eteinen – kaapistot ja spottivalot" },
-];
+function indexOfBase(images: GalleryImage[], base: string): number {
+  return Math.max(0, images.findIndex((img) => img.base === base));
+}
 
 // Myynti-ilmoitus: toistaiseksi välittäjän etusivu, vaihdetaan Etuovi-ilmoitukseen kun se julkaistaan
 const BROKER_LISTING_URL = "https://www.asuntobjorndahl.fi";
@@ -102,9 +95,15 @@ function getScrollSpeed() {
 
 export default function HomeContent({ lang }: { lang: Lang }) {
   const router = useRouter();
-  const [lightbox, setLightbox] = useState<{ images: typeof galleryImages; index: number } | null>(null);
+  const [lightbox, setLightbox] = useState<{ images: LightboxImage[]; index: number } | null>(null);
 
   const t = translations[lang];
+
+  const gallerySections: { title: string; images: GalleryImage[] }[] = [
+    { title: t.galleryInterior, images: GALLERY.interior },
+    { title: t.galleryExterior, images: GALLERY.exterior },
+    { title: t.galleryAerial, images: GALLERY.aerial },
+  ];
 
   function navigateToLang(l: Lang) {
     router.push(LANG_PATH[l]);
@@ -148,6 +147,8 @@ export default function HomeContent({ lang }: { lang: Lang }) {
   useEffect(() => {
     let rafId: number;
     let pausing = false;
+    // Alle 1 px:n askeleet kerätään talteen – osa selaimista pyöristää scrollBy(0, 0.64) nollaan
+    let carry = 0;
 
     function switchLang() {
       pausing = true;
@@ -166,7 +167,12 @@ export default function HomeContent({ lang }: { lang: Lang }) {
       if (window.scrollY >= maxScroll - 1) {
         switchLang();
       } else {
-        window.scrollBy(0, getScrollSpeed());
+        carry += getScrollSpeed();
+        const px = Math.floor(carry);
+        if (px >= 1) {
+          window.scrollBy(0, px);
+          carry -= px;
+        }
       }
       rafId = requestAnimationFrame(step);
     }
@@ -185,7 +191,7 @@ export default function HomeContent({ lang }: { lang: Lang }) {
     };
   }, [lang, router]);
 
-  function openLightbox(images: typeof galleryImages, index: number) { setLightbox({ images, index }); }
+  function openLightbox(images: LightboxImage[], index: number) { setLightbox({ images, index }); }
   function closeLightbox() { setLightbox(null); }
   function prevImage() { setLightbox((lb) => lb && { ...lb, index: (lb.index - 1 + lb.images.length) % lb.images.length }); }
   function nextImage() { setLightbox((lb) => lb && { ...lb, index: (lb.index + 1) % lb.images.length }); }
@@ -198,6 +204,7 @@ export default function HomeContent({ lang }: { lang: Lang }) {
         <Lightbox
           images={lightbox.images}
           index={lightbox.index}
+          labels={{ close: t.lbClose, prev: t.lbPrev, next: t.lbNext }}
           onClose={closeLightbox}
           onPrev={prevImage}
           onNext={nextImage}
@@ -208,37 +215,40 @@ export default function HomeContent({ lang }: { lang: Lang }) {
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/hero.webp"
-            alt="Pitkänsillankatu 33 – olohuone"
+            loader={webpLoader}
+            src={HERO_IMAGE.src}
+            alt={altOf(t, HERO_IMAGE.base)}
             fill
-            className="object-cover brightness-105 contrast-105"
+            sizes="100vw"
+            className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/50" />
+          {/* Ei tummennusta: kevyt vaalea hehku tekstin takana, kuva pysyy vaaleana */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgb(255_255_255/0.5)_0%,rgb(255_255_255/0.25)_50%,rgb(255_255_255/0)_80%)]" />
         </div>
 
         <div className="relative z-10 text-center px-4 lg:px-8 max-w-6xl mx-auto">
-          <p className="text-amber-400 text-base lg:text-2xl font-semibold tracking-widest uppercase mb-4 lg:mb-6">
+          <p className="text-amber-700 text-base lg:text-2xl font-semibold tracking-widest uppercase mb-4 lg:mb-6">
             {t.heroLocation}
           </p>
-          <h1 className="text-[2.14rem] sm:text-[2.85rem] md:text-[4.28rem] lg:text-[7.6rem] font-black text-white leading-[1.05] lg:leading-[1.0] tracking-tight mb-6 lg:mb-10">
+          <h1 className="text-[2.14rem] sm:text-[2.85rem] md:text-[4.28rem] lg:text-[7.6rem] font-black text-slate-900 leading-[1.05] lg:leading-[1.0] tracking-tight mb-6 lg:mb-10 [text-shadow:0_0_24px_rgb(255_255_255/0.7)]">
             {t.heroLine1}<br />
-            <span className="text-amber-400">
+            <span className="text-amber-600">
               {t.heroLine2.split("\n").map((line, i) => (
                 <span key={i}>{line}{i === 0 && <br />}</span>
               ))}
             </span><br />
             {t.heroLine3}
           </h1>
-          <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-slate-300 mb-2 lg:mb-3 font-light tracking-wide">
+          <p className="text-sm sm:text-base md:text-xl lg:text-2xl text-slate-800 mb-2 lg:mb-3 font-light tracking-wide [text-shadow:0_0_14px_rgb(255_255_255/0.9)]">
             {t.heroAddress}
           </p>
-          <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-amber-400 font-black mb-8 lg:mb-12 tracking-tight">
+          <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-amber-600 font-black mb-8 lg:mb-12 tracking-tight">
             {t.heroPrice}
           </p>
           <a
             href="#yhteystiedot"
-            className="inline-block bg-amber-500 hover:bg-amber-400 text-slate-900 text-lg lg:text-2xl font-bold px-8 lg:px-14 py-4 lg:py-6 rounded-full transition-colors duration-300 shadow-2xl"
+            className="inline-block bg-amber-600 hover:bg-amber-700 text-white text-lg lg:text-2xl font-bold px-8 lg:px-14 py-4 lg:py-6 rounded-full transition-colors duration-300 shadow-2xl"
           >
             {t.heroBtn}
           </a>
@@ -246,7 +256,7 @@ export default function HomeContent({ lang }: { lang: Lang }) {
 
         <a
           href="#pohjapiirros"
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-300 animate-bounce hover:text-amber-400 transition-colors"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-slate-800 animate-bounce hover:text-amber-600 transition-colors"
         >
           <span className="text-sm lg:text-lg tracking-widest uppercase">{t.heroScroll}</span>
           <svg className="w-6 h-6 lg:w-8 lg:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -256,7 +266,7 @@ export default function HomeContent({ lang }: { lang: Lang }) {
       </section>
 
       {/* ── AIRBNB-MAJOITUS ──────────────────────────────────────────── */}
-      <section className="py-8 px-4 lg:py-12 lg:px-8 bg-gradient-to-r from-amber-500 to-amber-400">
+      <section className="py-8 px-4 lg:py-12 lg:px-8 bg-gradient-to-r from-sand-100 to-sand-50">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-6 text-center lg:text-left">
           <div className="flex items-center gap-4 lg:gap-6">
             <span className="text-5xl lg:text-7xl shrink-0" aria-hidden>🏡</span>
@@ -270,7 +280,7 @@ export default function HomeContent({ lang }: { lang: Lang }) {
             href="https://www.airbnb.fi/rooms/1704146913497501882"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white text-base lg:text-xl font-bold px-8 lg:px-12 py-4 lg:py-5 rounded-full transition-colors duration-300 shadow-xl shrink-0 whitespace-nowrap"
+            className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white text-base lg:text-xl font-bold px-8 lg:px-12 py-4 lg:py-5 rounded-full transition-colors duration-300 shadow-xl shrink-0 whitespace-nowrap"
           >
             {t.airbnbBtn}
             <svg viewBox="0 0 24 24" className="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" strokeWidth={2}>
@@ -475,31 +485,46 @@ export default function HomeContent({ lang }: { lang: Lang }) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 items-stretch">
             {[
-              { icon: "🖌️", title: t.card1Title, desc: t.card1Desc, images: maalaattuImages },
-              { icon: "🛋️", title: t.card2Title, desc: t.card2Desc, images: kalustetutImages },
-              { icon: "✨", title: t.card3Title, desc: t.card3Desc, images: freesiImages },
-            ].map((item, i) => (
-              <FadeIn key={i} delay={i * 120}>
-                <div className="bg-white hover:bg-slate-50 rounded-2xl lg:rounded-3xl p-6 lg:p-12 transition-colors duration-300 border border-slate-100 shadow-lg hover:shadow-xl flex flex-col h-full">
-                  <div className="text-5xl mb-4 lg:mb-8">{item.icon}</div>
-                  <h3 className="text-xl lg:text-3xl font-bold mb-3 lg:mb-5 text-slate-800">{item.title}</h3>
-                  <p className="text-sm lg:text-xl text-slate-600 leading-relaxed flex-1">{item.desc}</p>
-                  {item.images ? (
+              { title: t.card1Title, desc: t.card1Desc, cover: READY_CARD_IMAGES[0] },
+              { title: t.card2Title, desc: t.card2Desc, cover: READY_CARD_IMAGES[1] },
+              { title: t.card3Title, desc: t.card3Desc, cover: READY_CARD_IMAGES[2] },
+            ].map((item, i) => {
+              // Kortin kuva ja "Katso kuvat" avaavat sisätilagallerian kortin kuvan kohdalta
+              const openPhotos = () => openLightbox(toLightbox(GALLERY.interior, t), indexOfBase(GALLERY.interior, item.cover.base));
+              return (
+                <FadeIn key={i} delay={i * 120}>
+                  <div className="bg-white rounded-2xl lg:rounded-3xl overflow-hidden transition-shadow duration-300 border border-slate-100 shadow-lg hover:shadow-xl flex flex-col h-full">
                     <button
-                      onClick={() => openLightbox(item.images!, 0)}
-                      className="mt-6 inline-flex items-center gap-2 text-sm lg:text-base font-semibold text-amber-600 hover:text-amber-500 transition-colors"
+                      onClick={openPhotos}
+                      className="relative aspect-[3/2] w-full block overflow-hidden cursor-zoom-in group"
+                      aria-label={`${t.viewPhotos}: ${item.title}`}
                     >
-                      {t.viewPhotos}
-                      <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                      </svg>
+                      <Image
+                        loader={webpLoader}
+                        src={item.cover.src}
+                        alt={altOf(t, item.cover.base)}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
                     </button>
-                  ) : (
-                    <div className="mt-6 h-6" />
-                  )}
-                </div>
-              </FadeIn>
-            ))}
+                    <div className="p-6 lg:p-12 flex flex-col flex-1">
+                      <h3 className="text-xl lg:text-3xl font-bold mb-3 lg:mb-5 text-slate-800">{item.title}</h3>
+                      <p className="text-sm lg:text-xl text-slate-600 leading-relaxed flex-1">{item.desc}</p>
+                      <button
+                        onClick={openPhotos}
+                        className="mt-6 self-start inline-flex items-center gap-2 text-sm lg:text-base font-semibold text-amber-600 hover:text-amber-500 transition-colors"
+                      >
+                        {t.viewPhotos}
+                        <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </FadeIn>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -511,26 +536,35 @@ export default function HomeContent({ lang }: { lang: Lang }) {
             <h2 className="text-3xl lg:text-5xl font-bold text-center mb-10 lg:mb-20 text-slate-800">{t.galleryTitle}</h2>
           </FadeIn>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-4">
-            <FadeIn className="col-span-2 row-span-2" delay={0}>
-              <button
-                onClick={() => openLightbox(galleryImages, 0)}
-                className="relative aspect-square rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg w-full block cursor-zoom-in"
-              >
-                <Image src="/kalustettu-olohuone-1.webp" alt="Olohuone kalustettuna" fill className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
-              </button>
-            </FadeIn>
-            {galleryImages.slice(1).map((img, i) => (
-              <FadeIn key={img.src} delay={(i + 1) * 80}>
-                <button
-                  onClick={() => openLightbox(galleryImages, i + 1)}
-                  className="relative aspect-square rounded-xl lg:rounded-2xl overflow-hidden shadow-md w-full block cursor-zoom-in"
-                >
-                  <Image src={img.src} alt={img.alt} fill className="object-cover brightness-105 contrast-105 hover:scale-105 transition-transform duration-500" />
-                </button>
+          {gallerySections.map((section) => (
+            <div key={section.title} className="mb-12 lg:mb-16 last:mb-0">
+              <FadeIn>
+                <h3 className="text-xl lg:text-3xl font-bold text-slate-800 mb-4 lg:mb-6">
+                  {section.title}{" "}
+                  <span className="text-slate-400 font-normal text-base lg:text-xl">· {section.images.length} {t.galleryCount}</span>
+                </h3>
               </FadeIn>
-            ))}
-          </div>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-4">
+                {section.images.map((img, i) => (
+                  <FadeIn key={img.base} delay={(i % 4) * 80}>
+                    <button
+                      onClick={() => openLightbox(toLightbox(section.images, t), i)}
+                      className="relative aspect-[3/2] rounded-xl lg:rounded-2xl overflow-hidden shadow-md w-full block cursor-zoom-in group"
+                    >
+                      <Image
+                        loader={webpLoader}
+                        src={img.src}
+                        alt={altOf(t, img.base)}
+                        fill
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </button>
+                  </FadeIn>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -559,19 +593,45 @@ export default function HomeContent({ lang }: { lang: Lang }) {
             <p className="text-base lg:text-2xl text-slate-500 text-center mb-10 lg:mb-20">{t.historySub}</p>
           </FadeIn>
 
+          {/* Sijainti ilmasta — leveä kuva, avaa ilmakuvat */}
+          <FadeIn className="mb-4 lg:mb-6">
+            <button
+              onClick={() => openLightbox(toLightbox(GALLERY.aerial, t), indexOfBase(GALLERY.aerial, LOCATION_IMAGE.base))}
+              className="relative w-full block rounded-2xl lg:rounded-3xl overflow-hidden aspect-[3/2] md:aspect-[21/9] shadow-xl cursor-zoom-in group text-left"
+            >
+              <Image
+                loader={webpLoader}
+                src={LOCATION_IMAGE.src}
+                alt={altOf(t, LOCATION_IMAGE.base)}
+                fill
+                sizes="(min-width: 1920px) 1840px, (min-width: 1152px) 1152px, 100vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              {/* Kuvateksti vaaleassa laatassa – ei tummaa liukuväriä kuvan päällä */}
+              <div className="absolute bottom-3 left-3 right-3 lg:bottom-6 lg:left-6 lg:right-6 flex justify-start">
+                <div className="rounded-xl lg:rounded-2xl bg-white/85 backdrop-blur-sm shadow-md px-3 py-2 lg:px-5 lg:py-3">
+                  <p className="text-slate-900 text-sm lg:text-xl font-semibold">📍 {t.locValue}</p>
+                  <p className="text-amber-700 text-xs lg:text-sm mt-1">🔍 {t.historyZoom}</p>
+                </div>
+              </div>
+            </button>
+          </FadeIn>
+
           <FadeIn delay={0} className="mb-8 lg:mb-16">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
               {/* Ikkunanäkymä — iso vasen */}
               <button
                 onClick={() => openLightbox([
-                  { src: "/nakyma.webp", alt: "Näkymä ikkunasta" },
+                  { src: "/nakyma.webp", alt: altOf(t, "nakyma") },
                 ], 0)}
-                className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] shadow-xl cursor-zoom-in group"
+                className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[4/3] md:aspect-auto shadow-xl cursor-zoom-in group"
               >
-                <Image src="/nakyma.webp" alt="Ikkunanäkymä Pitkänsillankadulle" fill className="object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4 lg:p-6">
-                  <p className="text-white text-sm lg:text-xl font-semibold">{t.historyCaption}</p>
-                  <p className="text-amber-400 text-xs lg:text-sm mt-1">🔍 Klikkaa suurentaaksesi</p>
+                <Image src="/nakyma.webp" alt={altOf(t, "nakyma")} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-500" />
+                <div className="absolute bottom-3 left-3 right-3 lg:bottom-6 lg:left-6 lg:right-6 flex justify-center">
+                  <div className="rounded-xl lg:rounded-2xl bg-white/85 backdrop-blur-sm shadow-md px-3 py-2 lg:px-5 lg:py-3">
+                    <p className="text-slate-900 text-sm lg:text-xl font-semibold">{t.historyCaption}</p>
+                    <p className="text-amber-700 text-xs lg:text-sm mt-1">🔍 {t.historyZoom}</p>
+                  </div>
                 </div>
               </button>
 
@@ -580,29 +640,40 @@ export default function HomeContent({ lang }: { lang: Lang }) {
                 {/* Historiallinen katukuva */}
                 <button
                   onClick={() => openLightbox([
-                    { src: "/katu-historia.jpeg", alt: "Historiallinen näkymä Kokkolan keskustasta" },
-                    { src: "/katu-nyt.webp",      alt: "Pitkänsillankatu tänään – BioRex" },
+                    { src: "/katu-historia.jpeg", alt: altOf(t, "katu-historia") },
+                    { src: STREET_IMAGE.src, alt: altOf(t, STREET_IMAGE.base) },
                   ], 0)}
                   className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[16/9] shadow-xl cursor-zoom-in group flex-1"
                 >
-                  <Image src="/katu-historia.jpeg" alt="Historiallinen katukuva Kokkolasta" fill className="object-cover brightness-100 contrast-105 sepia-[0.2] group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 lg:p-5">
-                    <p className="text-white text-sm lg:text-lg font-semibold">Historiallinen näkymä</p>
-                    <p className="text-amber-400 text-xs lg:text-sm mt-0.5">🔍 Klikkaa suurentaaksesi</p>
+                  <Image src="/katu-historia.jpeg" alt={altOf(t, "katu-historia")} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover brightness-100 contrast-105 sepia-[0.2] group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute bottom-3 left-3 right-3 lg:bottom-5 lg:left-5 lg:right-5 flex justify-center">
+                    <div className="rounded-xl lg:rounded-2xl bg-white/85 backdrop-blur-sm shadow-md px-3 py-2 lg:px-4 lg:py-2.5">
+                      <p className="text-slate-900 text-sm lg:text-lg font-semibold">{t.historyOldCaption}</p>
+                      <p className="text-amber-700 text-xs lg:text-sm mt-0.5">🔍 {t.historyZoom}</p>
+                    </div>
                   </div>
                 </button>
                 {/* Nykypäivän katukuva */}
                 <button
                   onClick={() => openLightbox([
-                    { src: "/katu-nyt.webp",      alt: "Pitkänsillankatu tänään – BioRex" },
-                    { src: "/katu-historia.jpeg", alt: "Historiallinen näkymä Kokkolan keskustasta" },
+                    { src: STREET_IMAGE.src, alt: altOf(t, STREET_IMAGE.base) },
+                    { src: "/katu-historia.jpeg", alt: altOf(t, "katu-historia") },
                   ], 0)}
                   className="relative rounded-2xl lg:rounded-3xl overflow-hidden aspect-[16/9] shadow-xl cursor-zoom-in group flex-1"
                 >
-                  <Image src="/katu-nyt.webp" alt="Pitkänsillankatu nykypäivänä" fill className="object-cover brightness-105 contrast-105 group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3 lg:p-5">
-                    <p className="text-white text-sm lg:text-lg font-semibold">Pitkänsillankatu tänään</p>
-                    <p className="text-amber-400 text-xs lg:text-sm mt-0.5">🔍 Klikkaa suurentaaksesi</p>
+                  <Image
+                    loader={webpLoader}
+                    src={STREET_IMAGE.src}
+                    alt={altOf(t, STREET_IMAGE.base)}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute bottom-3 left-3 right-3 lg:bottom-5 lg:left-5 lg:right-5 flex justify-center">
+                    <div className="rounded-xl lg:rounded-2xl bg-white/85 backdrop-blur-sm shadow-md px-3 py-2 lg:px-4 lg:py-2.5">
+                      <p className="text-slate-900 text-sm lg:text-lg font-semibold">{t.historyTodayCaption}</p>
+                      <p className="text-amber-700 text-xs lg:text-sm mt-0.5">🔍 {t.historyZoom}</p>
+                    </div>
                   </div>
                 </button>
               </div>
@@ -619,8 +690,8 @@ export default function HomeContent({ lang }: { lang: Lang }) {
                 ].map((item) => (
                   <div key={item.label} className="flex flex-col items-center">
                     <span className="text-3xl lg:text-5xl mb-2 lg:mb-4">{item.icon}</span>
-                    <p className="text-slate-500 text-xs lg:text-lg mb-1 lg:mb-2">{item.label}</p>
-                    <p className="text-sm lg:text-2xl font-bold text-slate-800">{item.value}</p>
+                    <p className="text-slate-500 text-xs lg:text-lg mb-1 lg:mb-2 max-w-full break-words hyphens-auto">{item.label}</p>
+                    <p className="text-sm lg:text-2xl font-bold text-slate-800 max-w-full break-words hyphens-auto">{item.value}</p>
                   </div>
                 ))}
               </div>
@@ -706,7 +777,7 @@ export default function HomeContent({ lang }: { lang: Lang }) {
               {/* QR-koodi */}
               <div className="flex flex-col items-center gap-3 w-40">
                 <div className="bg-white rounded-2xl p-3 shadow-lg w-40 h-40 flex items-center justify-center">
-                  <QRCodeSVG value="https://pitkansillankatu33.com/" size={120} bgColor="#ffffff" fgColor="#1e293b" level="M" />
+                  <QRCodeSVG value="https://pitkansillankatu33.com/" size={120} bgColor="#ffffff" fgColor="#2e2723" level="M" />
                 </div>
                 <p className="text-amber-400 font-semibold text-xs lg:text-sm tracking-wide text-center">{t.qrCaption}</p>
               </div>
@@ -755,7 +826,7 @@ export default function HomeContent({ lang }: { lang: Lang }) {
                   download
                   className="flex flex-col items-center justify-center gap-3 bg-white rounded-2xl p-4 shadow-lg w-40 h-40 hover:shadow-xl transition-shadow group"
                 >
-                  <svg viewBox="0 0 24 24" className="w-10 h-10 shrink-0" fill="none" stroke="#1e293b" strokeWidth={1.5}>
+                  <svg viewBox="0 0 24 24" className="w-10 h-10 shrink-0" fill="none" stroke="#2e2723" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l5.653-4.655m5.833-4.322a7.5 7.5 0 00-10.23 0" />
                   </svg>
                   <span className="text-slate-800 font-bold text-base text-center leading-tight">

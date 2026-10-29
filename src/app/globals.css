@@ -12,6 +12,58 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* ── Väripaletti A: terrakotta & hiekka (v2.6.0) ─────────────────────────
+   Tailwindin amber-, emerald- ja slate-sävyt määritellään uudelleen, jotta luokkanimet
+   ja alla olevat kiosk-TV:n säännöt (jotka viittaavat niihin) pysyvät ennallaan:
+   amber   = terrakotta: 400 heron korostus ja tunnisteet tummalla, 500 CTA-painikkeet,
+             600 linkit vaalealla, 50–200 ja 700–800 huomautuslaatikot
+   emerald = tumma terrakotta (luvut, sijoittajatunnus) ja hiekka (vaaleat taustat)
+   slate   = lämmin harmaa, kirkkaudet samat kuin Tailwindin slate-sävyissä
+   Vaaleat sävyt ja korostus tummalla (amber-400) on sovitettu pitkansillankatu18.comin
+   kirkkauteen (suhteellinen luminanssi: tausta ~0,96, korostus tummalla ~0,65).
+   sand    = Airbnb-kaistan hiekka
+   Paluu vanhoihin väreihin: poista tämä lohko. */
+@theme {
+  --color-amber-50: #fef8f2;
+  --color-amber-100: #fceee2;
+  --color-amber-200: #f5dcc6;
+  --color-amber-300: #ffd9b8;
+  --color-amber-400: #ffc99a;
+  --color-amber-500: #f59055;
+  --color-amber-600: #b4532a;
+  --color-amber-700: #9a4423;
+  --color-amber-800: #7c3720;
+  --color-amber-900: #5e2a19;
+  --color-amber-950: #3a190f;
+
+  --color-emerald-50: #fbf7f1;
+  --color-emerald-100: #f6efe5;
+  --color-emerald-200: #eee4d6;
+  --color-emerald-300: #f5d6bf;
+  --color-emerald-400: #eec09e;
+  --color-emerald-500: #c46a3d;
+  --color-emerald-600: #a9532e;
+  --color-emerald-700: #9a4423;
+  --color-emerald-800: #7a361d;
+  --color-emerald-900: #5a2816;
+  --color-emerald-950: #38180d;
+
+  --color-slate-50: #fcfaf7;
+  --color-slate-100: #f7f3ee;
+  --color-slate-200: #ede7df;
+  --color-slate-300: #ddd4c9;
+  --color-slate-400: #a89b8d;
+  --color-slate-500: #7a6d60;
+  --color-slate-600: #5c5147;
+  --color-slate-700: #433a33;
+  --color-slate-800: #2e2723;
+  --color-slate-900: #201b18;
+  --color-slate-950: #14100e;
+
+  --color-sand-50: #fbf6ef;
+  --color-sand-100: #f5ecdf;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;

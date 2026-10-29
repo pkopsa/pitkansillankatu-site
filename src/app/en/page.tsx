@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HomeContent from "@/components/HomeContent";
+import { OG_IMAGE } from "@/data/pk33-images";
 
 const BASE_URL = "https://pitkansillankatu33.com";
 
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
       "69 m² apartment in Kokkola city centre. For sale at €89,000 or furnished corporate rental. Top floor, next to BioRex.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "Pitkänsillankatu 33 A 13 – furnished living room, Kokkola",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Top-floor 2-room apartment in Kokkola, €89,000",
     description: "69 m² apartment in Kokkola city centre. For sale or furnished rental.",
-    images: ["/og-image.jpg"],
+    images: [OG_IMAGE],
   },
 };
 

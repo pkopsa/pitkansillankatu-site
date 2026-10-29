@@ -78,19 +78,20 @@ const labels = {
 export default function FloorPlan({ lang = "fi" }: { lang?: Lang }) {
   const L = labels[lang];
 
-  const extW = "#94a3b8";
-  const intW = "#64748b";
+  // Väripaletti A (terrakotta & hiekka, ks. globals.css)
+  const extW = "#a89b8d";
+  const intW = "#7a6d60";
   const EW = 3;
   const IW = 2;
-  const roomFill = "#1e3349";
-  const wetFill  = "#162a3a";
-  const corrFill = "#152535";
-  const cabFill  = "#182d42";
-  const door = "#f59e0b";
-  const win  = "#7dd3fc";
-  const txt  = "#e2e8f0";
-  const sub  = "#64748b";
-  const dim  = "#475569";
+  const roomFill = "#3a2f28";
+  const wetFill  = "#2f2722";
+  const corrFill = "#2c241f";
+  const cabFill  = "#342a24";
+  const door = "#f59055";
+  const win  = "#f3d3a8";
+  const txt  = "#e6ded3";
+  const sub  = "#7a6d60";
+  const dim  = "#5c5147";
 
   const
     xW   = 75,
@@ -125,10 +126,10 @@ export default function FloorPlan({ lang = "fi" }: { lang?: Lang }) {
       aria-label={L.header}
     >
       {/* BG */}
-      <rect width="560" height="470" fill="#0f172a" rx="16"/>
+      <rect width="560" height="470" fill="#201b18" rx="16"/>
 
       {/* Header */}
-      <text x="280" y="24" textAnchor="middle" fill="#f59e0b" fontSize="11" fontFamily="system-ui,sans-serif" fontWeight="700" letterSpacing="1.5">
+      <text x="280" y="24" textAnchor="middle" fill={door} fontSize="11" fontFamily="system-ui,sans-serif" fontWeight="700" letterSpacing="1.5">
         {L.header}
       </text>
       <text x="280" y="38" textAnchor="middle" fill={sub} fontSize="9" fontFamily="system-ui,sans-serif">
@@ -201,13 +202,13 @@ export default function FloorPlan({ lang = "fi" }: { lang?: Lang }) {
       <path d={`M ${bthL} ${yCE} A 30 30 0 0 1 ${bthR} ${yCE+30}`} fill="none" stroke={door} strokeWidth="1" strokeDasharray="3,2" opacity="0.6"/>
 
       {/* ── CABINETS ── */}
-      <rect x={xW+2} y={yCE-12} width={xBed-xW-4} height={10} fill="#1a3050" stroke="#2d4a6a" strokeWidth="1" rx="1"/>
-      <text x={(xW+xBed)/2} y={yCE-5} textAnchor="middle" fill="#3d6a9a" fontSize="7" fontFamily="system-ui,sans-serif">{L.cabinets}</text>
-      <rect x={xW+4} y={yCS+4} width={14} height={10} fill="#1a2f45" stroke="#2d4a6a" strokeWidth="1" rx="1"/>
-      <text x={xW+11} y={yCS+12} textAnchor="middle" fill="#3d6a9a" fontSize="5.5">⚡</text>
+      <rect x={xW+2} y={yCE-12} width={xBed-xW-4} height={10} fill="#3a2f28" stroke="#5a4a3e" strokeWidth="1" rx="1"/>
+      <text x={(xW+xBed)/2} y={yCE-5} textAnchor="middle" fill="#8a7766" fontSize="7" fontFamily="system-ui,sans-serif">{L.cabinets}</text>
+      <rect x={xW+4} y={yCS+4} width={14} height={10} fill="#342a24" stroke="#5a4a3e" strokeWidth="1" rx="1"/>
+      <text x={xW+11} y={yCS+12} textAnchor="middle" fill="#8a7766" fontSize="5.5">⚡</text>
 
       {/* ── WALKING ROUTE ── */}
-      <text x={xW+22} y={(yCS+yCE)/2+4} fill="#334155" fontSize="8.5" fontFamily="system-ui,sans-serif" letterSpacing="1">
+      <text x={xW+22} y={(yCS+yCE)/2+4} fill="#433a33" fontSize="8.5" fontFamily="system-ui,sans-serif" letterSpacing="1">
         → → → → → → → → → → → →
       </text>
 
@@ -236,8 +237,8 @@ export default function FloorPlan({ lang = "fi" }: { lang?: Lang }) {
       <text x={(xBed+xE)/2} y={yN+83} textAnchor="middle" fill={sub} fontSize="9"  fontFamily="system-ui,sans-serif">~13 m²</text>
       <text x={(xBed+xE)/2} y={yN+95} textAnchor="middle" fill={dim} fontSize="8"  fontFamily="system-ui,sans-serif">3,0 × 4,3 m</text>
 
-      <text x={(xW+xKit)/2} y={(yCS+yCE)/2+4} textAnchor="middle" fill="#334155" fontSize="8" fontFamily="system-ui,sans-serif" fontWeight="600">{L.entry}</text>
-      <text x={(xKit+xLiv)/2+20} y={(yCS+yCE)/2+4} textAnchor="middle" fill="#1e3a52" fontSize="8.5" fontFamily="system-ui,sans-serif" fontWeight="600">{L.hallway}</text>
+      <text x={(xW+xKit)/2} y={(yCS+yCE)/2+4} textAnchor="middle" fill="#433a33" fontSize="8" fontFamily="system-ui,sans-serif" fontWeight="600">{L.entry}</text>
+      <text x={(xKit+xLiv)/2+20} y={(yCS+yCE)/2+4} textAnchor="middle" fill="#4a3e35" fontSize="8.5" fontFamily="system-ui,sans-serif" fontWeight="600">{L.hallway}</text>
 
       <text x={(xLiv+xWCe)/2} y={yCE+30} textAnchor="middle" fill={txt} fontSize="9" fontFamily="system-ui,sans-serif" fontWeight="600">{L.wc}</text>
       <text x={(xLiv+xWCe)/2} y={yCE+44} textAnchor="middle" fill={sub} fontSize="8" fontFamily="system-ui,sans-serif">~3 m²</text>
@@ -272,7 +273,7 @@ export default function FloorPlan({ lang = "fi" }: { lang?: Lang }) {
       <text x="46" y={(yCS+yCE)/2} textAnchor="middle" fill={dim} fontSize="8" fontFamily="system-ui,sans-serif" transform={`rotate(-90,46,${(yCS+yCE)/2})`}>2,0 m</text>
 
       {/* ── LEGEND ── */}
-      <rect x="82" y="340" width="210" height="68" fill="#0a1628" stroke="#1e293b" strokeWidth="1" rx="6" opacity="0.95"/>
+      <rect x="82" y="340" width="210" height="68" fill="#14100e" stroke="#2e2723" strokeWidth="1" rx="6" opacity="0.95"/>
       <text x="187" y="354" textAnchor="middle" fill={sub} fontSize="8" fontFamily="system-ui,sans-serif" fontWeight="700">{L.legend}</text>
       <line x1="90" y1="365" x2="118" y2="365" stroke={win} strokeWidth="4"/>
       <text x="124" y="368" fill={sub} fontSize="8" fontFamily="system-ui,sans-serif">{L.legWin}</text>

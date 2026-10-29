@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import HomeContent from "@/components/HomeContent";
+import { OG_IMAGE } from "@/data/pk33-images";
 
 const BASE_URL = "https://pitkansillankatu33.com";
 
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
       "69 m² tvårummare i Karlebys stadskärna. Säljes 89 000 € eller uthyres möblerad till företag. Översta våningen, bredvid BioRex.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: "Pitkänsillankatu 33 A 13 – möblerat vardagsrum, Karleby",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Tvårummare i Karlebys stadskärna, 89 000 €",
     description: "69 m² tvårummare i Karlebys stadskärna. Säljes eller uthyres möblerad.",
-    images: ["/og-image.jpg"],
+    images: [OG_IMAGE],
   },
 };
 
